@@ -67,10 +67,12 @@ namespace KeepTalkingAndNobodyExplodes
         private void btnWires_Click(object sender, RoutedEventArgs e)
         {
             if (SwitchingTab()) TabControl.SelectedIndex = 1;
+            lb_ans_wire.Visibility = Visibility.Hidden;
         }
 
         private void btn_send_wires_Click(object sender, RoutedEventArgs e)
         {
+            
             string seqence = tb_wires.Text;
             int seqencelength = seqence.Length;
             bool lenright = false;
@@ -129,9 +131,37 @@ namespace KeepTalkingAndNobodyExplodes
                     break;
                 case 5:
                     lenright = true;
+                    if (seqence.Substring(seqencelength-1,1) == "s" && !(bool)iseven)
+                    {
+                        ret = "vierten Draht";
+                    }else if (farben["r"] == 1 && farben["g"] > 1)
+                    {
+                        ret = "ersten Draht";
+                    }else if (farben["s"] == 0)
+                    {
+                        ret = "zweiten Draht";
+                    }
+                    else
+                    {
+                        ret = "ersten Draht";
+                    }
                     break;
                 case 6:
                     lenright = true;
+                    if (farben["g"] == 0 && !(bool)iseven)
+                    {
+                        ret = "dritten Draht";
+                    }else if (farben["g"] == 1 && farben["w"] > 1)
+                    {
+                        ret = "vierten Draht";
+                    }else if (farben["r"] == 0)
+                    {
+                        ret = "letzen Draht";
+                    }
+                    else
+                    {
+                        ret = "vierten Draht";
+                    }
                     break;
             }
 
@@ -140,6 +170,7 @@ namespace KeepTalkingAndNobodyExplodes
                 MessageBox.Show("Keine richtige Anzahl der Drähte: " + seqencelength, "Anzahl der Drähte");
             }
 
+            lb_ans_wire.Visibility = Visibility.Visible;
             lb_wire_cut.Content = ret;
         }
 
@@ -150,6 +181,77 @@ namespace KeepTalkingAndNobodyExplodes
         private void btnButton_Click(object sender, RoutedEventArgs e)
         {
             if (SwitchingTab()) TabControl.SelectedIndex = 2;
+            ch_stripe_blue.Visibility = Visibility.Hidden;
+            ch_stripe_white.Visibility = Visibility.Hidden;
+            ch_stripe_other.Visibility = Visibility.Hidden;
+            ch_stripe_yellow.Visibility = Visibility.Hidden;
+            lb_stripes.Visibility = Visibility.Hidden;
+            lb_ans_button.Visibility = Visibility.Hidden;
+            btn_send_stripe.Visibility = Visibility.Hidden;
+        }
+        private void btn_senden_Click(object sender, RoutedEventArgs e)
+        {
+            string type = "";
+            if ((bool)ch_blue.IsChecked && (bool)ch_abbrechen.IsChecked)
+            {
+                type = "gedrückt halten";
+            }else if (batteries > 1 && (bool)ch_spreng.IsChecked)
+            {
+                type = "kurz drücken";
+            }
+            else if((bool)ch_white.IsChecked && (bool)car)
+            {
+                type = "gedrückt halten";
+            }else if (batteries > 2 && (bool)frk)
+            {
+                type = "kurz drücken";
+            }else if ((bool)ch_yellow.IsChecked)
+            {
+                type = "gedrückt halten";
+            }else if ((bool)ch_red.IsChecked && (bool)ch_hold.IsChecked)
+            {
+                type = "kurz drücken";
+            }
+            else
+            {
+                type = "gedrückt halten";
+            }
+
+            lb_ans_button.Visibility = Visibility.Visible;
+            lb_type.Content = type;
+            if (type == "gedrückt halten")
+            {
+                lb_stripes.Visibility = Visibility.Visible;
+                ch_stripe_other.Visibility = Visibility.Visible;
+                ch_stripe_white.Visibility = Visibility.Visible;
+                ch_stripe_yellow.Visibility = Visibility.Visible;
+                ch_stripe_blue.Visibility = Visibility.Visible;
+                btn_send_stripe.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void btn_send_stripe_Click(object sender, RoutedEventArgs e)
+        {
+            string ans = "Loslassen, wenn Timer eine ";
+            if ((bool)ch_stripe_white.IsChecked)
+            {
+                ans += "1 ";
+            }else if ((bool)ch_stripe_blue.IsChecked)
+            {
+                ans += "4 ";
+            }else if ((bool)ch_stripe_yellow.IsChecked)
+            {
+                ans += "5 ";
+            }else if ((bool)ch_stripe_other.IsChecked)
+            {
+                ans += "1 ";
+            }
+            else
+            {
+                MessageBox.Show("Bitte eine Farbe von Streifen auswählen", "Error with Stripes");
+            }
+
+            lb_ans_stripes.Content = ans + "anzeigt";
         }
 
         #endregion
@@ -163,7 +265,7 @@ namespace KeepTalkingAndNobodyExplodes
 
         #endregion
 
-        #region MyRegion
+        #region SimonSays
 
         private void btnSimonSays_Click(object sender, RoutedEventArgs e)
         {
@@ -246,5 +348,6 @@ namespace KeepTalkingAndNobodyExplodes
             return true;
         }
 
+        
     }
 }
