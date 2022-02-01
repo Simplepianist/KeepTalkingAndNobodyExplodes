@@ -96,34 +96,36 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="Bilder\6.PNG" />
-    <Resource Include="Bilder\absatz.PNG" />
-    <Resource Include="Bilder\ae.PNG" />
-    <Resource Include="Bilder\alien.PNG" />
-    <Resource Include="Bilder\alien_3.PNG" />
-    <Resource Include="Bilder\anzeige_words.PNG" />
-    <Resource Include="Bilder\AT.PNG" />
-    <Resource Include="Bilder\bahnübergang.PNG" />
-    <Resource Include="Bilder\broken_3.PNG" />
-    <Resource Include="Bilder\bT.PNG" />
-    <Resource Include="Bilder\copyright.PNG" />
-    <Resource Include="Bilder\curly_H.PNG" />
-    <Resource Include="Bilder\curly_N.PNG" />
-    <Resource Include="Bilder\c_looping.PNG" />
-    <Resource Include="Bilder\c_mit_punkt.PNG" />
-    <Resource Include="Bilder\empty_star.PNG" />
-    <Resource Include="Bilder\espaniol_fragezeichen.PNG" />
-    <Resource Include="Bilder\e_mit_punkten.PNG" />
-    <Resource Include="Bilder\filled_star.PNG" />
-    <Resource Include="Bilder\kerzenständer.PNG" />
-    <Resource Include="Bilder\k_spiegel.PNG" />
-    <Resource Include="Bilder\N_mit_bogen.PNG" />
-    <Resource Include="Bilder\Omega.PNG" />
-    <Resource Include="Bilder\O_mit_Strich.PNG" />
-    <Resource Include="Bilder\smiley.PNG" />
-    <Resource Include="Bilder\umgekehrtes_Y.PNG" />
-    <Resource Include="Bilder\umgekehrte_C_mit_punkt.PNG" />
-    <Resource Include="Bilder\w_mit_komma.PNG" />
+    <Resource Include="Bilder\Symbols\6.PNG" />
+    <Resource Include="Bilder\Symbols\absatz.PNG" />
+    <Resource Include="Bilder\Symbols\ae.PNG" />
+    <Resource Include="Bilder\Symbols\alien.PNG" />
+    <Resource Include="Bilder\Symbols\alien_3.PNG" />
+    <Resource Include="Bilder\Symbols\AT.PNG" />
+    <Resource Include="Bilder\Symbols\bahnübergang.PNG" />
+    <Resource Include="Bilder\Symbols\broken_3.PNG" />
+    <Resource Include="Bilder\Symbols\bT.PNG" />
+    <Resource Include="Bilder\Symbols\copyright.PNG" />
+    <Resource Include="Bilder\Symbols\curly_H.PNG" />
+    <Resource Include="Bilder\Symbols\curly_N.PNG" />
+    <Resource Include="Bilder\Symbols\c_looping.PNG" />
+    <Resource Include="Bilder\Symbols\c_mit_punkt.PNG" />
+    <Resource Include="Bilder\Symbols\empty_star.PNG" />
+    <Resource Include="Bilder\Symbols\espaniol_fragezeichen.PNG" />
+    <Resource Include="Bilder\Symbols\e_mit_punkten.PNG" />
+    <Resource Include="Bilder\Symbols\filled_star.PNG" />
+    <Resource Include="Bilder\Symbols\kerzenständer.PNG" />
+    <Resource Include="Bilder\Symbols\k_spiegel.PNG" />
+    <Resource Include="Bilder\Symbols\N_mit_bogen.PNG" />
+    <Resource Include="Bilder\Symbols\Omega.PNG" />
+    <Resource Include="Bilder\Symbols\O_mit_Strich.PNG" />
+    <Resource Include="Bilder\Symbols\smiley.PNG" />
+    <Resource Include="Bilder\Symbols\umgekehrtes_Y.PNG" />
+    <Resource Include="Bilder\Symbols\umgekehrte_C_mit_punkt.PNG" />
+    <Resource Include="Bilder\Symbols\w_mit_komma.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Bilder\Words\eyes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

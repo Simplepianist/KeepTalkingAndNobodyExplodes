@@ -8,475 +8,941 @@
     <Grid>
         <TabControl Name="TabControl" HorizontalAlignment="Left" Height="451" Margin="0,-32,0,0"
                     VerticalAlignment="Top" Width="792">
-            <TabItem Header="Main">
+            <TabItem Header="Main" Margin="-2,-1">
                 <Grid Background="#FFE5E5E5" Margin="0,-10,-3,3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="68*"/>
-                        <ColumnDefinition Width="721*"/>
-                    </Grid.ColumnDefinitions>
                     <Button x:Name="btnWires" Content="Wires" HorizontalAlignment="Left" Margin="0,30,0,0"
-                            VerticalAlignment="Top" Width="112" Height="47" Click="btnWires_Click" Grid.ColumnSpan="2"/>
-                    <Button x:Name="btnButton" Content="Button" HorizontalAlignment="Left" Margin="44,30,0,0"
-                            VerticalAlignment="Top" Width="112" Height="47" Click="btnButton_Click" Grid.Column="1" />
-                    <Button x:Name="btnSymbols" Content="Symbols" HorizontalAlignment="Left" Margin="156,30,0,0"
-                            VerticalAlignment="Top" Width="112" Height="47" Click="btnSymbols_Click" Grid.Column="1" />
-                    <Button x:Name="btnSimonSays" Content="Simon Says" HorizontalAlignment="Left" Margin="268,30,0,0"
-                            VerticalAlignment="Top" Width="112" Height="47" Click="btnSimonSays_Click" Grid.Column="1" />
-                    <Button x:Name="btnWords" Content="Wörterkette" HorizontalAlignment="Left" Margin="380,30,0,0"
-                            VerticalAlignment="Top" Width="112" Height="47" Click="btnWords_Click" Grid.Column="1" />
-                    <Button x:Name="btnMemory" Content="Memory" HorizontalAlignment="Left" Margin="492,30,0,0"
-                            VerticalAlignment="Top" Width="112" Height="47" Click="btnMemory_Click" Grid.Column="1" />
-                    <Button x:Name="btnMorse" Content="Morse" HorizontalAlignment="Left" Margin="604,30,0,0"
-                            VerticalAlignment="Top" Width="112" Height="47" Click="btnMorse_Click" Grid.Column="1" />
+                            VerticalAlignment="Top" Width="112" Height="47" Click="btnWires_Click" />
+                    <Button x:Name="btnButton" HorizontalAlignment="Left" Margin="112,30,0,0"
+                            VerticalAlignment="Top" Width="112" Height="47" Click="btnButton_Click" />
+                    <Button x:Name="btnSymbols" Content="Symbols" HorizontalAlignment="Left" Margin="224,30,0,0"
+                            VerticalAlignment="Top" Width="112" Height="47" Click="btnSymbols_Click" />
+                    <Button x:Name="btnSimonSays" Content="Simon Says" HorizontalAlignment="Left" Margin="336,30,0,0"
+                            VerticalAlignment="Top" Width="112" Height="47" Click="btnSimonSays_Click" />
+                    <Button x:Name="btnWords" Content="Wörterkette" HorizontalAlignment="Left" Margin="448,30,0,0"
+                            VerticalAlignment="Top" Width="112" Height="47" Click="btnWords_Click" />
+                    <Button x:Name="btnMemory" Content="Memory" HorizontalAlignment="Left" Margin="560,30,0,0"
+                            VerticalAlignment="Top" Width="112" Height="47" Click="btnMemory_Click" />
+                    <Button x:Name="btnMorse" Content="Morse" HorizontalAlignment="Left" Margin="672,30,0,0"
+                            VerticalAlignment="Top" Width="112" Height="47" Click="btnMorse_Click" />
                     <Button x:Name="btnComplicated" Content="Complicated" HorizontalAlignment="Left" Margin="0,72,0,0"
-                            VerticalAlignment="Top" Width="112" Height="47" Click="btnComplicated_Click" Grid.ColumnSpan="2" />
-                    <Button x:Name="btnSequence" Content="Sequence" HorizontalAlignment="Left" Margin="44,72,0,0"
-                            VerticalAlignment="Top" Width="112" Height="47" Click="btnSequence_Click" Grid.Column="1" />
-                    <Button x:Name="btnLabirinth" Content="Labyrinth" HorizontalAlignment="Left" Margin="156,72,0,0"
-                            VerticalAlignment="Top" Width="112" Height="47" Click="btnLabyrinth_Click" Grid.Column="1" />
-                    <Button x:Name="btnPasswd" Content="Passwort" HorizontalAlignment="Left" Margin="268,72,0,0"
-                            VerticalAlignment="Top" Width="112" Height="47" Click="btnPasswd_Click" Grid.Column="1" />
+                            VerticalAlignment="Top" Width="112" Height="47" Click="btnComplicated_Click" />
+                    <Button x:Name="btnSequence" Content="Sequence" HorizontalAlignment="Left" Margin="112,72,0,0"
+                            VerticalAlignment="Top" Width="112" Height="47" Click="btnSequence_Click" />
+                    <Button x:Name="btnLabirinth" Content="Labyrinth" HorizontalAlignment="Left" Margin="224,72,0,0"
+                            VerticalAlignment="Top" Width="112" Height="47" Click="btnLabyrinth_Click" />
+                    <Button x:Name="btnPasswd" Content="Passwort" HorizontalAlignment="Left" Margin="336,72,0,0"
+                            VerticalAlignment="Top" Width="112" Height="47" Click="btnPasswd_Click" />
 
 
-                    <Grid HorizontalAlignment="Left" Height="315" Margin="547,105,0,0" VerticalAlignment="Top"
-                          Width="164" Grid.Column="1">
+                    <Grid HorizontalAlignment="Left" Height="315" Margin="615,105,0,0" VerticalAlignment="Top"
+                          Width="164">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"/>
-                            <ColumnDefinition Width="49*"/>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="49*" />
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
 
-                            <RowDefinition Height="25"/>
-                            <RowDefinition Height="25"/>
-                            <RowDefinition Height="25"/>
-                            <RowDefinition Height="25"/>
-                            <RowDefinition Height="25"/>
-                            <RowDefinition Height="25"/>
-                            <RowDefinition Height="25"/>
-                            <RowDefinition Height="25"/>
-                            <RowDefinition Height="25"/>
-                            <RowDefinition Height="25"/>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
                         </Grid.RowDefinitions>
                         <!-- CAR,FRQ -->
-                        <CheckBox x:Name="ch_CAR" Content="CAR" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Grid.Row="4" Grid.Column="0"/>
-                        <CheckBox x:Name="ch_FRK" Content="FRK" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="0"/>
-                        <CheckBox x:Name="ch_vokal" Content="Vokal in Serial " HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="3"  />
-                        <Label  Content="Anzahl Batterien" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="5" Grid.ColumnSpan="2"/>
-                        <TextBox x:Name="count_Batterie" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="6" TextWrapping="Wrap" Text="0" Grid.ColumnSpan="2"/>
-                        <CheckBox x:Name="ch_parallel" Content="Parallel-Port" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="4"  />
-                        <CheckBox x:Name="ch_iseven" Content="Gerade Serial" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="2"  />
-                        <Button x:Name="bntSaveConfig" Content="Speichern" HorizontalAlignment="Stretch" Grid.Row="7" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Click="bntSaveConfig_Click" />
-                        <Label x:Name="lb_saved" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="8"/>
+                        <CheckBox x:Name="ch_CAR" Content="CAR" HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Grid.Row="4"
+                                  Grid.Column="0" />
+                        <CheckBox x:Name="ch_FRK" Content="FRK" HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Grid.Row="3"
+                                  Grid.Column="0" />
+                        <CheckBox x:Name="ch_vokal" Content="Vokal in Serial " HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Grid.Column="1"
+                                  Grid.Row="3" />
+                        <Label Content="Anzahl Batterien" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                               VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="5"
+                               Grid.ColumnSpan="2" />
+                        <TextBox x:Name="count_Batterie" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="6"
+                                 TextWrapping="Wrap" Text="0" Grid.ColumnSpan="2" />
+                        <CheckBox x:Name="ch_parallel" Content="Parallel-Port" HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Grid.Column="1"
+                                  Grid.Row="4" />
+                        <CheckBox x:Name="ch_iseven" Content="Gerade Serial" HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Grid.Column="1"
+                                  Grid.Row="2" />
+                        <Button x:Name="bntSaveConfig" Content="Speichern" HorizontalAlignment="Stretch" Grid.Row="7"
+                                VerticalAlignment="Stretch" Grid.ColumnSpan="2" Click="bntSaveConfig_Click" />
+                        <Label x:Name="lb_saved" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                               Grid.ColumnSpan="2" HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Center" Grid.Row="8" />
 
                     </Grid>
+                    <Button x:Name="btn_addFehler_main" Content="Fehler +" HorizontalAlignment="Left"
+                            Margin="0,383,0,-3" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_addFehler_wires_Click" />
+                    <Button x:Name="btn_removeFehler_main" Content="Fehler -" HorizontalAlignment="Left"
+                            Margin="79,383,0,-3" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_removeFehler_wires_Click" />
+                    <Label x:Name="lb_error_count_main" Content="0" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="79,352,0,0"
+                           VerticalAlignment="Top" Width="80" />
+                    <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,352,0,0" VerticalAlignment="Top" Width="80" />
 
                 </Grid>
             </TabItem>
             <TabItem Header="Wires">
                 <Grid Background="#FFE5E5E5" RenderTransformOrigin="-0.01,1.01">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
 
-                    <Label Content="Abfolge der Kabel" HorizontalAlignment="Left" Margin="246,83,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="147"/>
-                    <TextBox x:Name="tb_wires" HorizontalAlignment="Left" Height="26" Margin="412,83,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <Button x:Name="btn_send_wires" Content="Senden" HorizontalAlignment="Left" Margin="348,122,0,0" VerticalAlignment="Top" Width="100" Height="26" Click="btn_send_wires_Click"/>
-                    <Label x:Name="lb_ans_wire" Content="Druchtrenne den" HorizontalAlignment="Left" Margin="112,161,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="263"/>
-                    <Label x:Name="lb_wire_cut" Content="" HorizontalAlignment="Left" Margin="397,161,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Width="147"/>
-                    <Label Content="Drähte:&#xA;Rot = r&#xA;Gelb = g &#xA;Blau = b&#xA;Weiß = w&#xA;Schwarz = s&#xA;" HorizontalAlignment="Left" Margin="570,72,0,0" VerticalAlignment="Top" Height="107" Width="76"/>
-                    <Label Content="Nur 3-6 Buchstaben nötig, keine Trennzeichen" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="246,52,0,0" VerticalAlignment="Top" Height="31" Width="314"/>
-                    <Label Content="Wires" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
+                    <Label Content="Abfolge der Kabel" HorizontalAlignment="Left" Margin="246,83,0,0"
+                           VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"
+                           Width="147" />
+                    <TextBox x:Name="tb_wires" HorizontalAlignment="Left" Height="26" Margin="412,83,0,0"
+                             HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextWrapping="Wrap"
+                             VerticalAlignment="Top" Width="120" />
+                    <Button x:Name="btn_send_wires" Content="Senden" HorizontalAlignment="Left" Margin="348,122,0,0"
+                            VerticalAlignment="Top" Width="100" Height="26" Click="btn_send_wires_Click" />
+                    <Label x:Name="lb_ans_wire" Content="Druchtrenne den" HorizontalAlignment="Left"
+                           Margin="112,161,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center"
+                           HorizontalContentAlignment="Right" Width="263" />
+                    <Label x:Name="lb_wire_cut" HorizontalAlignment="Left" Margin="397,161,0,0" VerticalAlignment="Top"
+                           VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Width="147" />
+                    <Label Content="Drähte:&#xA;Rot = r&#xA;Gelb = g &#xA;Blau = b&#xA;Weiß = w&#xA;Schwarz = s&#xA;"
+                           HorizontalAlignment="Left" Margin="570,72,0,0" VerticalAlignment="Top" Height="107"
+                           Width="76" />
+                    <Label Content="Nur 3-6 Buchstaben nötig, keine Trennzeichen" FontSize="14" FontWeight="Bold"
+                           HorizontalAlignment="Left" Margin="246,52,0,0" VerticalAlignment="Top" Height="31"
+                           Width="314" />
+                    <Label Content="Wires" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786" />
                     <Button x:Name="btnReset_wires" Content="Reset" HorizontalAlignment="Left" Margin="656,10,0,0"
-                        VerticalAlignment="Top" Width="120" Height="50" Click="btnWires_Click"/>
-                    <Button x:Name="btnButton_wires" Content="Button" HorizontalAlignment="Left" Margin="0,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
+                            VerticalAlignment="Top" Width="120" Height="50" Click="btnWires_Click" />
+                    <Button x:Name="btnButton_wires" HorizontalAlignment="Left" Margin="0,72,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
                     <Button x:Name="btnSymbols_wires" Content="Symbols" HorizontalAlignment="Left" Margin="79,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
-                    <Button x:Name="btnSimonSays_wires" Content="Simon Says" HorizontalAlignment="Left" Margin="0,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
-                    <Button x:Name="btnWords_wires" Content="Wörterkette" HorizontalAlignment="Left" Margin="79,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
+                    <Button x:Name="btnSimonSays_wires" Content="Simon Says" HorizontalAlignment="Left"
+                            Margin="0,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
+                    <Button x:Name="btnWords_wires" Content="Wörterkette" HorizontalAlignment="Left"
+                            Margin="79,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
                     <Button x:Name="btnMemory_wires" Content="Memory" HorizontalAlignment="Left" Margin="0,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
                     <Button x:Name="btnMorse_wires" Content="Morse" HorizontalAlignment="Left" Margin="79,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
-                    <Button x:Name="btnComplicated_wires" Content="Complicated" HorizontalAlignment="Left" Margin="0,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
-                    <Button x:Name="btnSequence_wires" Content="Sequence" HorizontalAlignment="Left" Margin="79,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
-                    <Button x:Name="btnLabirinth_wires" Content="Labyrinth" HorizontalAlignment="Left" Margin="0,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
+                    <Button x:Name="btnComplicated_wires" Content="Complicated" HorizontalAlignment="Left"
+                            Margin="0,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
+                    <Button x:Name="btnSequence_wires" Content="Sequence" HorizontalAlignment="Left"
+                            Margin="79,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
+                    <Button x:Name="btnLabirinth_wires" Content="Labyrinth" HorizontalAlignment="Left"
+                            Margin="0,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
                     <Button x:Name="btnPasswd_wires" Content="Passwort" HorizontalAlignment="Left" Margin="79,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
                     <Button x:Name="Back4_Copy" Content="&lt;--" HorizontalAlignment="Left" Margin="10,10,0,0"
-                        VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
-                    <Button x:Name="btn_addFehler_wires" Content="Fehler +" HorizontalAlignment="Left" Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_addFehler_wires_Click" />
-                    <Button x:Name="btn_removeFehler_wires" Content="Fehler -" HorizontalAlignment="Left" Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_removeFehler_wires_Click"/>
+                            VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                    <Button x:Name="btn_addFehler_wires" Content="Fehler +" HorizontalAlignment="Left"
+                            Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_addFehler_wires_Click" />
+                    <Button x:Name="btn_removeFehler_wires" Content="Fehler -" HorizontalAlignment="Left"
+                            Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_removeFehler_wires_Click" />
+                    <Label x:Name="lb_error_count_wires" Content="0" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="79,342,0,0"
+                           VerticalAlignment="Top" Width="80" />
+                    <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,342,0,0" VerticalAlignment="Top" Width="80" />
                 </Grid>
             </TabItem>
             <TabItem Header="Button">
                 <Grid Background="#FFE5E5E5">
-                    <Label Content="Button" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
+                    <Label FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786" />
                     <Button x:Name="Back1" Content="&lt;--" HorizontalAlignment="Left" Margin="10,10,0,0"
                             VerticalAlignment="Top" Width="47" Height="38" Grid.ColumnSpan="2" Click="Back_Click" />
-                    <RadioButton x:Name="ch_red" GroupName="Farbe" Content="Rot" HorizontalAlignment="Left" Margin="196,67,0,0" VerticalAlignment="Top" Width="69" />
-                    <RadioButton x:Name="ch_blue" GroupName="Farbe" Content="Blau" HorizontalAlignment="Left" Margin="196,87,0,0" VerticalAlignment="Top" Width="69"/>
-                    <RadioButton x:Name="ch_yellow" GroupName="Farbe" Content="Gelb" HorizontalAlignment="Left" Margin="196,107,0,0" VerticalAlignment="Top" Width="69"/>
-                    <RadioButton x:Name="ch_white" GroupName="Farbe" Content="Weiß" HorizontalAlignment="Left" Margin="196,127,0,0" VerticalAlignment="Top" Width="69"/>
-                    <RadioButton x:Name="ch_abbrechen" GroupName="Text" Content="abbrechen" HorizontalAlignment="Left" Margin="272,78,0,0" VerticalAlignment="Top" Width="103" />
-                    <RadioButton x:Name="ch_spreng" GroupName="Text" Content="Sprengen" HorizontalAlignment="Left" Margin="272,98,0,0" VerticalAlignment="Top" Width="103" />
-                    <RadioButton x:Name="ch_hold" GroupName="Text" Content="Gedrückt halten" HorizontalAlignment="Left" Margin="272,117,0,0" VerticalAlignment="Top" />
-                    <Button x:Name="btn_senden" Content="Senden" HorizontalAlignment="Left" Margin="418,87,0,0" VerticalAlignment="Top" Width="79" Height="35" Click="btn_senden_Click"/>
-                    <Label x:Name="lb_ans_button" Content="Den Button" HorizontalAlignment="Left" Margin="173,155,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" Width="202"/>
-                    <Label x:Name="lb_type" Content="" HorizontalAlignment="Left" Margin="380,155,0,0" VerticalAlignment="Top" Width="102"/>
-                    <RadioButton x:Name="ch_stripe_white" GroupName="stripe" Content="Weiß" HorizontalAlignment="Left" Margin="196,244,0,0" VerticalAlignment="Top" Width="69" />
-                    <RadioButton x:Name="ch_stripe_blue" GroupName="stripe" Content="Blau" HorizontalAlignment="Left" Margin="196,264,0,0" VerticalAlignment="Top" Width="69" />
-                    <RadioButton x:Name="ch_stripe_yellow" GroupName="stripe" Content="Gelb" HorizontalAlignment="Left" Margin="196,284,0,0" VerticalAlignment="Top" Width="69" />
-                    <RadioButton x:Name="ch_stripe_other" GroupName="stripe" Content="Andere" HorizontalAlignment="Left" Margin="196,304,0,0" VerticalAlignment="Top" Width="69" />
-                    <Label x:Name="lb_stripes" FontWeight="Bold" Content="Farbe des Streifen" HorizontalAlignment="Left" Margin="196,200,0,0" VerticalAlignment="Top" Width="301"/>
-                    <Button x:Name="btn_send_stripe" Content="Send" HorizontalAlignment="Left" Margin="319,264,0,0" VerticalAlignment="Top" Width="75" Height="35" Click="btn_send_stripe_Click" />
-                    <Label x:Name="lb_ans_stripes" Content="" HorizontalAlignment="Left" Margin="196,324,0,0" VerticalAlignment="Top" Width="314"/>
+                    <RadioButton x:Name="ch_red" GroupName="Farbe" Content="Rot" HorizontalAlignment="Left"
+                                 Margin="196,67,0,0" VerticalAlignment="Top" Width="69" />
+                    <RadioButton x:Name="ch_blue" GroupName="Farbe" Content="Blau" HorizontalAlignment="Left"
+                                 Margin="196,87,0,0" VerticalAlignment="Top" Width="69" />
+                    <RadioButton x:Name="ch_yellow" GroupName="Farbe" Content="Gelb" HorizontalAlignment="Left"
+                                 Margin="196,107,0,0" VerticalAlignment="Top" Width="69" />
+                    <RadioButton x:Name="ch_white" GroupName="Farbe" Content="Weiß" HorizontalAlignment="Left"
+                                 Margin="196,127,0,0" VerticalAlignment="Top" Width="69" />
+                    <RadioButton x:Name="ch_abbrechen" GroupName="Text" Content="abbrechen" HorizontalAlignment="Left"
+                                 Margin="272,78,0,0" VerticalAlignment="Top" Width="103" />
+                    <RadioButton x:Name="ch_spreng" GroupName="Text" Content="Sprengen" HorizontalAlignment="Left"
+                                 Margin="272,98,0,0" VerticalAlignment="Top" Width="103" />
+                    <RadioButton x:Name="ch_hold" GroupName="Text" Content="Gedrückt halten" HorizontalAlignment="Left"
+                                 Margin="272,117,0,0" VerticalAlignment="Top" />
+                    <Button x:Name="btn_senden" Content="Senden" HorizontalAlignment="Left" Margin="418,87,0,0"
+                            VerticalAlignment="Top" Width="79" Height="35" Click="btn_senden_Click" />
+                    <Label x:Name="lb_ans_button" Content="Den Button" HorizontalAlignment="Left" Margin="173,155,0,0"
+                           VerticalAlignment="Top" HorizontalContentAlignment="Right" Width="202" />
+                    <Label x:Name="lb_type" HorizontalAlignment="Left" Margin="380,155,0,0" VerticalAlignment="Top"
+                           Width="102" />
+                    <RadioButton x:Name="ch_stripe_white" GroupName="stripe" Content="Weiß" HorizontalAlignment="Left"
+                                 Margin="196,244,0,0" VerticalAlignment="Top" Width="69" />
+                    <RadioButton x:Name="ch_stripe_blue" GroupName="stripe" Content="Blau" HorizontalAlignment="Left"
+                                 Margin="196,264,0,0" VerticalAlignment="Top" Width="69" />
+                    <RadioButton x:Name="ch_stripe_yellow" GroupName="stripe" Content="Gelb" HorizontalAlignment="Left"
+                                 Margin="196,284,0,0" VerticalAlignment="Top" Width="69" />
+                    <RadioButton x:Name="ch_stripe_other" GroupName="stripe" Content="Andere"
+                                 HorizontalAlignment="Left" Margin="196,304,0,0" VerticalAlignment="Top" Width="69" />
+                    <Label x:Name="lb_stripes" FontWeight="Bold" Content="Farbe des Streifen"
+                           HorizontalAlignment="Left" Margin="196,200,0,0" VerticalAlignment="Top" Width="301" />
+                    <Button x:Name="btn_send_stripe" Content="Send" HorizontalAlignment="Left" Margin="319,264,0,0"
+                            VerticalAlignment="Top" Width="75" Height="35" Click="btn_send_stripe_Click" />
+                    <Label x:Name="lb_ans_stripes" HorizontalAlignment="Left" Margin="196,324,0,0"
+                           VerticalAlignment="Top" Width="314" />
                     <Button x:Name="btnReset_button" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click" />
                     <Button x:Name="btnButton_button" Content="Reset" HorizontalAlignment="Left" Margin="656,10,0,0"
-                        VerticalAlignment="Top" Width="120" Height="50" Click="btnButton_Click" />
+                            VerticalAlignment="Top" Width="120" Height="50" Click="btnButton_Click" />
                     <Button x:Name="btnSymbols_button" Content="Symbols" HorizontalAlignment="Left" Margin="79,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
-                    <Button x:Name="btnSimonSays_button" Content="Simon Says" HorizontalAlignment="Left" Margin="0,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
-                    <Button x:Name="btnWords_button" Content="Wörterkette" HorizontalAlignment="Left" Margin="79,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
+                    <Button x:Name="btnSimonSays_button" Content="Simon Says" HorizontalAlignment="Left"
+                            Margin="0,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
+                    <Button x:Name="btnWords_button" Content="Wörterkette" HorizontalAlignment="Left"
+                            Margin="79,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
                     <Button x:Name="btnMemory_button" Content="Memory" HorizontalAlignment="Left" Margin="0,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
                     <Button x:Name="btnMorse_button" Content="Morse" HorizontalAlignment="Left" Margin="79,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
-                    <Button x:Name="btnComplicated_button" Content="Complicated" HorizontalAlignment="Left" Margin="0,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
-                    <Button x:Name="btnSequence_button" Content="Sequence" HorizontalAlignment="Left" Margin="79,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
-                    <Button x:Name="btnLabirinth_button" Content="Labyrinth" HorizontalAlignment="Left" Margin="0,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
+                    <Button x:Name="btnComplicated_button" Content="Complicated" HorizontalAlignment="Left"
+                            Margin="0,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
+                    <Button x:Name="btnSequence_button" Content="Sequence" HorizontalAlignment="Left"
+                            Margin="79,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
+                    <Button x:Name="btnLabirinth_button" Content="Labyrinth" HorizontalAlignment="Left"
+                            Margin="0,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
                     <Button x:Name="btnPasswd_button" Content="Passwort" HorizontalAlignment="Left" Margin="79,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
-                    <Button x:Name="btn_addFehler_button" Content="Fehler +" HorizontalAlignment="Left" Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_addFehler_wires_Click" />
-                    <Button x:Name="btn_removeFehler_button" Content="Fehler -" HorizontalAlignment="Left" Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_removeFehler_wires_Click"/>
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
+                    <Button x:Name="btn_addFehler_button" Content="Fehler +" HorizontalAlignment="Left"
+                            Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_addFehler_wires_Click" />
+                    <Button x:Name="btn_removeFehler_button" Content="Fehler -" HorizontalAlignment="Left"
+                            Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_removeFehler_wires_Click" />
+                    <Label x:Name="lb_error_count_button" Content="0" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="79,342,0,0"
+                           VerticalAlignment="Top" Width="80" />
+                    <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,342,0,0" VerticalAlignment="Top" Width="80" />
 
 
                 </Grid>
             </TabItem>
             <TabItem Header="Symbols">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Margin="0,-1,0,1">
 
-                    <Label Content="Symbols" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
+                    <Label Content="Symbols" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786" />
                     <Button x:Name="btnReset_symbols" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
-                    <Button x:Name="btnButton_symbols" Content="Button" HorizontalAlignment="Left" Margin="79,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click" />
+                    <Button x:Name="btnButton_symbols" Content="Buttons" HorizontalAlignment="Left" Margin="79,72,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
                     <Button x:Name="btnSymbols_symbols" Content="Reset" HorizontalAlignment="Left" Margin="656,10,0,0"
-                        VerticalAlignment="Top" Width="120" Height="50" Click="btnSymbols_Click" />
-                    <Button x:Name="btnSimonSays_symbols" Content="Simon Says" HorizontalAlignment="Left" Margin="0,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
-                    <Button x:Name="btnWords_symbols" Content="Wörterkette" HorizontalAlignment="Left" Margin="79,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
+                            VerticalAlignment="Top" Width="120" Height="50" Click="btnSymbols_Click" />
+                    <Button x:Name="btnSimonSays_symbols" Content="Simon Says" HorizontalAlignment="Left"
+                            Margin="0,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
+                    <Button x:Name="btnWords_symbols" Content="Wörterkette" HorizontalAlignment="Left"
+                            Margin="79,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
                     <Button x:Name="btnMemory_symbols" Content="Memory" HorizontalAlignment="Left" Margin="0,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
                     <Button x:Name="btnMorse_symbols" Content="Morse" HorizontalAlignment="Left" Margin="79,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
-                    <Button x:Name="btnComplicated_symbols" Content="Complicated" HorizontalAlignment="Left" Margin="0,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
-                    <Button x:Name="btnSequence_symbols" Content="Sequence" HorizontalAlignment="Left" Margin="79,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
-                    <Button x:Name="btnLabirinth_symbols" Content="Labyrinth" HorizontalAlignment="Left" Margin="0,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
-                    <Button x:Name="btnPasswd_symbols" Content="Passwort" HorizontalAlignment="Left" Margin="79,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
+                    <Button x:Name="btnComplicated_symbols" Content="Complicated" HorizontalAlignment="Left"
+                            Margin="0,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
+                    <Button x:Name="btnSequence_symbols" Content="Sequence" HorizontalAlignment="Left"
+                            Margin="79,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
+                    <Button x:Name="btnLabirinth_symbols" Content="Labyrinth" HorizontalAlignment="Left"
+                            Margin="0,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
+                    <Button x:Name="btnPasswd_symbols" Content="Passwort" HorizontalAlignment="Left"
+                            Margin="79,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
                     <Button x:Name="Back3" Content="&lt;--" HorizontalAlignment="Left" Margin="10,10,0,0"
-                        VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
-                    <Button x:Name="btn_addFehler_symbols" Content="Fehler +" HorizontalAlignment="Left" Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_addFehler_wires_Click" />
-                    <Button x:Name="btn_removeFehler_symbols" Content="Fehler -" HorizontalAlignment="Left" Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_removeFehler_wires_Click"/>
+                            VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                    <Button x:Name="btn_addFehler_symbols" Content="Fehler +" HorizontalAlignment="Left"
+                            Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_addFehler_wires_Click" />
+                    <Button x:Name="btn_removeFehler_symbols" Content="Fehler -" HorizontalAlignment="Left"
+                            Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_removeFehler_wires_Click" />
+                    <Label x:Name="lb_error_count_symbols" Content="0" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="79,342,0,0"
+                           VerticalAlignment="Top" Width="80" />
+                    <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,342,0,0" VerticalAlignment="Top" Width="80" />
+                    <Grid HorizontalAlignment="Left" Height="262" Margin="285,56,0,0" VerticalAlignment="Top"
+                          Width="193">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*" />
+                            <ColumnDefinition Width="50*" />
+                            <ColumnDefinition Width="50*" />
+                            <ColumnDefinition Width="50*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                            <RowDefinition Height="50*" />
+                        </Grid.RowDefinitions>
+                        <Button x:Name="sechs" VerticalAlignment="Top" Height="38"
+                                Grid.ColumnSpan="1" Margin="1,0,0,0" Click="getButton">
+                            <Image Source="Bilder/Symbols/6.PNG" />
+                        </Button>
+                        <Button x:Name="AT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="38"
+                                Grid.ColumnSpan="2" Margin="48,0,0,0" Click="getButton">
+                            <Image Source="Bilder/Symbols/AT.PNG" />
+                        </Button>
+                        <Button x:Name="NBogen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.Column="1" Grid.ColumnSpan="2" Margin="46,0,0,0" Click="getButton">
+                            <Image Source="Bilder/Symbols/N_mit_bogen.PNG" />
+                        </Button>
+                        <Button x:Name="OStrich" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.Column="2" Grid.ColumnSpan="2" Margin="44,0,0,0" Click="getButton">
+                            <Image Source="Bilder/Symbols/O_mit_Strich.PNG" />
+                        </Button>
+                        <Button x:Name="Omega" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Margin="1,37,0,0" Grid.RowSpan="2" Click="getButton">
+                            <Image Source="Bilder/Symbols/Omega.PNG" />
+                        </Button>
+                        <Button x:Name="Absatz" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Margin="48,37,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2" Click="getButton">
+                            <Image Source="Bilder/Symbols/absatz.PNG" />
+                        </Button>
+                        <Button x:Name="ae" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="38"
+                                Grid.Column="1" Margin="46,37,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                                Click="getButton">
+                            <Image Source="Bilder/Symbols/ae.PNG" />
+                        </Button>
+                        <Button x:Name="alien" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.Column="2" Margin="44,37,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                                Click="getButton">
+                            <Image Source="Bilder/Symbols/alien.PNG" />
+                        </Button>
+                        <Button x:Name="weird3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.ColumnSpan="2" Margin="1,35,0,0" Grid.Row="1" Grid.RowSpan="2" Click="getButton">
+                            <Image Source="Bilder/Symbols/alien_3.PNG" />
+                        </Button>
+                        <Button x:Name="bT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="38"
+                                Grid.ColumnSpan="2" Grid.Row="1" Margin="48,35,0,0" Grid.RowSpan="2" Click="getButton">
+                            <Image Source="Bilder/Symbols/bT.PNG" />
+                        </Button>
+                        <Button x:Name="WKomma" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.Column="1" Grid.Row="1" Margin="46,35,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                                Click="getButton">
+                            <Image Source="Bilder/Symbols/w_mit_komma.PNG" />
+                        </Button>
+                        <Button x:Name="Bahn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="38"
+                                Grid.Column="2" Margin="44,35,0,0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                                Click="getButton">
+                            <Image Source="Bilder/Symbols/bahnübergang.PNG" />
+                        </Button>
+                        <Button x:Name="CLoop" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.ColumnSpan="2" Margin="1,34,0,0" Grid.RowSpan="2" Grid.Row="2" Click="getButton">
+                            <Image Source="Bilder/Symbols/c_looping.PNG" />
+                        </Button>
+                        <Button x:Name="broken3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.ColumnSpan="2" Margin="48,34,0,0" Grid.RowSpan="2" Grid.Row="2" Click="getButton">
+                            <Image Source="Bilder/Symbols/broken_3.PNG" />
+                        </Button>
+                        <Button x:Name="dotedC" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.Column="1" Margin="46,34,0,0" Grid.RowSpan="2" Grid.Row="2" Grid.ColumnSpan="2"
+                                Click="getButton">
+                            <Image Source="Bilder/Symbols/c_mit_punkt.PNG" />
+                        </Button>
+                        <Button x:Name="Copyright" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.Column="2" Margin="44,34,0,0" Grid.RowSpan="2" Grid.Row="2" Grid.ColumnSpan="2"
+                                Click="getButton">
+                            <Image Source="Bilder/Symbols/copyright.PNG" />
+                        </Button>
+                        <Button x:Name="HCurly" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.ColumnSpan="2" Margin="1,33,0,0" Grid.Row="3" Grid.RowSpan="2" Click="getButton">
+                            <Image Source="Bilder/Symbols/curly_H.PNG" />
+                        </Button>
+                        <Button x:Name="NCurly" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.ColumnSpan="2" Margin="48,33,0,0" Grid.Row="3" Grid.RowSpan="2" Click="getButton">
+                            <Image Source="Bilder/Symbols/curly_N.PNG" />
+                        </Button>
+                        <Button x:Name="EDoted" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.Column="1" Margin="46,33,0,0" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                                Click="getButton">
+                            <Image Source="Bilder/Symbols/e_mit_punkten.PNG" />
+                        </Button>
+                        <Button x:Name="backCDoted" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.Column="2" Margin="44,33,0,0" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                                Click="getButton">
+                            <Image Source="Bilder/Symbols/umgekehrte_C_mit_punkt.PNG" />
+                        </Button>
+                        <Button x:Name="empStar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38" Margin="1,32,0,0" Grid.RowSpan="2" Grid.Row="4" Click="getButton">
+                            <Image Source="Bilder/Symbols/empty_star.PNG" />
+                        </Button>
+                        <Button x:Name="fullStar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.ColumnSpan="2" Margin="48,32,0,0" Grid.RowSpan="2" Grid.Row="4" Click="getButton">
+                            <Image Source="Bilder/Symbols/filled_star.PNG" />
+                        </Button>
+                        <Button x:Name="question" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.Column="1" Margin="46,32,0,0" Grid.RowSpan="2" Grid.Row="4" Grid.ColumnSpan="2"
+                                Click="getButton">
+                            <Image Source="Bilder/Symbols/espaniol_fragezeichen.PNG" />
+                        </Button>
+                        <Button x:Name="MirrorK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.Column="2" Margin="44,32,0,0" Grid.RowSpan="2" Grid.Row="4" Grid.ColumnSpan="2"
+                                Click="getButton">
+                            <Image Source="Bilder/Symbols/k_spiegel.PNG" />
+                        </Button>
+                        <Button x:Name="Candelight" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48"
+                                Height="38"
+                                Grid.ColumnSpan="2" Margin="25,32,0,0" Grid.Row="5" Grid.RowSpan="2" Click="getButton">
+                            <Image Source="Bilder/Symbols/kerzenständer.PNG" />
+                        </Button>
+                        <Button x:Name="Smiley" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="48"
+                                Height="38" Grid.Row="5" Margin="24,0,0,5" Grid.RowSpan="2" Grid.Column="1"
+                                Grid.ColumnSpan="2" Click="getButton">
+                            <Image Source="Bilder/Symbols/smiley.PNG" />
+                        </Button>
+                        <Button x:Name="Y" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="38"
+                                Grid.Column="2" Grid.Row="5" Margin="22,32,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                                Click="getButton">
+                            <Image Source="Bilder/Symbols/umgekehrtes_Y.PNG" />
+                        </Button>
+                    </Grid>
+                    <Button x:Name="btn_Solve" Content="Solve" HorizontalAlignment="Left" Margin="320,318,0,0"
+                            VerticalAlignment="Top"
+                            Width="114" Height="24" Click="btn_Solve_Click" />
+                    <Label Content="Order (1 -&gt; 4):" HorizontalContentAlignment="Center" HorizontalAlignment="Left"
+                           Margin="310,347,0,0" VerticalAlignment="Top" Width="138" />
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="38"
+                            Margin="283,373,0,0">
+                        <Image x:Name="sym1" />
+                    </Button>
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="38"
+                            Margin="330,373,0,0">
+                        <Image x:Name="sym2" />
+                    </Button>
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="38"
+                            Margin="377,373,0,0">
+                        <Image x:Name="sym3" />
+                    </Button>
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="38"
+                            Margin="424,373,0,0">
+                        <Image x:Name="sym4" />
+                    </Button>
                 </Grid>
             </TabItem>
             <TabItem Header="Simon says">
                 <Grid Background="#FFE5E5E5">
-                    <Label Content="Simon says" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
-                    <Grid HorizontalAlignment="Left" Height="100" Margin="172,150,0,0" VerticalAlignment="Top" Width="489">
-                        <Label x:Name="lb_errors" BorderThickness="1 1 1 1" BorderBrush="Black" Content="" Background="LightBlue" HorizontalAlignment="Left" Margin="1,28,0,0" VerticalAlignment="Top" Width="75"/>
-                        <Label BorderThickness="1 1 1 1" BorderBrush="Black" Content="Rot blinkend" Background="LightBlue" Foreground="Red" HorizontalAlignment="Left" Margin="75,1,0,0" VerticalAlignment="Top" Width="83"/>
-                        <Label BorderThickness="1 1 1 1" BorderBrush="Black" Content="Blau blinkend" Background="LightBlue" Foreground="Blue" HorizontalAlignment="Left" Margin="157,1,0,0" VerticalAlignment="Top" Width="83"/>
-                        <Label BorderThickness="1 1 1 1" BorderBrush="Black" Content="Grün blinkend" Background="LightBlue" Foreground="Green" HorizontalAlignment="Left" Margin="239,1,0,0" VerticalAlignment="Top" Width="91"/>
-                        <Label BorderThickness="1 1 1 1" BorderBrush="Black" Content="Gelb blinkend" Background="LightBlue" Foreground="Yellow" HorizontalAlignment="Left" Margin="329,1,0,0" VerticalAlignment="Top" Width="90"/>
-                        <Label x:Name="lb_red" BorderThickness="1 1 1 1" BorderBrush="Black" Background="LightBlue" Content="" HorizontalAlignment="Left" Margin="75,28,0,0" VerticalAlignment="Top" Width="83"/>
-                        <Label x:Name="lb_blue" BorderThickness="1 1 1 1" BorderBrush="Black" Background="LightBlue" Content="" HorizontalAlignment="Left" Margin="157,28,0,0" VerticalAlignment="Top" Width="83"/>
-                        <Label x:Name="lb_green" BorderThickness="1 1 1 1" BorderBrush="Black" Background="LightBlue" Content="" HorizontalAlignment="Left" Margin="239,28,0,0" VerticalAlignment="Top" Width="91"/>
-                        <Label x:Name="lb_yellow" BorderThickness="1 1 1 1" BorderBrush="Black" Background="LightBlue" Content="" HorizontalAlignment="Left" Margin="329,28,0,0" VerticalAlignment="Top" Width="90"/>
+                    <Label Content="Simon says" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786" />
+                    <Grid HorizontalAlignment="Left" Height="100" Margin="172,150,0,0" VerticalAlignment="Top"
+                          Width="489">
+                        <Label x:Name="lb_errors" BorderThickness="1 1 1 1" BorderBrush="Black" Background="LightBlue"
+                               HorizontalAlignment="Left" Margin="1,28,0,0" VerticalAlignment="Top" Width="75" />
+                        <Label BorderThickness="1 1 1 1" BorderBrush="Black" Content="Rot blinkend"
+                               Background="LightBlue" Foreground="Red" HorizontalAlignment="Left" Margin="75,1,0,0"
+                               VerticalAlignment="Top" Width="83" />
+                        <Label BorderThickness="1 1 1 1" BorderBrush="Black" Content="Blau blinkend"
+                               Background="LightBlue" Foreground="Blue" HorizontalAlignment="Left" Margin="157,1,0,0"
+                               VerticalAlignment="Top" Width="83" />
+                        <Label BorderThickness="1 1 1 1" BorderBrush="Black" Content="Grün blinkend"
+                               Background="LightBlue" Foreground="Green" HorizontalAlignment="Left" Margin="239,1,0,0"
+                               VerticalAlignment="Top" Width="91" />
+                        <Label BorderThickness="1 1 1 1" BorderBrush="Black" Content="Gelb blinkend"
+                               Background="LightBlue" Foreground="Yellow" HorizontalAlignment="Left" Margin="329,1,0,0"
+                               VerticalAlignment="Top" Width="90" />
+                        <Label x:Name="lb_red" BorderThickness="1 1 1 1" BorderBrush="Black" Background="LightBlue"
+                               HorizontalAlignment="Left" Margin="75,28,0,0" VerticalAlignment="Top" Width="83" />
+                        <Label x:Name="lb_blue" BorderThickness="1 1 1 1" BorderBrush="Black" Background="LightBlue"
+                               HorizontalAlignment="Left" Margin="157,28,0,0" VerticalAlignment="Top" Width="83" />
+                        <Label x:Name="lb_green" BorderThickness="1 1 1 1" BorderBrush="Black" Background="LightBlue"
+                               HorizontalAlignment="Left" Margin="239,28,0,0" VerticalAlignment="Top" Width="91" />
+                        <Label x:Name="lb_yellow" BorderThickness="1 1 1 1" BorderBrush="Black" Background="LightBlue"
+                               HorizontalAlignment="Left" Margin="329,28,0,0" VerticalAlignment="Top" Width="90" />
                     </Grid>
                     <Button x:Name="btnReset_simonsays" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
-                    <Button x:Name="btnButton_simonsays" Content="Button" HorizontalAlignment="Left" Margin="79,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
-                    <Button x:Name="btnSymbols_simonsays" Content="Symbols" HorizontalAlignment="Left" Margin="0,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
-                    <Button x:Name="btnSimonSays_simonsays" Content="Reset" HorizontalAlignment="Left" Margin="656,10,0,0"
-                        VerticalAlignment="Top" Width="120" Height="50" Click="btnSimonSays_Click" />
-                    <Button x:Name="btnWords_simonsays" Content="Wörterkette" HorizontalAlignment="Left" Margin="79,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click" />
+                    <Button x:Name="btnButton_simonsays" HorizontalAlignment="Left" Margin="79,72,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
+                    <Button x:Name="btnSymbols_simonsays" Content="Symbols" HorizontalAlignment="Left"
+                            Margin="0,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
+                    <Button x:Name="btnSimonSays_simonsays" Content="Reset" HorizontalAlignment="Left"
+                            Margin="656,10,0,0"
+                            VerticalAlignment="Top" Width="120" Height="50" Click="btnSimonSays_Click" />
+                    <Button x:Name="btnWords_simonsays" Content="Wörterkette" HorizontalAlignment="Left"
+                            Margin="79,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
                     <Button x:Name="btnMemory_simonsays" Content="Memory" HorizontalAlignment="Left" Margin="0,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
                     <Button x:Name="btnMorse_simonsays" Content="Morse" HorizontalAlignment="Left" Margin="79,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
-                    <Button x:Name="btnComplicated_simonsays" Content="Complicated" HorizontalAlignment="Left" Margin="0,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
-                    <Button x:Name="btnSequence_simonsays" Content="Sequence" HorizontalAlignment="Left" Margin="79,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
-                    <Button x:Name="btnLabirinth_simonsays" Content="Labyrinth" HorizontalAlignment="Left" Margin="0,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
-                    <Button x:Name="btnPasswd_simonsays" Content="Passwort" HorizontalAlignment="Left" Margin="79,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
+                    <Button x:Name="btnComplicated_simonsays" Content="Complicated" HorizontalAlignment="Left"
+                            Margin="0,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
+                    <Button x:Name="btnSequence_simonsays" Content="Sequence" HorizontalAlignment="Left"
+                            Margin="79,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
+                    <Button x:Name="btnLabirinth_simonsays" Content="Labyrinth" HorizontalAlignment="Left"
+                            Margin="0,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
+                    <Button x:Name="btnPasswd_simonsays" Content="Passwort" HorizontalAlignment="Left"
+                            Margin="79,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
                     <Button x:Name="Back4" Content="&lt;--" HorizontalAlignment="Left" Margin="10,10,0,0"
-                        VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
-                    <Button x:Name="btn_addFehler_simonsays" Content="Fehler +" HorizontalAlignment="Left" Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_addFehler_wires_Click" />
-                    <Button x:Name="btn_removeFehler_simonsays" Content="Fehler -" HorizontalAlignment="Left" Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_removeFehler_wires_Click"/>
+                            VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                    <Button x:Name="btn_addFehler_simonsays" Content="Fehler +" HorizontalAlignment="Left"
+                            Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_addFehler_wires_Click" />
+                    <Button x:Name="btn_removeFehler_simonsays" Content="Fehler -" HorizontalAlignment="Left"
+                            Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_removeFehler_wires_Click" />
+                    <Label x:Name="lb_error_count_simonsays" Content="0" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="79,342,0,0"
+                           VerticalAlignment="Top" Width="80" />
+                    <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,342,0,0" VerticalAlignment="Top" Width="80" />
                 </Grid>
             </TabItem>
             <TabItem Header="Words">
                 <Grid Background="#FFE5E5E5">
 
-                    <Label Content="Wörterkette" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
+                    <Label Content="Wörterkette" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786" />
                     <Button x:Name="btnReset_words" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
-                    <Button x:Name="btnButton_words" Content="Button" HorizontalAlignment="Left" Margin="79,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click" />
+                    <Button x:Name="btnButton_words" HorizontalAlignment="Left" Margin="79,72,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
                     <Button x:Name="btnSymbols_words" Content="Symbols" HorizontalAlignment="Left" Margin="0,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
-                    <Button x:Name="btnSimonSays_words" Content="Simon Says" HorizontalAlignment="Left" Margin="79,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
+                    <Button x:Name="btnSimonSays_words" Content="Simon Says" HorizontalAlignment="Left"
+                            Margin="79,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
                     <Button x:Name="btnWords_words" Content="Reset" HorizontalAlignment="Left" Margin="656,10,0,0"
-                        VerticalAlignment="Top" Width="120" Height="50" Click="btnWords_Click" />
+                            VerticalAlignment="Top" Width="120" Height="50" Click="Reset_Words" />
                     <Button x:Name="btnMemory_words" Content="Memory" HorizontalAlignment="Left" Margin="0,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
                     <Button x:Name="btnMorse_words" Content="Morse" HorizontalAlignment="Left" Margin="79,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
-                    <Button x:Name="btnComplicated_words" Content="Complicated" HorizontalAlignment="Left" Margin="0,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
-                    <Button x:Name="btnSequence_words" Content="Sequence" HorizontalAlignment="Left" Margin="79,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
-                    <Button x:Name="btnLabirinth_words" Content="Labyrinth" HorizontalAlignment="Left" Margin="0,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
+                    <Button x:Name="btnComplicated_words" Content="Complicated" HorizontalAlignment="Left"
+                            Margin="0,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
+                    <Button x:Name="btnSequence_words" Content="Sequence" HorizontalAlignment="Left"
+                            Margin="79,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
+                    <Button x:Name="btnLabirinth_words" Content="Labyrinth" HorizontalAlignment="Left"
+                            Margin="0,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
                     <Button x:Name="btnPasswd_words" Content="Passwort" HorizontalAlignment="Left" Margin="79,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
                     <Button x:Name="Back5" Content="&lt;--" HorizontalAlignment="Left" Margin="10,10,0,0"
-                        VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
-                    <Button x:Name="btn_addFehler_words" Content="Fehler +" HorizontalAlignment="Left" Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_addFehler_wires_Click" />
-                    <Button x:Name="btn_removeFehler_words" Content="Fehler -" HorizontalAlignment="Left" Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_removeFehler_wires_Click"/>
-                    <Label Content="Display:" HorizontalAlignment="Left" Margin="258,104,0,0" VerticalAlignment="Top"/>
-                    <TextBox VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="26" Margin="314,104,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <Grid HorizontalAlignment="Left" Height="120" Margin="314,193,0,0" VerticalAlignment="Top" Width="120">
+                            VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                    <Button x:Name="btn_addFehler_words" Content="Fehler +" HorizontalAlignment="Left"
+                            Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_addFehler_wires_Click" />
+                    <Button x:Name="btn_removeFehler_words" Content="Fehler -" HorizontalAlignment="Left"
+                            Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_removeFehler_wires_Click" />
+                    <Label Content="Display:" HorizontalAlignment="Left" Margin="258,67,0,0" VerticalAlignment="Top" />
+                    <Grid HorizontalAlignment="Left" Height="120" Margin="314,100,0,0" VerticalAlignment="Top"
+                          Width="120">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="60" />
                         </Grid.ColumnDefinitions>
                         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40">
-                            <!-- 
-                            <Image Source="Bilder/anzeige_words.PNG"></Image>
-                            -->
+                            <Image x:Name="left_up_word" />
                         </Button>
-                        <Button  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40" Grid.ColumnSpan="2" Margin="59,0,0,0"/>
-                        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40" Margin="0,39,0,0" Grid.RowSpan="2"/>
-                        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40" Grid.ColumnSpan="2" Margin="59,39,0,0" Grid.RowSpan="2"/>
-                        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40" Grid.Row="1" Margin="0,38,0,0" Grid.RowSpan="2"/>
-                        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40" Grid.Row="1" Margin="59,38,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40"
+                                Grid.ColumnSpan="2" Margin="59,0,0,0">
+                            <Image x:Name="right_up_word" />
+                        </Button>
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40"
+                                Margin="0,39,0,0" Grid.RowSpan="2">
+                            <Image x:Name="left_middle_word" />
+                        </Button>
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40"
+                                Grid.ColumnSpan="2" Margin="59,39,0,0" Grid.RowSpan="2">
+                            <Image x:Name="right_middle_word" />
+                        </Button>
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40" Grid.Row="1"
+                                Margin="0,38,0,0" Grid.RowSpan="2">
+                            <Image x:Name="left_bottom_word" />
+                        </Button>
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40" Grid.Row="1"
+                                Margin="59,38,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                            <Image x:Name="right_bottom_word" />
+                        </Button>
                     </Grid>
+                    <Label x:Name="lb_error_count_word" Content="0" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="79,342,0,0"
+                           VerticalAlignment="Top" Width="80" />
+                    <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,342,0,0" VerticalAlignment="Top" Width="80" />
+                    <ComboBox x:Name="Display_inhalt" HorizontalAlignment="Left" Margin="314,67,0,0"
+                              VerticalAlignment="Top" Width="167" SelectionChanged="ComboBox_SelectionChanged"
+                              Height="26" />
+                    <Label x:Name="lb_key" Content="Key: " HorizontalContentAlignment="Right"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="217,231,0,0"
+                           VerticalAlignment="Top" Width="92" />
+                    <ComboBox x:Name="Key_inhalt" HorizontalAlignment="Left" Margin="314,231,0,0"
+                              VerticalAlignment="Top" Width="167" Height="26"
+                              SelectionChanged="Key_inhalt_SelectionChanged" />
+                    <Label x:Name="lb_moeglich" Content="Möglichkeiten:" HorizontalContentAlignment="Right"
+                           HorizontalAlignment="Left" Margin="218,270,0,0" VerticalAlignment="Top" Height="30"
+                           Width="94" RenderTransformOrigin="0.5,0.5">
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform />
+                                <SkewTransform />
+                                <RotateTransform Angle="-0.146" />
+                                <TranslateTransform />
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>
+                    <Label x:Name="lb_answers" HorizontalAlignment="Left" Margin="229,297,0,0" VerticalAlignment="Top"
+                           Height="55" Width="322" />
                 </Grid>
             </TabItem>
             <TabItem Header="Memory">
                 <Grid Background="#FFE5E5E5">
 
-                    <Label Content="Memory" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
+                    <Label Content="Memory" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786" />
                     <Button x:Name="btnReset_memory" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
-                    <Button x:Name="btnButton_memory" Content="Button" HorizontalAlignment="Left" Margin="79,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click" />
+                    <Button x:Name="btnButton_memory" HorizontalAlignment="Left" Margin="79,72,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
                     <Button x:Name="btnSymbols_memory" Content="Symbols" HorizontalAlignment="Left" Margin="0,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
-                    <Button x:Name="btnSimonSays_memory" Content="Simon Says" HorizontalAlignment="Left" Margin="79,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
-                    <Button x:Name="btnWords_memory" Content="Wörterkette" HorizontalAlignment="Left" Margin="0,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
+                    <Button x:Name="btnSimonSays_memory" Content="Simon Says" HorizontalAlignment="Left"
+                            Margin="79,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
+                    <Button x:Name="btnWords_memory" Content="Wörterkette" HorizontalAlignment="Left"
+                            Margin="0,170,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
                     <Button x:Name="btnMemory_memory" Content="Reset" HorizontalAlignment="Left" Margin="662,10,0,0"
-                        VerticalAlignment="Top" Width="120" Height="50" Click="btnMemory_Click" />
+                            VerticalAlignment="Top" Width="120" Height="50" Click="btnMemory_Click" />
                     <Button x:Name="btnMorse_memory" Content="Morse" HorizontalAlignment="Left" Margin="79,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
-                    <Button x:Name="btnComplicated_memory" Content="Complicated" HorizontalAlignment="Left" Margin="0,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
-                    <Button x:Name="btnSequence_memory" Content="Sequence" HorizontalAlignment="Left" Margin="79,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
-                    <Button x:Name="btnLabirinth_memory" Content="Labyrinth" HorizontalAlignment="Left" Margin="0,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
+                    <Button x:Name="btnComplicated_memory" Content="Complicated" HorizontalAlignment="Left"
+                            Margin="0,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
+                    <Button x:Name="btnSequence_memory" Content="Sequence" HorizontalAlignment="Left"
+                            Margin="79,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
+                    <Button x:Name="btnLabirinth_memory" Content="Labyrinth" HorizontalAlignment="Left"
+                            Margin="0,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
                     <Button x:Name="btnPasswd_memory" Content="Passwort" HorizontalAlignment="Left" Margin="79,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
                     <Button x:Name="Back6" Content="&lt;--" HorizontalAlignment="Left" Margin="10,10,0,0"
-                        VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
-                    <Button x:Name="btn_addFehler_memory" Content="Fehler +" HorizontalAlignment="Left" Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_addFehler_wires_Click" />
-                    <Button x:Name="btn_removeFehler_memory" Content="Fehler -" HorizontalAlignment="Left" Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_removeFehler_wires_Click"/>
+                            VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                    <Button x:Name="btn_addFehler_memory" Content="Fehler +" HorizontalAlignment="Left"
+                            Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_addFehler_wires_Click" />
+                    <Button x:Name="btn_removeFehler_memory" Content="Fehler -" HorizontalAlignment="Left"
+                            Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_removeFehler_wires_Click" />
+                    <Label x:Name="lb_error_count_memory" Content="0" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="79,342,0,0"
+                           VerticalAlignment="Top" Width="80" />
+                    <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,342,0,0" VerticalAlignment="Top" Width="80" />
                 </Grid>
             </TabItem>
             <TabItem Header="Morsecode">
                 <Grid Background="#FFE5E5E5" Margin="0,1,0,-1">
 
-                    <Label Content="Morsecode" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
+                    <Label Content="Morsecode" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786" />
                     <Button x:Name="btnReset_morse" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
-                    <Button x:Name="btnButton_morse" Content="Button" HorizontalAlignment="Left" Margin="79,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click" />
+                    <Button x:Name="btnButton_morse" HorizontalAlignment="Left" Margin="79,72,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
                     <Button x:Name="btnSymbols_morse" Content="Symbols" HorizontalAlignment="Left" Margin="0,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
-                    <Button x:Name="btnSimonSays_morse" Content="Simon Says" HorizontalAlignment="Left" Margin="79,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
+                    <Button x:Name="btnSimonSays_morse" Content="Simon Says" HorizontalAlignment="Left"
+                            Margin="79,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
                     <Button x:Name="btnWords_morse" Content="Wörterkette" HorizontalAlignment="Left" Margin="0,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
                     <Button x:Name="btnMemory_morse" Content="Memory" HorizontalAlignment="Left" Margin="79,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
                     <Button x:Name="btnMorse_morse" Content="Reset" HorizontalAlignment="Left" Margin="656,10,0,0"
-                        VerticalAlignment="Top" Width="120" Height="50" Click="btnMorse_Click" />
-                    <Button x:Name="btnComplicated_morse" Content="Complicated" HorizontalAlignment="Left" Margin="0,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
-                    <Button x:Name="btnSequence_morse" Content="Sequence" HorizontalAlignment="Left" Margin="79,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
-                    <Button x:Name="btnLabirinth_morse" Content="Labyrinth" HorizontalAlignment="Left" Margin="0,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
+                            VerticalAlignment="Top" Width="120" Height="50" Click="btnMorse_Click" />
+                    <Button x:Name="btnComplicated_morse" Content="Complicated" HorizontalAlignment="Left"
+                            Margin="0,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
+                    <Button x:Name="btnSequence_morse" Content="Sequence" HorizontalAlignment="Left"
+                            Margin="79,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
+                    <Button x:Name="btnLabirinth_morse" Content="Labyrinth" HorizontalAlignment="Left"
+                            Margin="0,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
                     <Button x:Name="btnPasswd_morse" Content="Passwort" HorizontalAlignment="Left" Margin="79,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
                     <Button x:Name="Back7" Content="&lt;--" HorizontalAlignment="Left" Margin="10,10,0,0"
-                        VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
-                    <Button x:Name="btn_addFehler_morse" Content="Fehler +" HorizontalAlignment="Left" Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_addFehler_wires_Click" />
-                    <Button x:Name="btn_removeFehler_morse" Content="Fehler -" HorizontalAlignment="Left" Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_removeFehler_wires_Click"/>
+                            VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                    <Button x:Name="btn_addFehler_morse" Content="Fehler +" HorizontalAlignment="Left"
+                            Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_addFehler_wires_Click" />
+                    <Button x:Name="btn_removeFehler_morse" Content="Fehler -" HorizontalAlignment="Left"
+                            Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_removeFehler_wires_Click" />
+                    <Label x:Name="lb_error_count_morse" Content="0" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="79,342,0,0"
+                           VerticalAlignment="Top" Width="80" />
+                    <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,342,0,0" VerticalAlignment="Top" Width="80" />
                 </Grid>
             </TabItem>
             <TabItem Header="Complicated">
                 <Grid Background="#FFE5E5E5">
 
-                    <Label Content="Complicated Wires" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
+                    <Label Content="Complicated Wires" FontSize="25" FontWeight="Bold"
+                           HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0"
+                           VerticalAlignment="Top" Height="52" Width="786" />
                     <Button x:Name="btnReset_complicated" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
-                    <Button x:Name="btnButton_complicated" Content="Button" HorizontalAlignment="Left" Margin="79,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
-                    <Button x:Name="btnSymbols_complicated" Content="Symbols" HorizontalAlignment="Left" Margin="0,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
-                    <Button x:Name="btnSimonSays_complicated" Content="Simon Says" HorizontalAlignment="Left" Margin="79,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
-                    <Button x:Name="btnWords_complicated" Content="Wörterkette" HorizontalAlignment="Left" Margin="0,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
-                    <Button x:Name="btnMemory_complicated" Content="Memory" HorizontalAlignment="Left" Margin="79,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click" />
+                    <Button x:Name="btnButton_complicated" HorizontalAlignment="Left" Margin="79,72,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
+                    <Button x:Name="btnSymbols_complicated" Content="Symbols" HorizontalAlignment="Left"
+                            Margin="0,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
+                    <Button x:Name="btnSimonSays_complicated" Content="Simon Says" HorizontalAlignment="Left"
+                            Margin="79,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
+                    <Button x:Name="btnWords_complicated" Content="Wörterkette" HorizontalAlignment="Left"
+                            Margin="0,170,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
+                    <Button x:Name="btnMemory_complicated" Content="Memory" HorizontalAlignment="Left"
+                            Margin="79,170,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
                     <Button x:Name="btnMorse_complicated" Content="Morse" HorizontalAlignment="Left" Margin="0,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
-                    <Button x:Name="btnComplicated_complicated" Content="Reset" HorizontalAlignment="Left" Margin="656,10,0,0"
-                        VerticalAlignment="Top" Width="120" Height="50" Click="btnComplicated_Click" />
-                    <Button x:Name="btnSequence_complicated" Content="Sequence" HorizontalAlignment="Left" Margin="79,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
-                    <Button x:Name="btnLabirinth_complicated" Content="Labyrinth" HorizontalAlignment="Left" Margin="0,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
-                    <Button x:Name="btnPasswd_complicated" Content="Passwort" HorizontalAlignment="Left" Margin="79,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
+                    <Button x:Name="btnComplicated_complicated" Content="Reset" HorizontalAlignment="Left"
+                            Margin="656,10,0,0"
+                            VerticalAlignment="Top" Width="120" Height="50" Click="btnComplicated_Click" />
+                    <Button x:Name="btnSequence_complicated" Content="Sequence" HorizontalAlignment="Left"
+                            Margin="79,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
+                    <Button x:Name="btnLabirinth_complicated" Content="Labyrinth" HorizontalAlignment="Left"
+                            Margin="0,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
+                    <Button x:Name="btnPasswd_complicated" Content="Passwort" HorizontalAlignment="Left"
+                            Margin="79,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
                     <Button x:Name="Back8" Content="&lt;--" HorizontalAlignment="Left" Margin="10,10,0,0"
-                        VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                            VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                    <Label x:Name="lb_error_count_complicated" Content="0" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="79,342,0,0"
+                           VerticalAlignment="Top" Width="80" />
+                    <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,342,0,0" VerticalAlignment="Top" Width="80" />
+                    <Button x:Name="btn_addFehler_complicated" Content="Fehler +" HorizontalAlignment="Left"
+                            Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_addFehler_wires_Click" />
+                    <Button x:Name="btn_removeFehler_complicated" Content="Fehler -" HorizontalAlignment="Left"
+                            Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_removeFehler_wires_Click" />
                 </Grid>
             </TabItem>
             <TabItem Header="Sequence">
                 <Grid Background="#FFE5E5E5">
 
-                    <Label Content="Wires Sequence" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
+                    <Label Content="Wires Sequence" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786" />
                     <Button x:Name="btnReset_sequence" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
-                    <Button x:Name="btnButton_sequence" Content="Button" HorizontalAlignment="Left" Margin="79,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
-                    <Button x:Name="btnSymbols_sequence" Content="Symbols" HorizontalAlignment="Left" Margin="0,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
-                    <Button x:Name="btnSimonSays_sequence" Content="Simon Says" HorizontalAlignment="Left" Margin="79,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
-                    <Button x:Name="btnWords_sequence" Content="Wörterkette" HorizontalAlignment="Left" Margin="0,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click" />
+                    <Button x:Name="btnButton_sequence" HorizontalAlignment="Left" Margin="79,72,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
+                    <Button x:Name="btnSymbols_sequence" Content="Symbols" HorizontalAlignment="Left"
+                            Margin="0,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
+                    <Button x:Name="btnSimonSays_sequence" Content="Simon Says" HorizontalAlignment="Left"
+                            Margin="79,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
+                    <Button x:Name="btnWords_sequence" Content="Wörterkette" HorizontalAlignment="Left"
+                            Margin="0,170,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
                     <Button x:Name="btnMemory_sequence" Content="Memory" HorizontalAlignment="Left" Margin="79,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
                     <Button x:Name="btnMorse_sequence" Content="Morse" HorizontalAlignment="Left" Margin="0,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
-                    <Button x:Name="btnComplicated_sequence" Content="Complicated" HorizontalAlignment="Left" Margin="79,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
-                    <Button x:Name="btnSequence_sequence" Content="Reset" HorizontalAlignment="Left" Margin="656,10,0,0"
-                        VerticalAlignment="Top" Width="120" Height="50" Click="btnSequence_Click" />
-                    <Button x:Name="btnLabirinth_sequence" Content="Labyrinth" HorizontalAlignment="Left" Margin="0,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
-                    <Button x:Name="btnPasswd_sequence" Content="Passwort" HorizontalAlignment="Left" Margin="79,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
+                    <Button x:Name="btnComplicated_sequence" Content="Complicated" HorizontalAlignment="Left"
+                            Margin="79,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
+                    <Button x:Name="btnSequence_sequence" Content="Reset" HorizontalAlignment="Left"
+                            Margin="656,10,0,0"
+                            VerticalAlignment="Top" Width="120" Height="50" Click="btnSequence_Click" />
+                    <Button x:Name="btnLabirinth_sequence" Content="Labyrinth" HorizontalAlignment="Left"
+                            Margin="0,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
+                    <Button x:Name="btnPasswd_sequence" Content="Passwort" HorizontalAlignment="Left"
+                            Margin="79,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
                     <Button x:Name="Back9" Content="&lt;--" HorizontalAlignment="Left" Margin="10,10,0,0"
-                        VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                            VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                    <Label x:Name="lb_error_count_sequence" Content="0" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="79,342,0,0"
+                           VerticalAlignment="Top" Width="80" />
+                    <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,342,0,0" VerticalAlignment="Top" Width="80" />
+                    <Button x:Name="btn_addFehler_sequence" Content="Fehler +" HorizontalAlignment="Left"
+                            Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_addFehler_wires_Click" />
+                    <Button x:Name="btn_removeFehler_sequence" Content="Fehler -" HorizontalAlignment="Left"
+                            Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_removeFehler_wires_Click" />
                 </Grid>
             </TabItem>
             <TabItem Header="Labyrinth">
                 <Grid Background="#FFE5E5E5">
 
-                    <Label Content="Labyrinth" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
+                    <Label Content="Labyrinth" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786" />
                     <Button x:Name="btnReset_labyrinth" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
-                    <Button x:Name="btnButton_labyrinth" Content="Button" HorizontalAlignment="Left" Margin="79,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
-                    <Button x:Name="btnSymbols_labyrinth" Content="Symbols" HorizontalAlignment="Left" Margin="0,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
-                    <Button x:Name="btnSimonSays_labyrinth" Content="Simon Says" HorizontalAlignment="Left" Margin="79,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
-                    <Button x:Name="btnWords_labyrinth" Content="Wörterkette" HorizontalAlignment="Left" Margin="0,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
-                    <Button x:Name="btnMemory_labyrinth" Content="Memory" HorizontalAlignment="Left" Margin="79,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click" />
+                    <Button x:Name="btnButton_labyrinth" HorizontalAlignment="Left" Margin="79,72,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
+                    <Button x:Name="btnSymbols_labyrinth" Content="Symbols" HorizontalAlignment="Left"
+                            Margin="0,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
+                    <Button x:Name="btnSimonSays_labyrinth" Content="Simon Says" HorizontalAlignment="Left"
+                            Margin="79,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
+                    <Button x:Name="btnWords_labyrinth" Content="Wörterkette" HorizontalAlignment="Left"
+                            Margin="0,170,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
+                    <Button x:Name="btnMemory_labyrinth" Content="Memory" HorizontalAlignment="Left"
+                            Margin="79,170,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
                     <Button x:Name="btnMorse_labyrinth" Content="Morse" HorizontalAlignment="Left" Margin="0,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
-                    <Button x:Name="btnComplicated_labyrinth" Content="Complicated" HorizontalAlignment="Left" Margin="79,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
-                    <Button x:Name="btnSequence_labyrinth" Content="Sequence" HorizontalAlignment="Left" Margin="0,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
-                    <Button x:Name="btnLabirinth_labyrinth" Content="Reset" HorizontalAlignment="Left" Margin="656,10,0,0"
-                        VerticalAlignment="Top" Width="120" Height="50" Click="btnLabyrinth_Click" />
-                    <Button x:Name="btnPasswd_labyrinth" Content="Passwort" HorizontalAlignment="Left" Margin="79,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
+                    <Button x:Name="btnComplicated_labyrinth" Content="Complicated" HorizontalAlignment="Left"
+                            Margin="79,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
+                    <Button x:Name="btnSequence_labyrinth" Content="Sequence" HorizontalAlignment="Left"
+                            Margin="0,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
+                    <Button x:Name="btnLabirinth_labyrinth" Content="Reset" HorizontalAlignment="Left"
+                            Margin="656,10,0,0"
+                            VerticalAlignment="Top" Width="120" Height="50" Click="btnLabyrinth_Click" />
+                    <Button x:Name="btnPasswd_labyrinth" Content="Passwort" HorizontalAlignment="Left"
+                            Margin="79,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnPasswd_Click" />
                     <Button x:Name="Back10" Content="&lt;--" HorizontalAlignment="Left" Margin="10,10,0,0"
-                        VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                            VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                    <Label x:Name="lb_error_count_labyrinth" Content="0" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="79,342,0,0"
+                           VerticalAlignment="Top" Width="80" />
+                    <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,342,0,0" VerticalAlignment="Top" Width="80" />
+                    <Button x:Name="btn_addFehler_labyrinth" Content="Fehler +" HorizontalAlignment="Left"
+                            Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_addFehler_wires_Click" />
+                    <Button x:Name="btn_removeFehler_labyrinth" Content="Fehler -" HorizontalAlignment="Left"
+                            Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_removeFehler_wires_Click" />
                 </Grid>
             </TabItem>
             <TabItem Header="Passwort">
                 <Grid Background="#FFE5E5E5">
 
-                    <Label Content="Passwort" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
-                    <Button x:Name="btnReset_labyrinth_Copy" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
-                    <Button x:Name="btnButton_labyrinth_Copy" Content="Button" HorizontalAlignment="Left" Margin="79,72,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
-                    <Button x:Name="btnSymbols_labyrinth_Copy" Content="Symbols" HorizontalAlignment="Left" Margin="0,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
-                    <Button x:Name="btnSimonSays_labyrinth_Copy" Content="Simon Says" HorizontalAlignment="Left" Margin="79,121,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
-                    <Button x:Name="btnWords_labyrinth_Copy" Content="Wörterkette" HorizontalAlignment="Left" Margin="0,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
-                    <Button x:Name="btnMemory_labyrinth_Copy" Content="Memory" HorizontalAlignment="Left" Margin="79,170,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
-                    <Button x:Name="btnMorse_labyrinth_Copy" Content="Morse" HorizontalAlignment="Left" Margin="0,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
-                    <Button x:Name="btnComplicated_labyrinth_Copy" Content="Complicated" HorizontalAlignment="Left" Margin="79,219,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
-                    <Button x:Name="btnSequence_labyrinth_Copy" Content="Sequence" HorizontalAlignment="Left" Margin="0,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
-                    <Button x:Name="btnLabirinth_labyrinth_Copy" Content="Labyrinth" HorizontalAlignment="Left" Margin="79,268,0,0"
-                        VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
-                    <Button x:Name="btnPasswd_labyrinth_Copy" Content="Reset" HorizontalAlignment="Left" Margin="656,10,0,0"
-                        VerticalAlignment="Top" Width="120" Height="50" Click="btnPasswd_Click" />
+                    <Label Content="Passwort" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786" />
+                    <Button x:Name="btnReset_labyrinth_Copy" Content="Wires" HorizontalAlignment="Left"
+                            Margin="0,72,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click" />
+                    <Button x:Name="btnButton_labyrinth_Copy" HorizontalAlignment="Left" Margin="79,72,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnButton_Click" />
+                    <Button x:Name="btnSymbols_labyrinth_Copy" Content="Symbols" HorizontalAlignment="Left"
+                            Margin="0,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSymbols_Click" />
+                    <Button x:Name="btnSimonSays_labyrinth_Copy" Content="Simon Says" HorizontalAlignment="Left"
+                            Margin="79,121,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSimonSays_Click" />
+                    <Button x:Name="btnWords_labyrinth_Copy" Content="Wörterkette" HorizontalAlignment="Left"
+                            Margin="0,170,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnWords_Click" />
+                    <Button x:Name="btnMemory_labyrinth_Copy" Content="Memory" HorizontalAlignment="Left"
+                            Margin="79,170,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMemory_Click" />
+                    <Button x:Name="btnMorse_labyrinth_Copy" Content="Morse" HorizontalAlignment="Left"
+                            Margin="0,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnMorse_Click" />
+                    <Button x:Name="btnComplicated_labyrinth_Copy" Content="Complicated" HorizontalAlignment="Left"
+                            Margin="79,219,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnComplicated_Click" />
+                    <Button x:Name="btnSequence_labyrinth_Copy" Content="Sequence" HorizontalAlignment="Left"
+                            Margin="0,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnSequence_Click" />
+                    <Button x:Name="btnLabirinth_labyrinth_Copy" Content="Labyrinth" HorizontalAlignment="Left"
+                            Margin="79,268,0,0"
+                            VerticalAlignment="Top" Width="80" Height="50" Click="btnLabyrinth_Click" />
+                    <Button x:Name="btnPasswd_labyrinth_Copy" Content="Reset" HorizontalAlignment="Left"
+                            Margin="656,10,0,0"
+                            VerticalAlignment="Top" Width="120" Height="50" Click="btnPasswd_Click" />
                     <Button x:Name="Back11" Content="&lt;--" HorizontalAlignment="Left" Margin="10,10,0,0"
-                        VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                            VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
+                    <Label x:Name="lb_error_count_passwd" Content="0" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="79,342,0,0"
+                           VerticalAlignment="Top" Width="80" />
+                    <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                           HorizontalAlignment="Left" Margin="0,342,0,0" VerticalAlignment="Top" Width="80" />
+                    <Button x:Name="btn_addFehler_passwd" Content="Fehler +" HorizontalAlignment="Left"
+                            Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_addFehler_wires_Click" />
+                    <Button x:Name="btn_removeFehler_passwd" Content="Fehler -" HorizontalAlignment="Left"
+                            Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
+                            Click="btn_removeFehler_wires_Click" />
                 </Grid>
             </TabItem>
         </TabControl>
