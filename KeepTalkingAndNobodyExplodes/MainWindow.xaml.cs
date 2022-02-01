@@ -47,6 +47,34 @@ namespace KeepTalkingAndNobodyExplodes
             TabControl.SelectedIndex = 0;
         }
 
+        private bool SwitchingTab()
+        {
+            if (lb_saved.Content != "Saved")
+            {
+                MessageBox.Show("Erst Konfig rechts angeben", "Konfiguration");
+                return false;
+            }
+
+            return true;
+        }
+
+        private void btn_addFehler_wires_Click(object sender, RoutedEventArgs e)
+        {
+            fehler++;
+            if (TabControl.SelectedIndex == 4)
+            {
+                simonsays();
+            }
+        }
+
+        private void btn_removeFehler_wires_Click(object sender, RoutedEventArgs e)
+        {
+            fehler--;
+            if (TabControl.SelectedIndex == 4)
+            {
+                simonsays();
+            }
+        }
         #endregion
 
         #region Wires
@@ -159,6 +187,7 @@ namespace KeepTalkingAndNobodyExplodes
             }
 
             lb_ans_wire.Visibility = Visibility.Visible;
+            lb_wire_cut.Visibility = Visibility.Visible;
             lb_wire_cut.Content = ret;
         }
 
@@ -406,33 +435,6 @@ namespace KeepTalkingAndNobodyExplodes
 
         #endregion
 
-        private bool SwitchingTab()
-        {
-            if (lb_saved.Content != "Saved")
-            {
-                MessageBox.Show("Erst Konfig rechts angeben", "Konfiguration");
-                return false;
-            }
-
-            return true;
-        }
-
-        private void btn_addFehler_wires_Click(object sender, RoutedEventArgs e)
-        {
-            fehler++;
-            if (TabControl.SelectedIndex == 4)
-            {
-                simonsays();
-            }
-        }
-
-        private void btn_removeFehler_wires_Click(object sender, RoutedEventArgs e)
-        {
-            fehler--;
-            if (TabControl.SelectedIndex == 4)
-            {
-                simonsays();
-            }
-        }
+        
     }
 }

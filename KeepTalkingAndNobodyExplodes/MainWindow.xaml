@@ -79,7 +79,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    
+
                     <Label Content="Abfolge der Kabel" HorizontalAlignment="Left" Margin="246,83,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="147"/>
                     <TextBox x:Name="tb_wires" HorizontalAlignment="Left" Height="26" Margin="412,83,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                     <Button x:Name="btn_send_wires" Content="Senden" HorizontalAlignment="Left" Margin="348,122,0,0" VerticalAlignment="Top" Width="100" Height="26" Click="btn_send_wires_Click"/>
@@ -168,7 +168,7 @@
             </TabItem>
             <TabItem Header="Symbols">
                 <Grid Background="#FFE5E5E5">
-                    
+
                     <Label Content="Symbols" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
                     <Button x:Name="btnReset_symbols" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
                         VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
@@ -242,7 +242,7 @@
             </TabItem>
             <TabItem Header="Words">
                 <Grid Background="#FFE5E5E5">
-                    
+
                     <Label Content="Wörterkette" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
                     <Button x:Name="btnReset_words" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
                         VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
@@ -270,11 +270,34 @@
                         VerticalAlignment="Top" Width="47" Height="38" Click="Back_Click" />
                     <Button x:Name="btn_addFehler_words" Content="Fehler +" HorizontalAlignment="Left" Margin="0,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_addFehler_wires_Click" />
                     <Button x:Name="btn_removeFehler_words" Content="Fehler -" HorizontalAlignment="Left" Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50" Click="btn_removeFehler_wires_Click"/>
+                    <Label Content="Display:" HorizontalAlignment="Left" Margin="258,104,0,0" VerticalAlignment="Top"/>
+                    <TextBox VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="26" Margin="314,104,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <Grid HorizontalAlignment="Left" Height="120" Margin="314,193,0,0" VerticalAlignment="Top" Width="120">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40">
+                            <!-- 
+                            <Image Source="Bilder/anzeige_words.PNG"></Image>
+                            -->
+                        </Button>
+                        <Button  Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40" Grid.ColumnSpan="2" Margin="59,0,0,0"/>
+                        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40" Margin="0,39,0,0" Grid.RowSpan="2"/>
+                        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40" Grid.ColumnSpan="2" Margin="59,39,0,0" Grid.RowSpan="2"/>
+                        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40" Grid.Row="1" Margin="0,38,0,0" Grid.RowSpan="2"/>
+                        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="40" Grid.Row="1" Margin="59,38,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                    </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Memory">
                 <Grid Background="#FFE5E5E5">
-                    
+
                     <Label Content="Memory" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
                     <Button x:Name="btnReset_memory" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
                         VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
@@ -306,7 +329,7 @@
             </TabItem>
             <TabItem Header="Morsecode">
                 <Grid Background="#FFE5E5E5" Margin="0,1,0,-1">
-                    
+
                     <Label Content="Morsecode" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
                     <Button x:Name="btnReset_morse" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
                         VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
@@ -338,7 +361,7 @@
             </TabItem>
             <TabItem Header="Complicated">
                 <Grid Background="#FFE5E5E5">
-                    
+
                     <Label Content="Complicated Wires" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
                     <Button x:Name="btnReset_complicated" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
                         VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
@@ -368,7 +391,7 @@
             </TabItem>
             <TabItem Header="Sequence">
                 <Grid Background="#FFE5E5E5">
-                    
+
                     <Label Content="Wires Sequence" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
                     <Button x:Name="btnReset_sequence" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
                         VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
@@ -398,7 +421,7 @@
             </TabItem>
             <TabItem Header="Labyrinth">
                 <Grid Background="#FFE5E5E5">
-                    
+
                     <Label Content="Labyrinth" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
                     <Button x:Name="btnReset_labyrinth" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
                         VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
@@ -428,7 +451,7 @@
             </TabItem>
             <TabItem Header="Passwort">
                 <Grid Background="#FFE5E5E5">
-                    
+
                     <Label Content="Passwort" FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786"/>
                     <Button x:Name="btnReset_labyrinth_Copy" Content="Wires" HorizontalAlignment="Left" Margin="0,72,0,0"
                         VerticalAlignment="Top" Width="80" Height="50" Click="btnWires_Click"/>
