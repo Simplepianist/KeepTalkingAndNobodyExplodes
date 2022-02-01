@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using System.Windows.Media;
 
 namespace KeepTalkingAndNobodyExplodes
 {
@@ -15,16 +16,10 @@ namespace KeepTalkingAndNobodyExplodes
         }
         #region Main
 
-        private bool? snd = false;
-        private bool? clr = false;
+        private int fehler = 0;
+
         private bool? car = false;
-        private bool? ind = false;
-        private bool? frq = false;
-        private bool? sig = false;
-        private bool? nsa = false;
-        private bool? msa = false;
-        private bool? trn = false;
-        private bool? bob = false;
+
         private bool? frk = false;
 
         private int batteries;
@@ -36,16 +31,8 @@ namespace KeepTalkingAndNobodyExplodes
 
         private void bntSaveConfig_Click(object sender, RoutedEventArgs e)
         {
-            snd = ch_SND.IsChecked;
-            clr = ch_CLR.IsChecked;
             car = ch_CAR.IsChecked;
-            ind = ch_IND.IsChecked;
-            frq = ch_IND.IsChecked;
-            sig = ch_SIG.IsChecked;
-            nsa = ch_NSA.IsChecked;
-            msa = ch_MSA.IsChecked;
-            trn = ch_TRN.IsChecked;
-            bob = ch_BOB.IsChecked;
+            frk = ch_FRK.IsChecked;
             iseven = ch_iseven.IsChecked;
             vokal = ch_vokal.IsChecked;
             parralel = ch_parallel.IsChecked;
@@ -68,6 +55,7 @@ namespace KeepTalkingAndNobodyExplodes
         {
             if (SwitchingTab()) TabControl.SelectedIndex = 1;
             lb_ans_wire.Visibility = Visibility.Hidden;
+            lb_wire_cut.Visibility = Visibility.Hidden;
         }
 
         private void btn_send_wires_Click(object sender, RoutedEventArgs e)
@@ -269,8 +257,89 @@ namespace KeepTalkingAndNobodyExplodes
 
         private void btnSimonSays_Click(object sender, RoutedEventArgs e)
         {
-            if (SwitchingTab()) TabControl.SelectedIndex = 4;
+            if (SwitchingTab())
+            {
+                TabControl.SelectedIndex = 4;
+                simonsays();
+            }
+            
         }
+        private void simonsays()
+        {
+            if ((bool)vokal)
+            {
+                switch (fehler)
+                {
+                    case 0:
+                        lb_red.Content = "Blau";
+                        lb_red.Foreground = Brushes.Blue;
+                        lb_blue.Content = "Rot";
+                        lb_blue.Foreground = Brushes.Red;
+                        lb_green.Content = "Gelb";
+                        lb_green.Foreground = Brushes.Yellow;
+                        lb_yellow.Content = "Grün";
+                        lb_yellow.Foreground = Brushes.Green;
+                        break;
+                    case 1:
+                        lb_red.Content = "Gelb";
+                        lb_red.Foreground = Brushes.Yellow;
+                        lb_blue.Content = "Grün";
+                        lb_blue.Foreground = Brushes.Green;
+                        lb_green.Content = "Blau";
+                        lb_green.Foreground = Brushes.Blue;
+                        lb_yellow.Content = "Rot";
+                        lb_yellow.Foreground = Brushes.Red;
+                        break;
+                    case 2:
+                        lb_red.Content = "Grün";
+                        lb_red.Foreground = Brushes.Green;
+                        lb_blue.Content = "Rot";
+                        lb_blue.Foreground = Brushes.Red;
+                        lb_green.Content = "Gelb";
+                        lb_green.Foreground = Brushes.Yellow;
+                        lb_yellow.Content = "Blau";
+                        lb_yellow.Foreground = Brushes.Blue;
+                        break;
+                }
+            }
+            else
+            {
+                switch (fehler)
+                {
+                    case 0:
+                        lb_red.Content = "Blau";
+                        lb_red.Foreground = Brushes.Blue;
+                        lb_blue.Content = "Gelb";
+                        lb_blue.Foreground = Brushes.Yellow;
+                        lb_green.Content = "Grün";
+                        lb_green.Foreground = Brushes.Green;
+                        lb_yellow.Content = "Rot";
+                        lb_yellow.Foreground = Brushes.Red;
+                        break;
+                    case 1:
+                        lb_red.Content = "Rot";
+                        lb_red.Foreground = Brushes.Red;
+                        lb_blue.Content = "Blau";
+                        lb_blue.Foreground = Brushes.Blue;
+                        lb_green.Content = "Gelb";
+                        lb_green.Foreground = Brushes.Yellow;
+                        lb_yellow.Content = "Grün";
+                        lb_yellow.Foreground = Brushes.Green;
+                        break;
+                    case 2:
+                        lb_red.Content = "Gelb";
+                        lb_red.Foreground = Brushes.Yellow;
+                        lb_blue.Content = "Grün";
+                        lb_blue.Foreground = Brushes.Green;
+                        lb_green.Content = "Blau";
+                        lb_green.Foreground = Brushes.Blue;
+                        lb_yellow.Content = "Rot";
+                        lb_yellow.Foreground = Brushes.Red;
+                        break;
+                }
+            }
+        }
+
 
         #endregion
 
@@ -348,6 +417,22 @@ namespace KeepTalkingAndNobodyExplodes
             return true;
         }
 
-        
+        private void btn_addFehler_wires_Click(object sender, RoutedEventArgs e)
+        {
+            fehler++;
+            if (TabControl.SelectedIndex == 4)
+            {
+                simonsays();
+            }
+        }
+
+        private void btn_removeFehler_wires_Click(object sender, RoutedEventArgs e)
+        {
+            fehler--;
+            if (TabControl.SelectedIndex == 4)
+            {
+                simonsays();
+            }
+        }
     }
 }
