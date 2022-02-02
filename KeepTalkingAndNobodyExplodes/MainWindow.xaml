@@ -704,7 +704,8 @@
                     <TextBox x:Name="tb_pos" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="38" Margin="354,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"/>
                     <TextBox x:Name="tb_num" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="38" Margin="345,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87"/>
                     <Button x:Name="btn_save_memory" Content="Save" HorizontalAlignment="Left" Margin="345,333,0,0" VerticalAlignment="Top" Width="87" Click="btn_save_memory_Click"/>
-                    <Label x:Name="lb_answer" HorizontalContentAlignment="Center" Content="Label" HorizontalAlignment="Left" Margin="270,234,0,0" VerticalAlignment="Top" Height="27" Width="240"/>
+                    <Label x:Name="lb_answer" HorizontalContentAlignment="Center" Content="" HorizontalAlignment="Left" Margin="270,234,0,0" VerticalAlignment="Top" Height="27" Width="240"/>
+                    <Label x:Name="lb_saved_mem" HorizontalContentAlignment="Center" Content="Saved" HorizontalAlignment="Left" Margin="345,385,0,0" VerticalAlignment="Top" Width="87"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Morsecode">
@@ -802,6 +803,10 @@
                     <Button x:Name="btn_removeFehler_complicated" Content="Fehler -" HorizontalAlignment="Left"
                             Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
                             Click="btn_removeFehler_wires_Click" />
+                    <CheckBox Content="Draht Rot?" FontWeight="Bold" HorizontalAlignment="Left" Margin="343,90,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Draht Blau?" FontWeight="Bold" HorizontalAlignment="Left" Margin="343,110,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Stern?" FontWeight="Bold" HorizontalAlignment="Left" Margin="368,188,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="LED?" FontWeight="Bold" HorizontalAlignment="Left" Margin="375,237,0,0" VerticalAlignment="Top" />
                 </Grid>
             </TabItem>
             <TabItem Header="Sequence">

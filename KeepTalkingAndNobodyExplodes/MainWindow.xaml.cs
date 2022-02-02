@@ -1099,6 +1099,7 @@ namespace KeepTalkingAndNobodyExplodes
         private int[] durch5 = new[] {0, 0};
         private bool changed = false;
         string search = "";
+
         private void btnMemory_Click(object sender, RoutedEventArgs e)
         {
             if (SwitchingTab())
@@ -1112,236 +1113,257 @@ namespace KeepTalkingAndNobodyExplodes
                 durch4 = new[] {0, 0};
                 durch5 = new[] {0, 0};
                 changed = false;
+                lb_answer.Content = "";
+                tb_anzeige.Text = "";
                 tb_num.Visibility = Visibility.Hidden;
                 tb_pos.Visibility = Visibility.Hidden;
                 memory_num.Visibility = Visibility.Hidden;
                 memory_pos.Visibility = Visibility.Hidden;
+                lb_saved_mem.Visibility = Visibility.Hidden;
                 lb_memory_durchgang.Content = (stufe + 1).ToString() + ". Druchgang";
             }
         }
 
         private void btn_check_memory_Click(object sender, RoutedEventArgs e)
         {
-            int num = 0;
-            int pos;
-            string ausgabe = "";
-            
-            if (!int.TryParse(tb_anzeige.Text, out num))
+            if (stufe < 5)
             {
-                MessageBox.Show("Keine Zahl zum Checken", "No Number in Check");
-            }
-            else
-            {
-                if (stufe == 0)
+                int num = 0;
+                int pos;
+                string ausgabe = "";
+                lb_saved_mem.Visibility = Visibility.Hidden;
+                btn_save_memory.Visibility = Visibility.Visible;
+                if (!int.TryParse(tb_anzeige.Text, out num))
                 {
-                    switch (num)
-                    {
-                        case 1:
-                            ausgabe = "2. Position";
-                            durch1[1] = 2;
-                            search = "Number";
-                            break;
-                        case 2:
-                            ausgabe = "2. Position";
-                            durch1[1] = 2;
-                            search = "Number";
-                            break;
-                        case 3:
-                            ausgabe = "3. Position";
-                            durch1[1] = 3;
-                            search = "Number";
-                            break;
-                        case 4:
-                            ausgabe = "4. Position";
-                            durch1[1] = 4;
-                            search = "Number";
-                            break;
-                    }
+                    MessageBox.Show("Keine Zahl zum Checken", "No Number in Check");
                 }
                 else
                 {
-                    if (changed)
+                    if (stufe == 0)
                     {
-                        
-                        switch (stufe)
+                        switch (num)
                         {
                             case 1:
-                                switch (num)
-                                {
-                                    case 1:
-                                        ausgabe = "Beschriftung 4";
-                                        durch2[0] = 4;
-                                        search = "Position";
-                                        break;
-                                    case 2:
-                                        pos = durch1[1];
-                                        ausgabe = pos.ToString() + ". Position";
-                                        search = "Number";
-                                        break;
-                                    case 3:
-                                        ausgabe = "1. Position";
-                                        durch2[1] = 2;
-                                        search = "Number";
-                                        break;
-                                    case 4:
-                                        pos = durch1[1];
-                                        ausgabe = pos.ToString() + ". Position";
-                                        search = "Number";
-                                        break;
-                                }
+                                ausgabe = "2. Position";
+                                durch1[1] = 2;
+                                search = "Number";
                                 break;
                             case 2:
-                                switch (num)
-                                {
-                                    case 1:
-                                        pos = durch2[0];
-                                        ausgabe = "Beschriftung " + pos.ToString();
-                                        search = "Position";
-                                        break;
-                                    case 2:
-                                        pos = durch1[0];
-                                        ausgabe = "Beschriftung " + pos.ToString();
-                                        search = "Position";
-                                        break;
-                                    case 3:
-                                        ausgabe = "3. Position";
-                                        search = "Number";
-                                        break;
-                                    case 4:
-                                        pos = durch1[1];
-                                        ausgabe = pos.ToString() + ". Position";
-                                        search = "Number";
-                                        break;
-                                }
+                                ausgabe = "2. Position";
+                                durch1[1] = 2;
+                                search = "Number";
                                 break;
                             case 3:
-                                switch (num)
-                                {
-                                    case 1:
-                                        pos = durch1[1];
-                                        ausgabe = pos.ToString() + ". Position";
-                                        search = "Number";
-                                        break;
-                                    case 2:
-                                        ausgabe = "1. Position";
-                                        search = "Number";
-                                        break;
-                                    case 3:
-                                        pos = durch2[1];
-                                        ausgabe = pos.ToString() + ". Position";
-                                        search = "Number";
-                                        break;
-                                    case 4:
-                                        pos = durch3[1];
-                                        ausgabe = pos.ToString() + ". Position";
-                                        search = "Number";
-                                        break;
-                                }
+                                ausgabe = "3. Position";
+                                durch1[1] = 3;
+                                search = "Number";
                                 break;
                             case 4:
-                                switch (num)
-                                {
-                                    case 1:
-                                        pos = durch1[0];
-                                        ausgabe = "Beschriftung " + pos.ToString();
-                                        search = "Position";
-                                        break;
-                                    case 2:
-                                        pos = durch2[0];
-                                        ausgabe = "Beschriftung " + pos.ToString();
-                                        search = "Position";
-                                        break;
-                                    case 3:
-                                        pos = durch4[0];
-                                        ausgabe = "Beschriftung " + pos.ToString();
-                                        search = "Position";
-                                        break;
-                                    case 4:
-                                        pos = durch3[0];
-                                        ausgabe = "Beschriftung " + pos.ToString();
-                                        search = "Position";
-                                        break;
-                                }
+                                ausgabe = "4. Position";
+                                durch1[1] = 4;
+                                search = "Number";
                                 break;
-                            
                         }
                     }
-                }
+                    else
+                    {
+                        if (changed)
+                        {
+                            switch (stufe)
+                            {
+                                case 1:
+                                    switch (num)
+                                    {
+                                        case 1:
+                                            ausgabe = "Beschriftung 4";
+                                            durch2[0] = 4;
+                                            search = "Position";
+                                            break;
+                                        case 2:
+                                            pos = durch1[1];
+                                            ausgabe = pos.ToString() + ". Position";
+                                            search = "Number";
+                                            break;
+                                        case 3:
+                                            ausgabe = "1. Position";
+                                            durch2[1] = 2;
+                                            search = "Number";
+                                            break;
+                                        case 4:
+                                            pos = durch1[1];
+                                            ausgabe = pos.ToString() + ". Position";
+                                            search = "Number";
+                                            break;
+                                    }
 
-                lb_answer.Content = ausgabe;
-                if (changed || stufe == 0)
-                {
-                    changed = false;
-                    stufe++;
-                }
-                
-                if (search == "Position")
-                {
-                    memory_pos.Visibility = Visibility.Visible;
-                    tb_pos.Visibility = Visibility.Visible;
-                }
-                else if (search == "Number")
-                {
-                    memory_num.Visibility = Visibility.Visible;
-                    tb_num.Visibility = Visibility.Visible;
-                }
-                else
-                {
-                    MessageBox.Show("Fehler im Code schau nochmal nach", "Error");
+                                    break;
+                                case 2:
+                                    switch (num)
+                                    {
+                                        case 1:
+                                            pos = durch2[0];
+                                            ausgabe = "Beschriftung " + pos.ToString();
+                                            search = "Position";
+                                            break;
+                                        case 2:
+                                            pos = durch1[0];
+                                            ausgabe = "Beschriftung " + pos.ToString();
+                                            search = "Position";
+                                            break;
+                                        case 3:
+                                            ausgabe = "3. Position";
+                                            search = "Number";
+                                            break;
+                                        case 4:
+                                            pos = durch1[1];
+                                            ausgabe = pos.ToString() + ". Position";
+                                            search = "Number";
+                                            break;
+                                    }
+
+                                    break;
+                                case 3:
+                                    switch (num)
+                                    {
+                                        case 1:
+                                            pos = durch1[1];
+                                            ausgabe = pos.ToString() + ". Position";
+                                            search = "Number";
+                                            break;
+                                        case 2:
+                                            ausgabe = "1. Position";
+                                            search = "Number";
+                                            break;
+                                        case 3:
+                                            pos = durch2[1];
+                                            ausgabe = pos.ToString() + ". Position";
+                                            search = "Number";
+                                            break;
+                                        case 4:
+                                            pos = durch3[1];
+                                            ausgabe = pos.ToString() + ". Position";
+                                            search = "Number";
+                                            break;
+                                    }
+
+                                    break;
+                                case 4:
+                                    switch (num)
+                                    {
+                                        case 1:
+                                            pos = durch1[0];
+                                            ausgabe = "Beschriftung " + pos.ToString();
+                                            search = "Position";
+                                            break;
+                                        case 2:
+                                            pos = durch2[0];
+                                            ausgabe = "Beschriftung " + pos.ToString();
+                                            search = "Position";
+                                            break;
+                                        case 3:
+                                            pos = durch4[0];
+                                            ausgabe = "Beschriftung " + pos.ToString();
+                                            search = "Position";
+                                            break;
+                                        case 4:
+                                            pos = durch3[0];
+                                            ausgabe = "Beschriftung " + pos.ToString();
+                                            search = "Position";
+                                            break;
+                                    }
+
+                                    break;
+                            }
+                        }
+                    }
+
+                    lb_answer.Content = ausgabe;
+                    if (changed || stufe == 0)
+                    {
+                        changed = false;
+                        stufe++;
+                    }
+
+                    if (search == "Position")
+                    {
+                        memory_pos.Visibility = Visibility.Visible;
+                        tb_pos.Visibility = Visibility.Visible;
+                    }
+                    else if (search == "Number")
+                    {
+                        memory_num.Visibility = Visibility.Visible;
+                        tb_num.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fehler im Code schau nochmal nach", "Error");
+                    }
                 }
             }
         }
 
         private void btn_save_memory_Click(object sender, RoutedEventArgs e)
         {
-            changed = true;
-            string content;
-            if (search == "Position")
+            if (stufe < 5)
             {
-                content = tb_pos.Text;
-                switch (stufe)
+                
+                changed = true;
+                string content;
+                if (search == "Position")
                 {
-                    case 0:
-                        durch1[1] = int.Parse(content);
-                        break;
-                    case 1:
-                        durch2[1] = int.Parse(content);
-                        break;
-                    case 2:
-                        durch3[1] = int.Parse(content);
-                        break;
-                    case 3:
-                        durch4[1] = int.Parse(content);
-                        break;
-                    case 4:
-                        durch5[1] = int.Parse(content);
-                        break;
+                    content = tb_pos.Text;
+                    switch (stufe)
+                    {
+                        case 0:
+                            durch1[1] = int.Parse(content);
+                            break;
+                        case 1:
+                            durch2[1] = int.Parse(content);
+                            break;
+                        case 2:
+                            durch3[1] = int.Parse(content);
+                            break;
+                        case 3:
+                            durch4[1] = int.Parse(content);
+                            break;
+                        case 4:
+                            durch5[1] = int.Parse(content);
+                            break;
+                    }
                 }
-            }
-            else
-            {
-                content = tb_num.Text;
-                switch (stufe-1)
+                else
                 {
-                    case 0:
-                        durch1[0] = int.Parse(content);
-                        break;
-                    case 1:
-                        durch2[0] = int.Parse(content);
-                        break;
-                    case 2:
-                        durch3[0] = int.Parse(content);
-                        break;
-                    case 3:
-                        durch4[0] = int.Parse(content);
-                        break;
-                    case 4:
-                        durch5[0] = int.Parse(content);
-                        break;
+                    content = tb_num.Text;
+                    switch (stufe - 1)
+                    {
+                        case 0:
+                            durch1[0] = int.Parse(content);
+                            break;
+                        case 1:
+                            durch2[0] = int.Parse(content);
+                            break;
+                        case 2:
+                            durch3[0] = int.Parse(content);
+                            break;
+                        case 3:
+                            durch4[0] = int.Parse(content);
+                            break;
+                        case 4:
+                            durch5[0] = int.Parse(content);
+                            break;
+                    }
                 }
+
+                lb_saved_mem.Visibility = Visibility.Visible;
+                memory_num.Visibility = Visibility.Hidden;
+                memory_pos.Visibility = Visibility.Hidden;
+                tb_num.Visibility = Visibility.Hidden;
+                tb_pos.Visibility = Visibility.Hidden;
+                btn_save_memory.Visibility = Visibility.Hidden;
+                tb_num.Text = "";
+                tb_pos.Text = "";
+                tb_anzeige.Text = "";
             }
-            
-            
         }
 
         #endregion
@@ -1573,5 +1595,7 @@ namespace KeepTalkingAndNobodyExplodes
         }
 
         #endregion
+
+
     }
 }
