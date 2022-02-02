@@ -17,6 +17,7 @@ namespace KeepTalkingAndNobodyExplodes
         {
             InitializeComponent();
         }
+
         #region Main
 
         private int fehler = 0;
@@ -90,10 +91,12 @@ namespace KeepTalkingAndNobodyExplodes
             {
                 fehler = 0;
             }
+
             if (TabControl.SelectedIndex == 4)
             {
                 simonsays();
             }
+
             lb_error_count_button.Content = fehler;
             lb_error_count_complicated.Content = fehler;
             lb_error_count_labyrinth.Content = fehler;
@@ -107,6 +110,7 @@ namespace KeepTalkingAndNobodyExplodes
             lb_error_count_wires.Content = fehler;
             lb_error_count_word.Content = fehler;
         }
+
         #endregion
 
         #region Wires
@@ -120,7 +124,6 @@ namespace KeepTalkingAndNobodyExplodes
 
         private void btn_send_wires_Click(object sender, RoutedEventArgs e)
         {
-            
             string seqence = tb_wires.Text;
             int seqencelength = seqence.Length;
             bool lenright = false;
@@ -157,10 +160,11 @@ namespace KeepTalkingAndNobodyExplodes
                     {
                         ret = "letzten Draht";
                     }
+
                     break;
                 case 4:
                     lenright = true;
-                    if (farben["r"] > 1 && !(bool)iseven)
+                    if (farben["r"] > 1 && !(bool) iseven)
                     {
                         ret = "letzten roten Draht";
                     }
@@ -176,16 +180,19 @@ namespace KeepTalkingAndNobodyExplodes
                     {
                         ret = "zweiten Draht";
                     }
+
                     break;
                 case 5:
                     lenright = true;
-                    if (seqence.Substring(seqencelength-1,1) == "s" && !(bool)iseven)
+                    if (seqence.Substring(seqencelength - 1, 1) == "s" && !(bool) iseven)
                     {
                         ret = "vierten Draht";
-                    }else if (farben["r"] == 1 && farben["g"] > 1)
+                    }
+                    else if (farben["r"] == 1 && farben["g"] > 1)
                     {
                         ret = "ersten Draht";
-                    }else if (farben["s"] == 0)
+                    }
+                    else if (farben["s"] == 0)
                     {
                         ret = "zweiten Draht";
                     }
@@ -193,16 +200,19 @@ namespace KeepTalkingAndNobodyExplodes
                     {
                         ret = "ersten Draht";
                     }
+
                     break;
                 case 6:
                     lenright = true;
-                    if (farben["g"] == 0 && !(bool)iseven)
+                    if (farben["g"] == 0 && !(bool) iseven)
                     {
                         ret = "dritten Draht";
-                    }else if (farben["g"] == 1 && farben["w"] > 1)
+                    }
+                    else if (farben["g"] == 1 && farben["w"] > 1)
                     {
                         ret = "vierten Draht";
-                    }else if (farben["r"] == 0)
+                    }
+                    else if (farben["r"] == 0)
                     {
                         ret = "letzen Draht";
                     }
@@ -210,6 +220,7 @@ namespace KeepTalkingAndNobodyExplodes
                     {
                         ret = "vierten Draht";
                     }
+
                     break;
             }
 
@@ -238,26 +249,31 @@ namespace KeepTalkingAndNobodyExplodes
             lb_ans_button.Visibility = Visibility.Hidden;
             btn_send_stripe.Visibility = Visibility.Hidden;
         }
+
         private void btn_senden_Click(object sender, RoutedEventArgs e)
         {
             string type = "";
-            if ((bool)ch_blue.IsChecked && (bool)ch_abbrechen.IsChecked)
+            if ((bool) ch_blue.IsChecked && (bool) ch_abbrechen.IsChecked)
             {
                 type = "gedrückt halten";
-            }else if (batteries > 1 && (bool)ch_spreng.IsChecked)
+            }
+            else if (batteries > 1 && (bool) ch_spreng.IsChecked)
             {
                 type = "kurz drücken";
             }
-            else if((bool)ch_white.IsChecked && (bool)car)
+            else if ((bool) ch_white.IsChecked && (bool) car)
             {
                 type = "gedrückt halten";
-            }else if (batteries > 2 && (bool)frk)
+            }
+            else if (batteries > 2 && (bool) frk)
             {
                 type = "kurz drücken";
-            }else if ((bool)ch_yellow.IsChecked)
+            }
+            else if ((bool) ch_yellow.IsChecked)
             {
                 type = "gedrückt halten";
-            }else if ((bool)ch_red.IsChecked && (bool)ch_hold.IsChecked)
+            }
+            else if ((bool) ch_red.IsChecked && (bool) ch_hold.IsChecked)
             {
                 type = "kurz drücken";
             }
@@ -282,16 +298,19 @@ namespace KeepTalkingAndNobodyExplodes
         private void btn_send_stripe_Click(object sender, RoutedEventArgs e)
         {
             string ans = "Loslassen, wenn Timer eine ";
-            if ((bool)ch_stripe_white.IsChecked)
+            if ((bool) ch_stripe_white.IsChecked)
             {
                 ans += "1 ";
-            }else if ((bool)ch_stripe_blue.IsChecked)
+            }
+            else if ((bool) ch_stripe_blue.IsChecked)
             {
                 ans += "4 ";
-            }else if ((bool)ch_stripe_yellow.IsChecked)
+            }
+            else if ((bool) ch_stripe_yellow.IsChecked)
             {
                 ans += "5 ";
-            }else if ((bool)ch_stripe_other.IsChecked)
+            }
+            else if ((bool) ch_stripe_other.IsChecked)
             {
                 ans += "1 ";
             }
@@ -308,15 +327,31 @@ namespace KeepTalkingAndNobodyExplodes
         #region Symbols
 
         int counter = 0;
-        int[] pics = new int[]{50,50,50,50};
-        String[] symbuttons = new[] { "sechs", "AT", "NBogen", "OStrich", "Omega", "Absatz","ae","alien","weird3","bT","WKomma","Bahn","CLoop","broken3","dotedC","Copyright","HCurly","NCurly","EDoted","backCDoted","empStar","fullStar","question","MirrorK","Candelight","Smiley","Y" };
+        int[] pics = new int[] {50, 50, 50, 50};
+
+        String[] symbuttons = new[]
+        {
+            "sechs", "AT", "NBogen", "OStrich", "Omega", "Absatz", "ae", "alien", "weird3", "bT", "WKomma", "Bahn",
+            "CLoop", "broken3", "dotedC", "Copyright", "HCurly", "NCurly", "EDoted", "backCDoted", "empStar",
+            "fullStar", "question", "MirrorK", "Candelight", "Smiley", "Y"
+        };
+
         private String[] reihe1 = new[] {"OStrich", "AT", "Y", "NCurly", "alien", "HCurly", "backCDoted"};
-        private String[] reihe2 = new[] { "EDoted", "OStrich", "backCDoted", "CLoop", "empStar", "HCurly", "question" };
-        private String[] reihe3 = new[] { "Copyright", "WKomma", "CLoop", "MirrorK", "broken3", "Y", "empStar" };
-        private String[] reihe4 = new[] { "sechs", "Absatz", "bT", "alien", "MirrorK", "question", "Smiley" };
-        private String[] reihe5 = new[] { "Candelight", "Smiley", "bT", "dotedC", "Absatz", "weird3", "fullStar" };
-        private String[] reihe6 = new[] { "sechs", "EDoted", "Bahn", "ae", "Candelight", "NBogen", "Omega" };
-        private String[] pngs = new[] {"6.PNG", "AT.PNG","N_mit_bogen.PNG","O_mit_Strich.PNG","Omega.PNG","absatz.PNG","ae.PNG","alien.PNG","alien_3.PNG","bT.PNG","w_mit_komma.PNG","bahnübergang.PNG","c_looping.PNG","broken_3.PNG","c_mit_punkt.PNG","copyright.PNG","curly_H.PNG","curly_N.PNG","e_mit_punkten.PNG", "umgekehrte_C_mit_punkt.PNG", "empty_star.PNG","filled_star.PNG","espaniol_fragezeichen.PNG","k_spiegel.PNG","kerzenständer.PNG","smiley.PNG","umgekehrtes_Y.PNG"};
+        private String[] reihe2 = new[] {"EDoted", "OStrich", "backCDoted", "CLoop", "empStar", "HCurly", "question"};
+        private String[] reihe3 = new[] {"Copyright", "WKomma", "CLoop", "MirrorK", "broken3", "Y", "empStar"};
+        private String[] reihe4 = new[] {"sechs", "Absatz", "bT", "alien", "MirrorK", "question", "Smiley"};
+        private String[] reihe5 = new[] {"Candelight", "Smiley", "bT", "dotedC", "Absatz", "weird3", "fullStar"};
+        private String[] reihe6 = new[] {"sechs", "EDoted", "Bahn", "ae", "Candelight", "NBogen", "Omega"};
+
+        private String[] pngs = new[]
+        {
+            "6.PNG", "AT.PNG", "N_mit_bogen.PNG", "O_mit_Strich.PNG", "Omega.PNG", "absatz.PNG", "ae.PNG", "alien.PNG",
+            "alien_3.PNG", "bT.PNG", "w_mit_komma.PNG", "bahnübergang.PNG", "c_looping.PNG", "broken_3.PNG",
+            "c_mit_punkt.PNG", "copyright.PNG", "curly_H.PNG", "curly_N.PNG", "e_mit_punkten.PNG",
+            "umgekehrte_C_mit_punkt.PNG", "empty_star.PNG", "filled_star.PNG", "espaniol_fragezeichen.PNG",
+            "k_spiegel.PNG", "kerzenständer.PNG", "smiley.PNG", "umgekehrtes_Y.PNG"
+        };
+
         private IDictionary<string, string> path = new Dictionary<string, string>();
 
         private void btnSymbols_Click(object sender, RoutedEventArgs e)
@@ -334,7 +369,7 @@ namespace KeepTalkingAndNobodyExplodes
                 for (int i = 0; i < symbuttons.Length; i++)
                 {
                     string pfad = "Bilder/Symbols/" + pngs[i];
-                    path.Add(symbuttons[i],pfad);
+                    path.Add(symbuttons[i], pfad);
                 }
             }
         }
@@ -458,7 +493,6 @@ namespace KeepTalkingAndNobodyExplodes
 
                 counter++;
             }
-            
         }
 
         private void btn_Solve_Click(object sender, RoutedEventArgs e)
@@ -470,7 +504,8 @@ namespace KeepTalkingAndNobodyExplodes
             int reihe = 0;
             if (!pics.Contains(50))
             {
-                if (reihe1.Contains(symbuttons[pics[0]]) && reihe1.Contains(symbuttons[pics[1]]) && reihe1.Contains(symbuttons[pics[2]]) && reihe1.Contains(symbuttons[pics[3]]))
+                if (reihe1.Contains(symbuttons[pics[0]]) && reihe1.Contains(symbuttons[pics[1]]) &&
+                    reihe1.Contains(symbuttons[pics[2]]) && reihe1.Contains(symbuttons[pics[3]]))
                 {
                     reihe = 1;
                     for (int i = 0; i < reihe1.Length; i++)
@@ -479,20 +514,25 @@ namespace KeepTalkingAndNobodyExplodes
                         {
                             found1 = i;
                         }
+
                         if (reihe1[i] == symbuttons[pics[1]])
                         {
                             found2 = i;
                         }
+
                         if (reihe1[i] == symbuttons[pics[2]])
                         {
                             found3 = i;
                         }
+
                         if (reihe1[i] == symbuttons[pics[3]])
                         {
                             found4 = i;
                         }
                     }
-                }else if (reihe2.Contains(symbuttons[pics[0]]) && reihe2.Contains(symbuttons[pics[1]]) && reihe2.Contains(symbuttons[pics[2]]) && reihe2.Contains(symbuttons[pics[3]]))
+                }
+                else if (reihe2.Contains(symbuttons[pics[0]]) && reihe2.Contains(symbuttons[pics[1]]) &&
+                         reihe2.Contains(symbuttons[pics[2]]) && reihe2.Contains(symbuttons[pics[3]]))
                 {
                     reihe = 2;
                     for (int i = 0; i < reihe2.Length; i++)
@@ -501,21 +541,25 @@ namespace KeepTalkingAndNobodyExplodes
                         {
                             found1 = i;
                         }
+
                         if (reihe2[i] == symbuttons[pics[1]])
                         {
                             found2 = i;
                         }
+
                         if (reihe2[i] == symbuttons[pics[2]])
                         {
                             found3 = i;
                         }
+
                         if (reihe2[i] == symbuttons[pics[3]])
                         {
                             found4 = i;
                         }
                     }
                 }
-                else if (reihe3.Contains(symbuttons[pics[0]]) && reihe3.Contains(symbuttons[pics[1]]) && reihe3.Contains(symbuttons[pics[2]]) && reihe3.Contains(symbuttons[pics[3]]))
+                else if (reihe3.Contains(symbuttons[pics[0]]) && reihe3.Contains(symbuttons[pics[1]]) &&
+                         reihe3.Contains(symbuttons[pics[2]]) && reihe3.Contains(symbuttons[pics[3]]))
                 {
                     reihe = 3;
                     for (int i = 0; i < reihe3.Length; i++)
@@ -524,21 +568,25 @@ namespace KeepTalkingAndNobodyExplodes
                         {
                             found1 = i;
                         }
+
                         if (reihe3[i] == symbuttons[pics[1]])
                         {
                             found2 = i;
                         }
+
                         if (reihe3[i] == symbuttons[pics[2]])
                         {
                             found3 = i;
                         }
+
                         if (reihe3[i] == symbuttons[pics[3]])
                         {
                             found4 = i;
                         }
                     }
                 }
-                else if (reihe4.Contains(symbuttons[pics[0]]) && reihe4.Contains(symbuttons[pics[1]]) && reihe4.Contains(symbuttons[pics[2]]) && reihe4.Contains(symbuttons[pics[3]]))
+                else if (reihe4.Contains(symbuttons[pics[0]]) && reihe4.Contains(symbuttons[pics[1]]) &&
+                         reihe4.Contains(symbuttons[pics[2]]) && reihe4.Contains(symbuttons[pics[3]]))
                 {
                     reihe = 4;
                     for (int i = 0; i < reihe4.Length; i++)
@@ -547,21 +595,25 @@ namespace KeepTalkingAndNobodyExplodes
                         {
                             found1 = i;
                         }
+
                         if (reihe4[i] == symbuttons[pics[1]])
                         {
                             found2 = i;
                         }
+
                         if (reihe4[i] == symbuttons[pics[2]])
                         {
                             found3 = i;
                         }
+
                         if (reihe4[i] == symbuttons[pics[3]])
                         {
                             found4 = i;
                         }
                     }
                 }
-                else if (reihe5.Contains(symbuttons[pics[0]]) && reihe5.Contains(symbuttons[pics[1]]) && reihe5.Contains(symbuttons[pics[2]]) && reihe5.Contains(symbuttons[pics[3]]))
+                else if (reihe5.Contains(symbuttons[pics[0]]) && reihe5.Contains(symbuttons[pics[1]]) &&
+                         reihe5.Contains(symbuttons[pics[2]]) && reihe5.Contains(symbuttons[pics[3]]))
                 {
                     reihe = 5;
                     for (int i = 0; i < reihe5.Length; i++)
@@ -570,21 +622,25 @@ namespace KeepTalkingAndNobodyExplodes
                         {
                             found1 = i;
                         }
+
                         if (reihe5[i] == symbuttons[pics[1]])
                         {
                             found2 = i;
                         }
+
                         if (reihe5[i] == symbuttons[pics[2]])
                         {
                             found3 = i;
                         }
+
                         if (reihe5[i] == symbuttons[pics[3]])
                         {
                             found4 = i;
                         }
                     }
                 }
-                else if (reihe6.Contains(symbuttons[pics[0]]) && reihe6.Contains(symbuttons[pics[1]]) && reihe6.Contains(symbuttons[pics[2]]) && reihe6.Contains(symbuttons[pics[3]]))
+                else if (reihe6.Contains(symbuttons[pics[0]]) && reihe6.Contains(symbuttons[pics[1]]) &&
+                         reihe6.Contains(symbuttons[pics[2]]) && reihe6.Contains(symbuttons[pics[3]]))
                 {
                     reihe = 6;
                     for (int i = 0; i < reihe6.Length; i++)
@@ -593,21 +649,24 @@ namespace KeepTalkingAndNobodyExplodes
                         {
                             found1 = i;
                         }
+
                         if (reihe6[i] == symbuttons[pics[1]])
                         {
                             found2 = i;
                         }
+
                         if (reihe6[i] == symbuttons[pics[2]])
                         {
                             found3 = i;
                         }
+
                         if (reihe6[i] == symbuttons[pics[3]])
                         {
                             found4 = i;
                         }
                     }
                 }
-                
+
                 int[] founds = new[] {found1, found2, found3, found4};
                 string ausgabe = "";
                 foreach (var VARIABLE in founds)
@@ -632,6 +691,7 @@ namespace KeepTalkingAndNobodyExplodes
                         }
                     }
                 }
+
                 ausgabe = "";
                 foreach (var VARIABLE in founds)
                 {
@@ -649,7 +709,7 @@ namespace KeepTalkingAndNobodyExplodes
                 b2.BeginInit();
                 b3.BeginInit();
                 b4.BeginInit();
-                
+
                 switch (reihe)
                 {
                     case 1:
@@ -737,17 +797,13 @@ namespace KeepTalkingAndNobodyExplodes
                         b4.EndInit();
                         break;
                 }
-                
+
 
                 sym1.Source = b1;
                 sym2.Source = b2;
                 sym3.Source = b3;
                 sym4.Source = b4;
-
-
             }
-            
-
         }
 
         #endregion
@@ -761,11 +817,11 @@ namespace KeepTalkingAndNobodyExplodes
                 TabControl.SelectedIndex = 4;
                 simonsays();
             }
-            
         }
+
         private void simonsays()
         {
-            if ((bool)vokal)
+            if ((bool) vokal)
             {
                 switch (fehler)
                 {
@@ -841,23 +897,21 @@ namespace KeepTalkingAndNobodyExplodes
             lb_errors.Content = fehler.ToString() + ". Fehler";
         }
 
-
         #endregion
 
         #region Words
+
         IDictionary<string, string> kette = new Dictionary<string, string>();
 
-        
 
         private void btnWords_Click(object sender, RoutedEventArgs e)
         {
             if (SwitchingTab())
             {
                 TabControl.SelectedIndex = 5;
-                
+
                 Reset_Words();
             }
-            
         }
 
         private void Reset_Words(object sender, RoutedEventArgs e)
@@ -883,7 +937,8 @@ namespace KeepTalkingAndNobodyExplodes
             kette["Kuh"] = "WAS,\t, LEER, Q, JA, OKAY, NOCHMAL,\nCOUP, NEIN, KUH";
             kette["Coup"] = "OK, O. K., JA, DRÜCK, COUP";
             kette["Sohn"] = "MOMENT, SO EIN, SO'N, OH GOTT, WAS?,\nZEH, ZEHN, WARTE, C, SOHN";
-            kette["So ein"] = "SO'N, WAS?, DA STEHT, ZEH, C, ZEHEN,\n10, WARTE, SOHN, CN, OH GOTT, MOMENT, ZEHN, SO EIN";
+            kette["So ein"] =
+                "SO'N, WAS?, DA STEHT, ZEH, C, ZEHEN,\n10, WARTE, SOHN, CN, OH GOTT, MOMENT, ZEHN, SO EIN";
             kette["So'n"] = "10, SO EIN, ZEH, SO'N";
             kette["Oh Gott"] = "SOHN, OH GOTT";
             kette["Zehn"] = "ZEHEN, CN, ZEHN";
@@ -928,6 +983,7 @@ namespace KeepTalkingAndNobodyExplodes
             {
                 Key_inhalt.Items.Add(keys);
             }
+
             lb_key.Visibility = Visibility.Hidden;
             Key_inhalt.Visibility = Visibility.Hidden;
             lb_answers.Content = "";
@@ -945,7 +1001,7 @@ namespace KeepTalkingAndNobodyExplodes
 
         private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            string inhalt = (string)Display_inhalt.SelectedValue;
+            string inhalt = (string) Display_inhalt.SelectedValue;
             BitmapImage pic = new BitmapImage();
             Uri uripic = new Uri("Bilder/Words/eyes.png", UriKind.Relative);
             pic.BeginInit();
@@ -992,7 +1048,8 @@ namespace KeepTalkingAndNobodyExplodes
                 right_middle_word.Source = null;
                 right_bottom_word.Source = null;
             }
-            else if (inhalt == "Leer" || inhalt == "Coup" || inhalt == "Warte" || inhalt == "So ein" || inhalt == "Sohn" || inhalt == "Zehn" || inhalt == "Zäh")
+            else if (inhalt == "Leer" || inhalt == "Coup" || inhalt == "Warte" || inhalt == "So ein" ||
+                     inhalt == "Sohn" || inhalt == "Zehn" || inhalt == "Zäh")
             {
                 right_middle_word.Stretch = Stretch.Fill;
                 right_middle_word.Source = pic;
@@ -1002,7 +1059,8 @@ namespace KeepTalkingAndNobodyExplodes
                 left_up_word.Source = null;
                 right_bottom_word.Source = null;
             }
-            else if (inhalt == "Oben" || inhalt == "Da Steht" || inhalt == "Nein" || inhalt == "Q" || inhalt == "Bumm" || inhalt == "So'n" || inhalt == "Zehen" || inhalt == "CE" || inhalt == "Zu Spät")
+            else if (inhalt == "Oben" || inhalt == "Da Steht" || inhalt == "Nein" || inhalt == "Q" ||
+                     inhalt == "Bumm" || inhalt == "So'n" || inhalt == "Zehen" || inhalt == "CE" || inhalt == "Zu Spät")
             {
                 right_bottom_word.Stretch = Stretch.Fill;
                 right_bottom_word.Source = pic;
@@ -1015,8 +1073,6 @@ namespace KeepTalkingAndNobodyExplodes
 
             lb_key.Visibility = Visibility.Visible;
             Key_inhalt.Visibility = Visibility.Visible;
-            
-
         }
 
         private void Key_inhalt_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -1027,34 +1083,34 @@ namespace KeepTalkingAndNobodyExplodes
                 lb_moeglich.Visibility = Visibility.Visible;
                 lb_answers.Content = kette[(string) Key_inhalt.SelectedValue];
             }
-            
-            
         }
-
 
         #endregion
 
         #region Memory
 
         private int stufe = 0;
+
         //                          { Zahl, Position }
-        private int[] durch1 = new[] { 0, 0 };
-        private int[] durch2 = new[] { 0, 0 };
-        private int[] durch3 = new[] { 0, 0 };
-        private int[] durch4 = new[] { 0, 0 };
-        private int[] durch5 = new[] { 0, 0 };
+        private int[] durch1 = new[] {0, 0};
+        private int[] durch2 = new[] {0, 0};
+        private int[] durch3 = new[] {0, 0};
+        private int[] durch4 = new[] {0, 0};
+        private int[] durch5 = new[] {0, 0};
         private bool changed = false;
+        string search = "";
         private void btnMemory_Click(object sender, RoutedEventArgs e)
         {
             if (SwitchingTab())
             {
                 TabControl.SelectedIndex = 6;
                 stufe = 0;
-                durch1 = new[] { 0, 0 };
-                durch2 = new[] { 0, 0 };
-                durch3 = new[] { 0, 0 };
-                durch4 = new[] { 0, 0 };
-                durch5  = new[] { 0, 0 };
+                search = "";
+                durch1 = new[] {0, 0};
+                durch2 = new[] {0, 0};
+                durch3 = new[] {0, 0};
+                durch4 = new[] {0, 0};
+                durch5 = new[] {0, 0};
                 changed = false;
                 tb_num.Visibility = Visibility.Hidden;
                 tb_pos.Visibility = Visibility.Hidden;
@@ -1062,16 +1118,231 @@ namespace KeepTalkingAndNobodyExplodes
                 memory_pos.Visibility = Visibility.Hidden;
                 lb_memory_durchgang.Content = (stufe + 1).ToString() + ". Druchgang";
             }
-        } 
+        }
+
         private void btn_check_memory_Click(object sender, RoutedEventArgs e)
         {
+            int num = 0;
+            int pos;
+            string ausgabe = "";
+            
+            if (!int.TryParse(tb_anzeige.Text, out num))
+            {
+                MessageBox.Show("Keine Zahl zum Checken", "No Number in Check");
+            }
+            else
+            {
+                if (stufe == 0)
+                {
+                    switch (num)
+                    {
+                        case 1:
+                            ausgabe = "2. Position";
+                            durch1[1] = 2;
+                            search = "Number";
+                            break;
+                        case 2:
+                            ausgabe = "2. Position";
+                            durch1[1] = 2;
+                            search = "Number";
+                            break;
+                        case 3:
+                            ausgabe = "3. Position";
+                            durch1[1] = 3;
+                            search = "Number";
+                            break;
+                        case 4:
+                            ausgabe = "4. Position";
+                            durch1[1] = 4;
+                            search = "Number";
+                            break;
+                    }
+                }
+                else
+                {
+                    if (changed)
+                    {
+                        
+                        switch (stufe)
+                        {
+                            case 1:
+                                switch (num)
+                                {
+                                    case 1:
+                                        ausgabe = "Beschriftung 4";
+                                        durch2[0] = 4;
+                                        search = "Position";
+                                        break;
+                                    case 2:
+                                        pos = durch1[1];
+                                        ausgabe = pos.ToString() + ". Position";
+                                        search = "Number";
+                                        break;
+                                    case 3:
+                                        ausgabe = "1. Position";
+                                        durch2[1] = 2;
+                                        search = "Number";
+                                        break;
+                                    case 4:
+                                        pos = durch1[1];
+                                        ausgabe = pos.ToString() + ". Position";
+                                        search = "Number";
+                                        break;
+                                }
+                                break;
+                            case 2:
+                                switch (num)
+                                {
+                                    case 1:
+                                        pos = durch2[0];
+                                        ausgabe = "Beschriftung " + pos.ToString();
+                                        search = "Position";
+                                        break;
+                                    case 2:
+                                        pos = durch1[0];
+                                        ausgabe = "Beschriftung " + pos.ToString();
+                                        search = "Position";
+                                        break;
+                                    case 3:
+                                        ausgabe = "3. Position";
+                                        search = "Number";
+                                        break;
+                                    case 4:
+                                        pos = durch1[1];
+                                        ausgabe = pos.ToString() + ". Position";
+                                        search = "Number";
+                                        break;
+                                }
+                                break;
+                            case 3:
+                                switch (num)
+                                {
+                                    case 1:
+                                        pos = durch1[1];
+                                        ausgabe = pos.ToString() + ". Position";
+                                        search = "Number";
+                                        break;
+                                    case 2:
+                                        ausgabe = "1. Position";
+                                        search = "Number";
+                                        break;
+                                    case 3:
+                                        pos = durch2[1];
+                                        ausgabe = pos.ToString() + ". Position";
+                                        search = "Number";
+                                        break;
+                                    case 4:
+                                        pos = durch3[1];
+                                        ausgabe = pos.ToString() + ". Position";
+                                        search = "Number";
+                                        break;
+                                }
+                                break;
+                            case 4:
+                                switch (num)
+                                {
+                                    case 1:
+                                        pos = durch1[0];
+                                        ausgabe = "Beschriftung " + pos.ToString();
+                                        search = "Position";
+                                        break;
+                                    case 2:
+                                        pos = durch2[0];
+                                        ausgabe = "Beschriftung " + pos.ToString();
+                                        search = "Position";
+                                        break;
+                                    case 3:
+                                        pos = durch4[0];
+                                        ausgabe = "Beschriftung " + pos.ToString();
+                                        search = "Position";
+                                        break;
+                                    case 4:
+                                        pos = durch3[0];
+                                        ausgabe = "Beschriftung " + pos.ToString();
+                                        search = "Position";
+                                        break;
+                                }
+                                break;
+                            
+                        }
+                    }
+                }
 
+                lb_answer.Content = ausgabe;
+                if (changed || stufe == 0)
+                {
+                    changed = false;
+                    stufe++;
+                }
+                
+                if (search == "Position")
+                {
+                    memory_pos.Visibility = Visibility.Visible;
+                    tb_pos.Visibility = Visibility.Visible;
+                }
+                else if (search == "Number")
+                {
+                    memory_num.Visibility = Visibility.Visible;
+                    tb_num.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    MessageBox.Show("Fehler im Code schau nochmal nach", "Error");
+                }
+            }
         }
+
         private void btn_save_memory_Click(object sender, RoutedEventArgs e)
         {
-
+            changed = true;
+            string content;
+            if (search == "Position")
+            {
+                content = tb_pos.Text;
+                switch (stufe)
+                {
+                    case 0:
+                        durch1[1] = int.Parse(content);
+                        break;
+                    case 1:
+                        durch2[1] = int.Parse(content);
+                        break;
+                    case 2:
+                        durch3[1] = int.Parse(content);
+                        break;
+                    case 3:
+                        durch4[1] = int.Parse(content);
+                        break;
+                    case 4:
+                        durch5[1] = int.Parse(content);
+                        break;
+                }
+            }
+            else
+            {
+                content = tb_num.Text;
+                switch (stufe-1)
+                {
+                    case 0:
+                        durch1[0] = int.Parse(content);
+                        break;
+                    case 1:
+                        durch2[0] = int.Parse(content);
+                        break;
+                    case 2:
+                        durch3[0] = int.Parse(content);
+                        break;
+                    case 3:
+                        durch4[0] = int.Parse(content);
+                        break;
+                    case 4:
+                        durch5[0] = int.Parse(content);
+                        break;
+                }
+            }
+            
+            
         }
-
 
         #endregion
 
@@ -1081,28 +1352,27 @@ namespace KeepTalkingAndNobodyExplodes
         {
             if (SwitchingTab()) TabControl.SelectedIndex = 7;
         }
-        
 
         #endregion
 
         #region Complicated
 
-        
         private void btnComplicated_Click(object sender, RoutedEventArgs e)
         {
             if (SwitchingTab())
             {
                 TabControl.SelectedIndex = 8;
-                
             }
         }
 
         #endregion
 
         #region Sequence
+
         private int blue = 0;
         private int red = 0;
         private int black = 0;
+
         private void btnSequence_Click(object sender, RoutedEventArgs e)
         {
             if (SwitchingTab())
@@ -1115,6 +1385,7 @@ namespace KeepTalkingAndNobodyExplodes
                 CutOrNot_Label.Content = "";
             }
         }
+
         private void Complicated_Blue_Click(object sender, RoutedEventArgs e)
         {
             string content = "Cut wenn ";
@@ -1169,7 +1440,6 @@ namespace KeepTalkingAndNobodyExplodes
             {
                 CutOrNot.Content = "No more Wires";
             }
-
         }
 
         private void Complicated_Red_Click(object sender, RoutedEventArgs e)
@@ -1226,7 +1496,6 @@ namespace KeepTalkingAndNobodyExplodes
             {
                 CutOrNot.Content = "No more Wires";
             }
-
         }
 
         private void Complicated_Black_Click(object sender, RoutedEventArgs e)
@@ -1283,7 +1552,6 @@ namespace KeepTalkingAndNobodyExplodes
             {
                 CutOrNot.Content = "No more Wires";
             }
-
         }
 
         #endregion
@@ -1304,21 +1572,6 @@ namespace KeepTalkingAndNobodyExplodes
             if (SwitchingTab()) TabControl.SelectedIndex = 11;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         #endregion
-
-        
     }
 }

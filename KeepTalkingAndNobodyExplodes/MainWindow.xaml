@@ -704,6 +704,7 @@
                     <TextBox x:Name="tb_pos" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="38" Margin="354,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"/>
                     <TextBox x:Name="tb_num" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="38" Margin="345,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87"/>
                     <Button x:Name="btn_save_memory" Content="Save" HorizontalAlignment="Left" Margin="345,333,0,0" VerticalAlignment="Top" Width="87" Click="btn_save_memory_Click"/>
+                    <Label x:Name="lb_answer" HorizontalContentAlignment="Center" Content="Label" HorizontalAlignment="Left" Margin="270,234,0,0" VerticalAlignment="Top" Height="27" Width="240"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Morsecode">
