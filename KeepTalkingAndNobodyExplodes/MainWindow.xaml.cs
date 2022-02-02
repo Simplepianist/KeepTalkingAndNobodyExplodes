@@ -1037,7 +1037,8 @@ namespace KeepTalkingAndNobodyExplodes
         #region Memory
 
         private int stufe = 0;
-        private int[] durch1 = new[] {0, 0};
+        //                          { Zahl, Position }
+        private int[] durch1 = new[] { 0, 0 };
         private int[] durch2 = new[] { 0, 0 };
         private int[] durch3 = new[] { 0, 0 };
         private int[] durch4 = new[] { 0, 0 };
@@ -1055,9 +1056,22 @@ namespace KeepTalkingAndNobodyExplodes
                 durch4 = new[] { 0, 0 };
                 durch5  = new[] { 0, 0 };
                 changed = false;
+                tb_num.Visibility = Visibility.Hidden;
+                tb_pos.Visibility = Visibility.Hidden;
+                memory_num.Visibility = Visibility.Hidden;
+                memory_pos.Visibility = Visibility.Hidden;
                 lb_memory_durchgang.Content = (stufe + 1).ToString() + ". Druchgang";
             }
+        } 
+        private void btn_check_memory_Click(object sender, RoutedEventArgs e)
+        {
+
         }
+        private void btn_save_memory_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
 
         #endregion
 
@@ -1289,6 +1303,10 @@ namespace KeepTalkingAndNobodyExplodes
         {
             if (SwitchingTab()) TabControl.SelectedIndex = 11;
         }
+
+
+
+
 
 
 

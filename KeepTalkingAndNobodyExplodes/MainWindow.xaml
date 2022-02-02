@@ -696,8 +696,14 @@
                     <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
                            HorizontalAlignment="Left" Margin="0,342,0,0" VerticalAlignment="Top" Width="80" />
                     <Label x:Name="lb_memory_durchgang" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="270,82,0,0" VerticalAlignment="Top" Height="40" Width="240"/>
-                    <TextBox x:Name="tb_anzeige" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="38" Margin="354,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"/>
+                    <TextBox x:Name="tb_anzeige" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="38" Margin="345,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87"/>
                     <Label Content="Anzeige" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="345,121,0,0" VerticalAlignment="Top" Width="87"/>
+                    <Button x:Name="btn_check_memory" Content="Check" HorizontalAlignment="Left" Margin="345,204,0,0" VerticalAlignment="Top" Width="87" Click="btn_check_memory_Click"/>
+                    <Label x:Name="memory_pos" HorizontalContentAlignment="Center" Content="Position" HorizontalAlignment="Left" Margin="345,259,0,0" VerticalAlignment="Top" Width="83"/>
+                    <Label x:Name="memory_num" HorizontalContentAlignment="Center" Content="Number" HorizontalAlignment="Left" Margin="345,259,0,0" VerticalAlignment="Top" Width="83"/>
+                    <TextBox x:Name="tb_pos" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="38" Margin="354,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"/>
+                    <TextBox x:Name="tb_num" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="38" Margin="345,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87"/>
+                    <Button x:Name="btn_save_memory" Content="Save" HorizontalAlignment="Left" Margin="345,333,0,0" VerticalAlignment="Top" Width="87" Click="btn_save_memory_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Morsecode">
