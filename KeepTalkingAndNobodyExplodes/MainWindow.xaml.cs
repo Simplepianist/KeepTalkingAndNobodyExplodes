@@ -75,7 +75,6 @@ namespace KeepTalkingAndNobodyExplodes
             lb_error_count_labyrinth.Content = fehler;
             lb_error_count_main.Content = fehler;
             lb_error_count_memory.Content = fehler;
-            lb_error_count_morse.Content = fehler;
             lb_error_count_passwd.Content = fehler;
             lb_error_count_sequence.Content = fehler;
             lb_error_count_simonsays.Content = fehler;
@@ -102,7 +101,7 @@ namespace KeepTalkingAndNobodyExplodes
             lb_error_count_labyrinth.Content = fehler;
             lb_error_count_main.Content = fehler;
             lb_error_count_memory.Content = fehler;
-            lb_error_count_morse.Content = fehler;
+            
             lb_error_count_passwd.Content = fehler;
             lb_error_count_sequence.Content = fehler;
             lb_error_count_simonsays.Content = fehler;
@@ -1368,14 +1367,6 @@ namespace KeepTalkingAndNobodyExplodes
 
         #endregion
 
-        #region Morse
-
-        private void btnMorse_Click(object sender, RoutedEventArgs e)
-        {
-            if (SwitchingTab()) TabControl.SelectedIndex = 7;
-        }
-
-        #endregion
 
         #region Complicated
 
@@ -1384,7 +1375,152 @@ namespace KeepTalkingAndNobodyExplodes
             if (SwitchingTab())
             {
                 TabControl.SelectedIndex = 8;
+                compli_blue.IsChecked = false;
+                compli_white.IsChecked = false;
+                compli_led.IsChecked = false;
+                compli_red.IsChecked = false;
+                compli_stern.IsChecked = false;
+                lb_comli_cut.Content = "";
             }
+        }
+        private void btn_compli_solve_Click(object sender, RoutedEventArgs e)
+        {
+            string ans = "";
+            if ((bool)compli_stern.IsChecked)
+            {
+                if ((bool)compli_led.IsChecked)
+                {
+                    if ((bool)compli_blue.IsChecked)
+                    {
+                        if ((bool)compli_red.IsChecked)
+                        {
+                            ans = "N";
+                        }
+                        else
+                        {
+                            ans = "P";
+                        }
+                    }
+                    else if ((bool)compli_red.IsChecked)
+                    {
+                        ans = "B";
+                    }
+                    else if ((bool)compli_white.IsChecked)
+                    {
+                        ans = "B";
+                    }
+                }
+                else
+                {
+                    if ((bool)compli_blue.IsChecked)
+                    {
+                        if ((bool)compli_red.IsChecked)
+                        {
+                            ans = "P";
+                        }
+                        else
+                        {
+                            ans = "N";
+                        }
+                    }
+                    else if ((bool)compli_red.IsChecked)
+                    {
+                        ans = "D";
+                    }
+                    else if ((bool)compli_white.IsChecked)
+                    {
+                        ans = "D";
+                    }
+                }
+            }
+            else
+            {
+                if ((bool)compli_led.IsChecked)
+                {
+                    if ((bool)compli_blue.IsChecked)
+                    {
+                        if ((bool)compli_red.IsChecked)
+                        {
+                            ans = "S";
+                        }
+                        else
+                        {
+                            ans = "P";
+                        }
+                    }
+                    else if ((bool)compli_red.IsChecked)
+                    {
+                        ans = "B";
+                    }
+                    else if((bool)compli_white.IsChecked)
+                    {
+                        ans = "N";
+                    }
+                }
+                else
+                {
+                    if ((bool)compli_blue.IsChecked)
+                    {
+                        if ((bool)compli_red.IsChecked)
+                        {
+                            ans = "S";
+                        }
+                        else
+                        {
+                            ans = "S";
+                        }
+                    }
+                    else if ((bool)compli_red.IsChecked)
+                    {
+                        ans = "S";
+                    }
+                    else if ((bool)compli_white.IsChecked)
+                    {
+                        ans = "D";
+                    }
+                }
+            }
+
+            string cut = "";
+            if (ans == "D")
+            {
+                cut = "Cut it";
+            }else if (ans == "N")
+            {
+                cut = "Don't cut it";
+            }else if (ans == "S")
+            {
+                if ((bool)iseven)
+                {
+                    cut = "Cut it";
+                }
+                else
+                {
+                    cut = "Don't cut it";
+                }
+            }else if (ans == "P")
+            {
+                if ((bool)parralel)
+                {
+                    cut = "Cut it";
+                }
+                else
+                {
+                    cut = "Don't cut it";
+                }
+            }
+            else if (ans == "B")
+            {
+                if (batteries >= 2)
+                {
+                    cut = "Cut it";
+                }
+                else
+                {
+                    cut = "Don't cut it";
+                }
+            }
+            lb_comli_cut.Content = cut;
         }
 
         #endregion
@@ -1576,17 +1712,22 @@ namespace KeepTalkingAndNobodyExplodes
             }
         }
 
-        #endregion
+        #endregion 
 
+        // Noch nicht done
         #region Labyrinth
 
         private void btnLabyrinth_Click(object sender, RoutedEventArgs e)
         {
-            if (SwitchingTab()) TabControl.SelectedIndex = 10;
+            if (SwitchingTab())
+            {
+                TabControl.SelectedIndex = 10;
+            }
         }
 
         #endregion
 
+        // Noch nicht done
         #region Passwd
 
         private void btnPasswd_Click(object sender, RoutedEventArgs e)
@@ -1594,8 +1735,9 @@ namespace KeepTalkingAndNobodyExplodes
             if (SwitchingTab()) TabControl.SelectedIndex = 11;
         }
 
+
         #endregion
 
-
+        
     }
 }
