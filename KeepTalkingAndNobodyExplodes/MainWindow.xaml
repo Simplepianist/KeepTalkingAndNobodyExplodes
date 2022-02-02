@@ -792,6 +792,10 @@
                     <Button x:Name="btn_removeFehler_complicated" Content="Fehler -" HorizontalAlignment="Left"
                             Margin="79,373,0,0" VerticalAlignment="Top" Width="80" Height="50"
                             Click="btn_removeFehler_wires_Click" />
+                    <Button x:Name="Complicated_Blue" Background="Blue" HorizontalAlignment="Left" Margin="339,113,0,0" VerticalAlignment="Top" Width="87" Height="40"/>
+                    <Button x:Name="Complicated_Red" Background="Red" HorizontalAlignment="Left" Margin="339,180,0,0" VerticalAlignment="Top" Width="87" Height="40"/>
+                    <Button x:Name="Complicated_Black" Background="Black" HorizontalAlignment="Left" Margin="339,244,0,0" VerticalAlignment="Top" Width="87" Height="40"/>
+                    <Label x:Name="CutOrNot" Content="Label" HorizontalAlignment="Left" Margin="349,342,0,0" VerticalAlignment="Top" Height="41" Width="68"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Sequence">

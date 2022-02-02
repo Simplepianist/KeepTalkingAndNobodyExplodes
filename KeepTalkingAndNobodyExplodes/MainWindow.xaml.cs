@@ -1037,9 +1037,58 @@ namespace KeepTalkingAndNobodyExplodes
 
         #region Complicated
 
+        private int blue = 0;
+        private int red = 0;
+        private int black = 0;
         private void btnComplicated_Click(object sender, RoutedEventArgs e)
         {
-            if (SwitchingTab()) TabControl.SelectedIndex = 8;
+            if (SwitchingTab())
+            {
+                TabControl.SelectedIndex = 8;
+                blue = 0;
+                red = 0;
+                black = 0;
+            }
+        }
+
+        private void Complicated_Blue_Click(object sender, RoutedEventArgs e)
+        {
+            blue++;
+            switch (blue)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+            }
+        }
+
+        private void Complicated_Red_Click(object sender, RoutedEventArgs e)
+        {
+            red++;
+            switch (red)
+            {
+                
+            }
+        }
+
+        private void Complicated_Black_Click(object sender, RoutedEventArgs e)
+        {
+            black++;
+            switch (black)
+            {
+                
+            }
         }
 
         #endregion
@@ -1068,6 +1117,9 @@ namespace KeepTalkingAndNobodyExplodes
         {
             if (SwitchingTab()) TabControl.SelectedIndex = 11;
         }
+
+
+
 
 
 
