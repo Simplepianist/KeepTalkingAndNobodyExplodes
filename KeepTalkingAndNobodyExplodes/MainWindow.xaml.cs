@@ -86,10 +86,26 @@ namespace KeepTalkingAndNobodyExplodes
         private void btn_removeFehler_wires_Click(object sender, RoutedEventArgs e)
         {
             fehler--;
+            if (fehler < 0)
+            {
+                fehler = 0;
+            }
             if (TabControl.SelectedIndex == 4)
             {
                 simonsays();
             }
+            lb_error_count_button.Content = fehler;
+            lb_error_count_complicated.Content = fehler;
+            lb_error_count_labyrinth.Content = fehler;
+            lb_error_count_main.Content = fehler;
+            lb_error_count_memory.Content = fehler;
+            lb_error_count_morse.Content = fehler;
+            lb_error_count_passwd.Content = fehler;
+            lb_error_count_sequence.Content = fehler;
+            lb_error_count_simonsays.Content = fehler;
+            lb_error_count_symbols.Content = fehler;
+            lb_error_count_wires.Content = fehler;
+            lb_error_count_word.Content = fehler;
         }
         #endregion
 
@@ -821,6 +837,8 @@ namespace KeepTalkingAndNobodyExplodes
                         break;
                 }
             }
+
+            lb_errors.Content = fehler.ToString() + ". Fehler";
         }
 
 
@@ -1018,9 +1036,27 @@ namespace KeepTalkingAndNobodyExplodes
 
         #region Memory
 
+        private int stufe = 0;
+        private int[] durch1 = new[] {0, 0};
+        private int[] durch2 = new[] { 0, 0 };
+        private int[] durch3 = new[] { 0, 0 };
+        private int[] durch4 = new[] { 0, 0 };
+        private int[] durch5 = new[] { 0, 0 };
+        private bool changed = false;
         private void btnMemory_Click(object sender, RoutedEventArgs e)
         {
-            if (SwitchingTab()) TabControl.SelectedIndex = 6;
+            if (SwitchingTab())
+            {
+                TabControl.SelectedIndex = 6;
+                stufe = 0;
+                durch1 = new[] { 0, 0 };
+                durch2 = new[] { 0, 0 };
+                durch3 = new[] { 0, 0 };
+                durch4 = new[] { 0, 0 };
+                durch5  = new[] { 0, 0 };
+                changed = false;
+                lb_memory_durchgang.Content = (stufe + 1).ToString() + ". Druchgang";
+            }
         }
 
         #endregion
@@ -1037,56 +1073,12 @@ namespace KeepTalkingAndNobodyExplodes
 
         #region Complicated
 
-        private int blue = 0;
-        private int red = 0;
-        private int black = 0;
+        
         private void btnComplicated_Click(object sender, RoutedEventArgs e)
         {
             if (SwitchingTab())
             {
                 TabControl.SelectedIndex = 8;
-                blue = 0;
-                red = 0;
-                black = 0;
-            }
-        }
-
-        private void Complicated_Blue_Click(object sender, RoutedEventArgs e)
-        {
-            blue++;
-            switch (blue)
-            {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    break;
-            }
-        }
-
-        private void Complicated_Red_Click(object sender, RoutedEventArgs e)
-        {
-            red++;
-            switch (red)
-            {
-                
-            }
-        }
-
-        private void Complicated_Black_Click(object sender, RoutedEventArgs e)
-        {
-            black++;
-            switch (black)
-            {
                 
             }
         }
@@ -1094,10 +1086,190 @@ namespace KeepTalkingAndNobodyExplodes
         #endregion
 
         #region Sequence
-
+        private int blue = 0;
+        private int red = 0;
+        private int black = 0;
         private void btnSequence_Click(object sender, RoutedEventArgs e)
         {
-            if (SwitchingTab()) TabControl.SelectedIndex = 9;
+            if (SwitchingTab())
+            {
+                TabControl.SelectedIndex = 9;
+                blue = 0;
+                red = 0;
+                black = 0;
+                CutOrNot.Content = "";
+                CutOrNot_Label.Content = "";
+            }
+        }
+        private void Complicated_Blue_Click(object sender, RoutedEventArgs e)
+        {
+            string content = "Cut wenn ";
+            blue++;
+            bool cases = false;
+            switch (blue)
+            {
+                case 1:
+                    content += "B";
+                    cases = true;
+                    break;
+                case 2:
+                    content += "A oder C";
+                    cases = true;
+                    break;
+                case 3:
+                    content += "B";
+                    cases = true;
+                    break;
+                case 4:
+                    content += "A";
+                    cases = true;
+                    break;
+                case 5:
+                    content += "B";
+                    cases = true;
+                    break;
+                case 6:
+                    content += "B oder C";
+                    cases = true;
+                    break;
+                case 7:
+                    content += "C";
+                    cases = true;
+                    break;
+                case 8:
+                    content += "A oder C";
+                    cases = true;
+                    break;
+                case 9:
+                    content += "A";
+                    cases = true;
+                    break;
+            }
+
+            CutOrNot_Label.Content = "Blau";
+            if (cases)
+            {
+                CutOrNot.Content = content;
+            }
+            else
+            {
+                CutOrNot.Content = "No more Wires";
+            }
+
+        }
+
+        private void Complicated_Red_Click(object sender, RoutedEventArgs e)
+        {
+            string content = "Cut wenn ";
+            red++;
+            bool cases = false;
+            switch (red)
+            {
+                case 1:
+                    content += "C";
+                    cases = true;
+                    break;
+                case 2:
+                    content += "B";
+                    cases = true;
+                    break;
+                case 3:
+                    content += "A";
+                    cases = true;
+                    break;
+                case 4:
+                    content += "A oder C";
+                    cases = true;
+                    break;
+                case 5:
+                    content += "B";
+                    cases = true;
+                    break;
+                case 6:
+                    content += "A oder C";
+                    cases = true;
+                    break;
+                case 7:
+                    content = "Just Cut it";
+                    cases = true;
+                    break;
+                case 8:
+                    content += "A oder B";
+                    cases = true;
+                    break;
+                case 9:
+                    content += "B";
+                    cases = true;
+                    break;
+            }
+
+            CutOrNot_Label.Content = "Rot";
+            if (cases)
+            {
+                CutOrNot.Content = content;
+            }
+            else
+            {
+                CutOrNot.Content = "No more Wires";
+            }
+
+        }
+
+        private void Complicated_Black_Click(object sender, RoutedEventArgs e)
+        {
+            string content = "Cut wenn ";
+            black++;
+            bool cases = false;
+            switch (black)
+            {
+                case 1:
+                    content = "Just Cut it";
+                    cases = true;
+                    break;
+                case 2:
+                    content += "A oder C";
+                    cases = true;
+                    break;
+                case 3:
+                    content += "B";
+                    cases = true;
+                    break;
+                case 4:
+                    content += "A oder C";
+                    cases = true;
+                    break;
+                case 5:
+                    content += "B";
+                    cases = true;
+                    break;
+                case 6:
+                    content += "B oder C";
+                    cases = true;
+                    break;
+                case 7:
+                    content += "A oder B";
+                    cases = true;
+                    break;
+                case 8:
+                    content += "C";
+                    cases = true;
+                    break;
+                case 9:
+                    content += "C";
+                    cases = true;
+                    break;
+            }
+
+            CutOrNot_Label.Content = "Schwarz";
+            if (cases)
+            {
+                CutOrNot.Content = content;
+            }
+            else
+            {
+                CutOrNot.Content = "No more Wires";
+            }
+
         }
 
         #endregion
