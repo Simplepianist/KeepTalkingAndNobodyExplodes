@@ -891,7 +891,7 @@
                     <Button x:Name="btn_removeFehler_labyrinth" Content="Fehler -" HorizontalAlignment="Left"
                             Margin="79,369,0,0" VerticalAlignment="Top" Width="80" Height="50"
                             Click="btn_removeFehler_wires_Click" />
-                    <Grid HorizontalAlignment="Left" Height="250" Margin="267,67,0,0" VerticalAlignment="Top"
+                    <Grid x:Name="UI_laby" HorizontalAlignment="Left" Height="250" Margin="267,67,0,0" VerticalAlignment="Top"
                           Width="250">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="25*" />
@@ -914,38 +914,38 @@
                         <Button x:Name="pos12" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.Column="1" />
                         <Button x:Name="pos13" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.Column="2" />
                         <Button x:Name="pos14" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.ColumnSpan="2" Grid.Column="3" Margin="0,0,41,0" />
-                        <Button x:Name="pos15" VerticalAlignment="Top" Height="44" Grid.ColumnSpan="2" Grid.Column="4" Margin="1,0,40,0" Grid.RowSpan="2" />
-                        <Button x:Name="pos16" VerticalAlignment="Top" Height="44" Grid.Column="5" Margin="1,0,-2,0" Grid.RowSpan="2" />
+                        <Button x:Name="pos15" VerticalAlignment="Top" Height="44" Grid.Column="4" Grid.RowSpan="2" />
+                        <Button x:Name="pos16" VerticalAlignment="Top" Height="44" Grid.Column="4" Margin="41,0,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2" />
                         <Button x:Name="pos21" VerticalAlignment="Top" Grid.RowSpan="3" Height="44" Margin="0,41,0,0" Grid.Row="1" />
                         <Button x:Name="pos22" VerticalAlignment="Top" Grid.RowSpan="3" Height="44" Grid.Column="1" Margin="0,41,0,0" Grid.Row="1" />
                         <Button x:Name="pos23" VerticalAlignment="Top" Grid.RowSpan="3" Height="44" Grid.Column="2" Margin="0,41,0,0" Grid.Row="1" />
                         <Button x:Name="pos24" VerticalAlignment="Top" Grid.RowSpan="3" Height="44" Grid.ColumnSpan="2" Grid.Column="3" Margin="0,41,41,0" Grid.Row="1" />
-                        <Button x:Name="pos25" VerticalAlignment="Top" Height="44" Grid.ColumnSpan="2" Grid.Column="4" Margin="1,41,40,0" Grid.RowSpan="3" Grid.Row="1" />
-                        <Button x:Name="pos26" VerticalAlignment="Top" Height="44" Grid.Column="5" Margin="1,41,-2,0" Grid.RowSpan="3" Grid.Row="1" />
+                        <Button x:Name="pos25" VerticalAlignment="Top" Height="44" Grid.Column="4" Margin="0,41,0,0" Grid.RowSpan="3" Grid.Row="1" />
+                        <Button x:Name="pos26" VerticalAlignment="Top" Height="44" Grid.Column="4" Margin="41,41,0,0" Grid.RowSpan="3" Grid.Row="1" Grid.ColumnSpan="2" />
                         <Button x:Name="pos31" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.Row="3" />
                         <Button x:Name="pos32" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.Column="1" Grid.Row="3" />
                         <Button x:Name="pos33" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.Column="2" Grid.Row="3" />
                         <Button x:Name="pos34" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.ColumnSpan="2" Grid.Column="3" Margin="0,0,41,0" Grid.Row="3" />
-                        <Button x:Name="pos35" VerticalAlignment="Top" Height="44" Grid.ColumnSpan="2" Grid.Column="4" Margin="1,0,40,0" Grid.RowSpan="2" Grid.Row="3" />
-                        <Button x:Name="pos36" VerticalAlignment="Top" Height="44" Grid.Column="5" Margin="1,0,-2,0" Grid.RowSpan="2" Grid.Row="3" />
+                        <Button x:Name="pos35" VerticalAlignment="Top" Height="44" Grid.Column="4" Grid.RowSpan="2" Grid.Row="3" />
+                        <Button x:Name="pos36" VerticalAlignment="Top" Height="44" Grid.Column="4" Margin="41,0,0,0" Grid.RowSpan="2" Grid.Row="3" Grid.ColumnSpan="2" />
                         <Button x:Name="pos41" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.Row="4" />
                         <Button x:Name="pos42" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.Column="1" Grid.Row="4" />
                         <Button x:Name="pos43" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.Column="2" Grid.Row="4" />
                         <Button x:Name="pos44" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.ColumnSpan="2" Grid.Column="3" Margin="0,0,41,0" Grid.Row="4" />
-                        <Button x:Name="pos45" VerticalAlignment="Top" Height="44" Grid.ColumnSpan="2" Grid.Column="4" Margin="1,0,40,0" Grid.RowSpan="2" Grid.Row="4" />
-                        <Button x:Name="pos46" VerticalAlignment="Top" Height="44" Grid.Column="5" Margin="1,0,-2,0" Grid.RowSpan="2" Grid.Row="4" />
+                        <Button x:Name="pos45" VerticalAlignment="Top" Height="44" Grid.Column="4" Grid.RowSpan="2" Grid.Row="4" />
+                        <Button x:Name="pos46" VerticalAlignment="Top" Height="44" Grid.Column="4" Margin="41,0,0,0" Grid.RowSpan="2" Grid.Row="4" Grid.ColumnSpan="2" />
                         <Button x:Name="pos51" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.Row="5" />
                         <Button x:Name="pos52" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.Row="5" Grid.Column="1" />
                         <Button x:Name="pos53" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.Column="2" Grid.Row="5" />
                         <Button x:Name="pos54" VerticalAlignment="Top" Grid.RowSpan="2" Height="44" Grid.ColumnSpan="2" Grid.Column="3" Margin="0,0,41,0" Grid.Row="5" />
-                        <Button x:Name="pos55" VerticalAlignment="Top" Height="44" Grid.Column="4" Grid.RowSpan="2" Grid.Row="5" Grid.ColumnSpan="2" Margin="1,0,40,0" />
-                        <Button x:Name="pos56" VerticalAlignment="Top" Height="44" Grid.Column="5" Margin="1,0,-2,0" Grid.RowSpan="2" Grid.Row="5" />
+                        <Button x:Name="pos55" VerticalAlignment="Top" Height="44" Grid.Column="4" Grid.RowSpan="2" Grid.Row="5" />
+                        <Button x:Name="pos56" VerticalAlignment="Top" Height="44" Grid.Column="4" Margin="41,0,0,0" Grid.RowSpan="2" Grid.Row="5" Grid.ColumnSpan="2" />
                         <Button x:Name="pos61" VerticalAlignment="Top" Height="44" Margin="0,0,0,-3" Grid.Row="6" />
                         <Button x:Name="pos62" VerticalAlignment="Top" Height="44" Grid.Column="1" Margin="0,0,0,-3" Grid.Row="6" />
                         <Button x:Name="pos63" VerticalAlignment="Top" Height="44" Grid.Column="2" Margin="0,0,0,-3" Grid.Row="6" />
                         <Button x:Name="pos64" VerticalAlignment="Top" Height="44" Grid.ColumnSpan="2" Grid.Column="3" Margin="0,0,41,-3" Grid.Row="6" />
-                        <Button x:Name="pos65" VerticalAlignment="Top" Height="44" Grid.ColumnSpan="2" Grid.Column="4" Margin="1,0,40,-3" Grid.Row="6" />
-                        <Button x:Name="pos66" VerticalAlignment="Top" Height="44" Grid.Column="5" Margin="1,0,-2,-3" Grid.Row="6" />
+                        <Button x:Name="pos65" VerticalAlignment="Top" Height="44" Grid.Column="4" Margin="0,0,0,-3" Grid.Row="6" />
+                        <Button x:Name="pos66" VerticalAlignment="Top" Height="44" Grid.Column="4" Margin="41,0,0,-3" Grid.Row="6" Grid.ColumnSpan="2" />
 
                     </Grid>
                 </Grid>

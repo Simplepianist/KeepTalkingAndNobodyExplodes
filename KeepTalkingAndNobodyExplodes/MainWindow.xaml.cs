@@ -1721,10 +1721,89 @@ namespace KeepTalkingAndNobodyExplodes
         {
             if (SwitchingTab())
             {
-                TabControl.SelectedIndex = 10;
+                TabControl.SelectedIndex = 9;
+                buildLabyrinth(0);
+
             }
         }
 
+
+        void buildLabyrinth(int layout)
+        {
+            switch (layout)
+            {
+                case int pos when (pos == 21 || pos == 36):
+                    pos21.Background = Brushes.LightGreen;
+                    pos36.Background = Brushes.LightGreen;
+                    pos13.BorderThickness = new Thickness(0, 5, 3, 0);
+                    pos22.BorderThickness = new Thickness(3,3, 0, 0);
+                    pos23.BorderThickness = new Thickness(0, 0,3, 3);
+                    pos24.BorderThickness = new Thickness(0, 0, 0, 3);
+                    pos25.BorderThickness = new Thickness(0, 3, 0, 3);
+                    pos26.BorderThickness = new Thickness(0, 3, 5, 0);
+                    pos31.BorderThickness = new Thickness(5, 0, 3, 0);
+                    pos33.BorderThickness = new Thickness(0, 0, 3, 0);
+                    break;
+                case int pos when (pos == 25 || pos == 42):
+                    
+                    break;
+                case int pos when (pos == 44 || pos == 46):
+                    
+                    break;
+                case int pos when (pos == 11 || pos == 41):
+                    
+                    break;
+                case int pos when (pos == 35 || pos == 64):
+                    
+                    break;
+                case int pos when (pos == 15 || pos == 53):
+                    
+                    break;
+                case int pos when (pos == 12 || pos == 62):
+                    break;
+                case int pos when (pos == 14 || pos == 43):
+                    break;
+                case int pos when (pos == 23 || pos == 51):
+                default:
+                    pos11.BorderThickness = new Thickness(5, 5, 0, 0);
+                    pos12.BorderThickness = new Thickness(0, 5, 0, 0);
+                    pos13.BorderThickness = new Thickness(0, 5, 0, 0);
+                    pos14.BorderThickness = new Thickness(0, 5, 0, 0);
+                    pos15.BorderThickness = new Thickness(0, 5, 0, 0);
+                    pos16.BorderThickness = new Thickness(0, 5, 5, 0);
+                    pos21.BorderThickness = new Thickness(5, 0, 0, 0);
+                    pos22.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos23.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos24.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos25.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos26.BorderThickness = new Thickness(0, 0, 5, 0);
+                    pos31.BorderThickness = new Thickness(5, 0, 0, 0);
+                    pos32.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos33.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos34.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos35.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos36.BorderThickness = new Thickness(0, 0, 5, 0);
+                    pos41.BorderThickness = new Thickness(5, 0, 0, 0);
+                    pos42.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos43.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos44.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos45.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos46.BorderThickness = new Thickness(0, 0, 5, 0);
+                    pos51.BorderThickness = new Thickness(5, 0, 0, 0);
+                    pos52.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos53.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos54.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos55.BorderThickness = new Thickness(0, 0, 0, 0);
+                    pos56.BorderThickness = new Thickness(0, 0, 5, 0);
+                    pos61.BorderThickness = new Thickness(5, 0, 0, 5);
+                    pos62.BorderThickness = new Thickness(0, 0, 0, 5);
+                    pos63.BorderThickness = new Thickness(0, 0, 0, 5);
+                    pos64.BorderThickness = new Thickness(0, 0, 0, 5);
+                    pos65.BorderThickness = new Thickness(0, 0, 0, 5);
+                    pos66.BorderThickness = new Thickness(0, 0, 5, 5);
+                    break;
+            }
+        }
         #endregion
 
         // Noch nicht done
@@ -1732,12 +1811,12 @@ namespace KeepTalkingAndNobodyExplodes
 
         private void btnPasswd_Click(object sender, RoutedEventArgs e)
         {
-            if (SwitchingTab()) TabControl.SelectedIndex = 11;
+            if (SwitchingTab()) TabControl.SelectedIndex = 10;
         }
+
 
 
         #endregion
 
-        
     }
 }
