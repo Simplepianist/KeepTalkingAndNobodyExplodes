@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
@@ -20,7 +21,7 @@ namespace KeepTalkingAndNobodyExplodes
 
         #region Main
 
-        private int fehler = 0;
+        private int fehler;
 
         private bool? car = false;
 
@@ -65,10 +66,7 @@ namespace KeepTalkingAndNobodyExplodes
         private void btn_addFehler_wires_Click(object sender, RoutedEventArgs e)
         {
             fehler++;
-            if (TabControl.SelectedIndex == 4)
-            {
-                simonsays();
-            }
+            if (TabControl.SelectedIndex == 4) simonsays();
 
             lb_error_count_button.Content = fehler;
             lb_error_count_complicated.Content = fehler;
@@ -86,22 +84,16 @@ namespace KeepTalkingAndNobodyExplodes
         private void btn_removeFehler_wires_Click(object sender, RoutedEventArgs e)
         {
             fehler--;
-            if (fehler < 0)
-            {
-                fehler = 0;
-            }
+            if (fehler < 0) fehler = 0;
 
-            if (TabControl.SelectedIndex == 4)
-            {
-                simonsays();
-            }
+            if (TabControl.SelectedIndex == 4) simonsays();
 
             lb_error_count_button.Content = fehler;
             lb_error_count_complicated.Content = fehler;
             lb_error_count_labyrinth.Content = fehler;
             lb_error_count_main.Content = fehler;
             lb_error_count_memory.Content = fehler;
-            
+
             lb_error_count_passwd.Content = fehler;
             lb_error_count_sequence.Content = fehler;
             lb_error_count_simonsays.Content = fehler;
@@ -123,19 +115,19 @@ namespace KeepTalkingAndNobodyExplodes
 
         private void btn_send_wires_Click(object sender, RoutedEventArgs e)
         {
-            string seqence = tb_wires.Text;
-            int seqencelength = seqence.Length;
-            bool lenright = false;
-            string ret = "error";
+            var seqence = tb_wires.Text;
+            var seqencelength = seqence.Length;
+            var lenright = false;
+            var ret = "error";
             IDictionary<string, int> farben = new Dictionary<string, int>();
             farben["r"] = 0;
             farben["b"] = 0;
             farben["g"] = 0;
             farben["w"] = 0;
             farben["s"] = 0;
-            for (int i = 0; i < seqencelength; i++)
+            for (var i = 0; i < seqencelength; i++)
             {
-                int count = farben[seqence.Substring(i, 1)] + 1;
+                var count = farben[seqence.Substring(i, 1)] + 1;
                 farben[seqence.Substring(i, 1)] = count;
             }
 
@@ -144,89 +136,54 @@ namespace KeepTalkingAndNobodyExplodes
                 case 3:
                     lenright = true;
                     if (!seqence.Contains("r"))
-                    {
                         ret = "2. Draht";
-                    }
                     else if (seqence.Substring(seqencelength - 1, 1) == "w")
-                    {
                         ret = "letzten Draht";
-                    }
                     else if (farben["b"] > 1)
-                    {
                         ret = "letzten blauen Draht";
-                    }
                     else
-                    {
                         ret = "letzten Draht";
-                    }
 
                     break;
                 case 4:
                     lenright = true;
                     if (farben["r"] > 1 && !(bool) iseven)
-                    {
                         ret = "letzten roten Draht";
-                    }
                     else if (seqence.Substring(seqencelength - 1, 1) == "g" && farben["r"] == 0 || farben["b"] == 1)
-                    {
                         ret = "ersten Draht";
-                    }
                     else if (farben["g"] > 1)
-                    {
                         ret = "letzten Draht";
-                    }
                     else
-                    {
                         ret = "zweiten Draht";
-                    }
 
                     break;
                 case 5:
                     lenright = true;
                     if (seqence.Substring(seqencelength - 1, 1) == "s" && !(bool) iseven)
-                    {
                         ret = "vierten Draht";
-                    }
                     else if (farben["r"] == 1 && farben["g"] > 1)
-                    {
                         ret = "ersten Draht";
-                    }
                     else if (farben["s"] == 0)
-                    {
                         ret = "zweiten Draht";
-                    }
                     else
-                    {
                         ret = "ersten Draht";
-                    }
 
                     break;
                 case 6:
                     lenright = true;
                     if (farben["g"] == 0 && !(bool) iseven)
-                    {
                         ret = "dritten Draht";
-                    }
                     else if (farben["g"] == 1 && farben["w"] > 1)
-                    {
                         ret = "vierten Draht";
-                    }
                     else if (farben["r"] == 0)
-                    {
                         ret = "letzen Draht";
-                    }
                     else
-                    {
                         ret = "vierten Draht";
-                    }
 
                     break;
             }
 
-            if (!lenright)
-            {
-                MessageBox.Show("Keine richtige Anzahl der Drähte: " + seqencelength, "Anzahl der Drähte");
-            }
+            if (!lenright) MessageBox.Show("Keine richtige Anzahl der Drähte: " + seqencelength, "Anzahl der Drähte");
 
             lb_ans_wire.Visibility = Visibility.Visible;
             lb_wire_cut.Visibility = Visibility.Visible;
@@ -251,35 +208,21 @@ namespace KeepTalkingAndNobodyExplodes
 
         private void btn_senden_Click(object sender, RoutedEventArgs e)
         {
-            string type = "";
+            var type = "";
             if ((bool) ch_blue.IsChecked && (bool) ch_abbrechen.IsChecked)
-            {
                 type = "gedrückt halten";
-            }
             else if (batteries > 1 && (bool) ch_spreng.IsChecked)
-            {
                 type = "kurz drücken";
-            }
             else if ((bool) ch_white.IsChecked && (bool) car)
-            {
                 type = "gedrückt halten";
-            }
             else if (batteries > 2 && (bool) frk)
-            {
                 type = "kurz drücken";
-            }
             else if ((bool) ch_yellow.IsChecked)
-            {
                 type = "gedrückt halten";
-            }
             else if ((bool) ch_red.IsChecked && (bool) ch_hold.IsChecked)
-            {
                 type = "kurz drücken";
-            }
             else
-            {
                 type = "gedrückt halten";
-            }
 
             lb_ans_button.Visibility = Visibility.Visible;
             lb_type.Content = type;
@@ -296,27 +239,17 @@ namespace KeepTalkingAndNobodyExplodes
 
         private void btn_send_stripe_Click(object sender, RoutedEventArgs e)
         {
-            string ans = "Loslassen, wenn Timer eine ";
+            var ans = "Loslassen, wenn Timer eine ";
             if ((bool) ch_stripe_white.IsChecked)
-            {
                 ans += "1 ";
-            }
             else if ((bool) ch_stripe_blue.IsChecked)
-            {
                 ans += "4 ";
-            }
             else if ((bool) ch_stripe_yellow.IsChecked)
-            {
                 ans += "5 ";
-            }
             else if ((bool) ch_stripe_other.IsChecked)
-            {
                 ans += "1 ";
-            }
             else
-            {
                 MessageBox.Show("Bitte eine Farbe von Streifen auswählen", "Error with Stripes");
-            }
 
             lb_ans_stripes.Content = ans + "anzeigt";
         }
@@ -325,24 +258,27 @@ namespace KeepTalkingAndNobodyExplodes
 
         #region Symbols
 
-        int counter = 0;
-        int[] pics = new int[] {50, 50, 50, 50};
+        private int counter;
+        private readonly int[] pics = {50, 50, 50, 50};
 
-        String[] symbuttons = new[]
+        private readonly string[] symbuttons =
         {
             "sechs", "AT", "NBogen", "OStrich", "Omega", "Absatz", "ae", "alien", "weird3", "bT", "WKomma", "Bahn",
             "CLoop", "broken3", "dotedC", "Copyright", "HCurly", "NCurly", "EDoted", "backCDoted", "empStar",
             "fullStar", "question", "MirrorK", "Candelight", "Smiley", "Y"
         };
 
-        private String[] reihe1 = new[] {"OStrich", "AT", "Y", "NCurly", "alien", "HCurly", "backCDoted"};
-        private String[] reihe2 = new[] {"EDoted", "OStrich", "backCDoted", "CLoop", "empStar", "HCurly", "question"};
-        private String[] reihe3 = new[] {"Copyright", "WKomma", "CLoop", "MirrorK", "broken3", "Y", "empStar"};
-        private String[] reihe4 = new[] {"sechs", "Absatz", "bT", "alien", "MirrorK", "question", "Smiley"};
-        private String[] reihe5 = new[] {"Candelight", "Smiley", "bT", "dotedC", "Absatz", "weird3", "fullStar"};
-        private String[] reihe6 = new[] {"sechs", "EDoted", "Bahn", "ae", "Candelight", "NBogen", "Omega"};
+        private readonly string[] reihe1 = {"OStrich", "AT", "Y", "NCurly", "alien", "HCurly", "backCDoted"};
 
-        private String[] pngs = new[]
+        private readonly string[] reihe2 =
+            {"EDoted", "OStrich", "backCDoted", "CLoop", "empStar", "HCurly", "question"};
+
+        private readonly string[] reihe3 = {"Copyright", "WKomma", "CLoop", "MirrorK", "broken3", "Y", "empStar"};
+        private readonly string[] reihe4 = {"sechs", "Absatz", "bT", "alien", "MirrorK", "question", "Smiley"};
+        private readonly string[] reihe5 = {"Candelight", "Smiley", "bT", "dotedC", "Absatz", "weird3", "fullStar"};
+        private readonly string[] reihe6 = {"sechs", "EDoted", "Bahn", "ae", "Candelight", "NBogen", "Omega"};
+
+        private readonly string[] pngs =
         {
             "6.PNG", "AT.PNG", "N_mit_bogen.PNG", "O_mit_Strich.PNG", "Omega.PNG", "absatz.PNG", "ae.PNG", "alien.PNG",
             "alien_3.PNG", "bT.PNG", "w_mit_komma.PNG", "bahnübergang.PNG", "c_looping.PNG", "broken_3.PNG",
@@ -351,7 +287,7 @@ namespace KeepTalkingAndNobodyExplodes
             "k_spiegel.PNG", "kerzenständer.PNG", "smiley.PNG", "umgekehrtes_Y.PNG"
         };
 
-        private IDictionary<string, string> path = new Dictionary<string, string>();
+        private readonly IDictionary<string, string> path = new Dictionary<string, string>();
 
         private void btnSymbols_Click(object sender, RoutedEventArgs e)
         {
@@ -360,14 +296,11 @@ namespace KeepTalkingAndNobodyExplodes
                 path.Clear();
                 TabControl.SelectedIndex = 3;
                 counter = 0;
-                for (int i = 0; i < pics.Length; i++)
-                {
-                    pics[i] = 50;
-                }
+                for (var i = 0; i < pics.Length; i++) pics[i] = 50;
 
-                for (int i = 0; i < symbuttons.Length; i++)
+                for (var i = 0; i < symbuttons.Length; i++)
                 {
-                    string pfad = "Bilder/Symbols/" + pngs[i];
+                    var pfad = "Bilder/Symbols/" + pngs[i];
                     path.Add(symbuttons[i], pfad);
                 }
             }
@@ -382,113 +315,58 @@ namespace KeepTalkingAndNobodyExplodes
             else
             {
                 if (sender == sechs)
-                {
                     pics[counter] = 0;
-                }
                 else if (sender == AT)
-                {
                     pics[counter] = 1;
-                }
                 else if (sender == NBogen)
-                {
                     pics[counter] = 2;
-                }
                 else if (sender == OStrich)
-                {
                     pics[counter] = 3;
-                }
                 else if (sender == Omega)
-                {
                     pics[counter] = 4;
-                }
                 else if (sender == Absatz)
-                {
                     pics[counter] = 5;
-                }
                 else if (sender == ae)
-                {
                     pics[counter] = 6;
-                }
                 else if (sender == alien)
-                {
                     pics[counter] = 7;
-                }
                 else if (sender == weird3)
-                {
                     pics[counter] = 8;
-                }
                 else if (sender == bT)
-                {
                     pics[counter] = 9;
-                }
                 else if (sender == WKomma)
-                {
                     pics[counter] = 10;
-                }
                 else if (sender == Bahn)
-                {
                     pics[counter] = 11;
-                }
                 else if (sender == CLoop)
-                {
                     pics[counter] = 12;
-                }
                 else if (sender == broken3)
-                {
                     pics[counter] = 13;
-                }
                 else if (sender == dotedC)
-                {
                     pics[counter] = 14;
-                }
                 else if (sender == Copyright)
-                {
                     pics[counter] = 15;
-                }
                 else if (sender == HCurly)
-                {
                     pics[counter] = 16;
-                }
                 else if (sender == NCurly)
-                {
                     pics[counter] = 17;
-                }
                 else if (sender == EDoted)
-                {
                     pics[counter] = 18;
-                }
                 else if (sender == backCDoted)
-                {
                     pics[counter] = 19;
-                }
                 else if (sender == empStar)
-                {
                     pics[counter] = 20;
-                }
                 else if (sender == fullStar)
-                {
                     pics[counter] = 21;
-                }
                 else if (sender == question)
-                {
                     pics[counter] = 22;
-                }
                 else if (sender == MirrorK)
-                {
                     pics[counter] = 23;
-                }
                 else if (sender == Candelight)
-                {
                     pics[counter] = 24;
-                }
                 else if (sender == Smiley)
-                {
                     pics[counter] = 25;
-                }
-                else if (sender == Y)
-                {
-                    pics[counter] = 26;
-                }
+                else if (sender == Y) pics[counter] = 26;
 
                 counter++;
             }
@@ -496,213 +374,131 @@ namespace KeepTalkingAndNobodyExplodes
 
         private void btn_Solve_Click(object sender, RoutedEventArgs e)
         {
-            int found1 = 50;
-            int found2 = 50;
-            int found3 = 50;
-            int found4 = 50;
-            int reihe = 0;
+            var found1 = 50;
+            var found2 = 50;
+            var found3 = 50;
+            var found4 = 50;
+            var reihe = 0;
             if (!pics.Contains(50))
             {
                 if (reihe1.Contains(symbuttons[pics[0]]) && reihe1.Contains(symbuttons[pics[1]]) &&
                     reihe1.Contains(symbuttons[pics[2]]) && reihe1.Contains(symbuttons[pics[3]]))
                 {
                     reihe = 1;
-                    for (int i = 0; i < reihe1.Length; i++)
+                    for (var i = 0; i < reihe1.Length; i++)
                     {
-                        if (reihe1[i] == symbuttons[pics[0]])
-                        {
-                            found1 = i;
-                        }
+                        if (reihe1[i] == symbuttons[pics[0]]) found1 = i;
 
-                        if (reihe1[i] == symbuttons[pics[1]])
-                        {
-                            found2 = i;
-                        }
+                        if (reihe1[i] == symbuttons[pics[1]]) found2 = i;
 
-                        if (reihe1[i] == symbuttons[pics[2]])
-                        {
-                            found3 = i;
-                        }
+                        if (reihe1[i] == symbuttons[pics[2]]) found3 = i;
 
-                        if (reihe1[i] == symbuttons[pics[3]])
-                        {
-                            found4 = i;
-                        }
+                        if (reihe1[i] == symbuttons[pics[3]]) found4 = i;
                     }
                 }
                 else if (reihe2.Contains(symbuttons[pics[0]]) && reihe2.Contains(symbuttons[pics[1]]) &&
                          reihe2.Contains(symbuttons[pics[2]]) && reihe2.Contains(symbuttons[pics[3]]))
                 {
                     reihe = 2;
-                    for (int i = 0; i < reihe2.Length; i++)
+                    for (var i = 0; i < reihe2.Length; i++)
                     {
-                        if (reihe2[i] == symbuttons[pics[0]])
-                        {
-                            found1 = i;
-                        }
+                        if (reihe2[i] == symbuttons[pics[0]]) found1 = i;
 
-                        if (reihe2[i] == symbuttons[pics[1]])
-                        {
-                            found2 = i;
-                        }
+                        if (reihe2[i] == symbuttons[pics[1]]) found2 = i;
 
-                        if (reihe2[i] == symbuttons[pics[2]])
-                        {
-                            found3 = i;
-                        }
+                        if (reihe2[i] == symbuttons[pics[2]]) found3 = i;
 
-                        if (reihe2[i] == symbuttons[pics[3]])
-                        {
-                            found4 = i;
-                        }
+                        if (reihe2[i] == symbuttons[pics[3]]) found4 = i;
                     }
                 }
                 else if (reihe3.Contains(symbuttons[pics[0]]) && reihe3.Contains(symbuttons[pics[1]]) &&
                          reihe3.Contains(symbuttons[pics[2]]) && reihe3.Contains(symbuttons[pics[3]]))
                 {
                     reihe = 3;
-                    for (int i = 0; i < reihe3.Length; i++)
+                    for (var i = 0; i < reihe3.Length; i++)
                     {
-                        if (reihe3[i] == symbuttons[pics[0]])
-                        {
-                            found1 = i;
-                        }
+                        if (reihe3[i] == symbuttons[pics[0]]) found1 = i;
 
-                        if (reihe3[i] == symbuttons[pics[1]])
-                        {
-                            found2 = i;
-                        }
+                        if (reihe3[i] == symbuttons[pics[1]]) found2 = i;
 
-                        if (reihe3[i] == symbuttons[pics[2]])
-                        {
-                            found3 = i;
-                        }
+                        if (reihe3[i] == symbuttons[pics[2]]) found3 = i;
 
-                        if (reihe3[i] == symbuttons[pics[3]])
-                        {
-                            found4 = i;
-                        }
+                        if (reihe3[i] == symbuttons[pics[3]]) found4 = i;
                     }
                 }
                 else if (reihe4.Contains(symbuttons[pics[0]]) && reihe4.Contains(symbuttons[pics[1]]) &&
                          reihe4.Contains(symbuttons[pics[2]]) && reihe4.Contains(symbuttons[pics[3]]))
                 {
                     reihe = 4;
-                    for (int i = 0; i < reihe4.Length; i++)
+                    for (var i = 0; i < reihe4.Length; i++)
                     {
-                        if (reihe4[i] == symbuttons[pics[0]])
-                        {
-                            found1 = i;
-                        }
+                        if (reihe4[i] == symbuttons[pics[0]]) found1 = i;
 
-                        if (reihe4[i] == symbuttons[pics[1]])
-                        {
-                            found2 = i;
-                        }
+                        if (reihe4[i] == symbuttons[pics[1]]) found2 = i;
 
-                        if (reihe4[i] == symbuttons[pics[2]])
-                        {
-                            found3 = i;
-                        }
+                        if (reihe4[i] == symbuttons[pics[2]]) found3 = i;
 
-                        if (reihe4[i] == symbuttons[pics[3]])
-                        {
-                            found4 = i;
-                        }
+                        if (reihe4[i] == symbuttons[pics[3]]) found4 = i;
                     }
                 }
                 else if (reihe5.Contains(symbuttons[pics[0]]) && reihe5.Contains(symbuttons[pics[1]]) &&
                          reihe5.Contains(symbuttons[pics[2]]) && reihe5.Contains(symbuttons[pics[3]]))
                 {
                     reihe = 5;
-                    for (int i = 0; i < reihe5.Length; i++)
+                    for (var i = 0; i < reihe5.Length; i++)
                     {
-                        if (reihe5[i] == symbuttons[pics[0]])
-                        {
-                            found1 = i;
-                        }
+                        if (reihe5[i] == symbuttons[pics[0]]) found1 = i;
 
-                        if (reihe5[i] == symbuttons[pics[1]])
-                        {
-                            found2 = i;
-                        }
+                        if (reihe5[i] == symbuttons[pics[1]]) found2 = i;
 
-                        if (reihe5[i] == symbuttons[pics[2]])
-                        {
-                            found3 = i;
-                        }
+                        if (reihe5[i] == symbuttons[pics[2]]) found3 = i;
 
-                        if (reihe5[i] == symbuttons[pics[3]])
-                        {
-                            found4 = i;
-                        }
+                        if (reihe5[i] == symbuttons[pics[3]]) found4 = i;
                     }
                 }
                 else if (reihe6.Contains(symbuttons[pics[0]]) && reihe6.Contains(symbuttons[pics[1]]) &&
                          reihe6.Contains(symbuttons[pics[2]]) && reihe6.Contains(symbuttons[pics[3]]))
                 {
                     reihe = 6;
-                    for (int i = 0; i < reihe6.Length; i++)
+                    for (var i = 0; i < reihe6.Length; i++)
                     {
-                        if (reihe6[i] == symbuttons[pics[0]])
-                        {
-                            found1 = i;
-                        }
+                        if (reihe6[i] == symbuttons[pics[0]]) found1 = i;
 
-                        if (reihe6[i] == symbuttons[pics[1]])
-                        {
-                            found2 = i;
-                        }
+                        if (reihe6[i] == symbuttons[pics[1]]) found2 = i;
 
-                        if (reihe6[i] == symbuttons[pics[2]])
-                        {
-                            found3 = i;
-                        }
+                        if (reihe6[i] == symbuttons[pics[2]]) found3 = i;
 
-                        if (reihe6[i] == symbuttons[pics[3]])
-                        {
-                            found4 = i;
-                        }
+                        if (reihe6[i] == symbuttons[pics[3]]) found4 = i;
                     }
                 }
 
-                int[] founds = new[] {found1, found2, found3, found4};
-                string ausgabe = "";
-                foreach (var VARIABLE in founds)
-                {
-                    ausgabe += VARIABLE.ToString() + " ";
-                }
+                int[] founds = {found1, found2, found3, found4};
+                var ausgabe = "";
+                foreach (var VARIABLE in founds) ausgabe += VARIABLE + " ";
 
                 MessageBox.Show(ausgabe);
-                int length = founds.Length;
+                var length = founds.Length;
 
-                int temp = founds[0];
+                var temp = founds[0];
 
-                for (int i = 0; i < length; i++)
-                {
-                    for (int j = i + 1; j < length; j++)
+                for (var i = 0; i < length; i++)
+                for (var j = i + 1; j < length; j++)
+                    if (founds[i] > founds[j])
                     {
-                        if (founds[i] > founds[j])
-                        {
-                            temp = founds[i];
-                            founds[i] = founds[j];
-                            founds[j] = temp;
-                        }
+                        temp = founds[i];
+                        founds[i] = founds[j];
+                        founds[j] = temp;
                     }
-                }
 
                 ausgabe = "";
-                foreach (var VARIABLE in founds)
-                {
-                    ausgabe += VARIABLE.ToString() + " ";
-                }
+                foreach (var VARIABLE in founds) ausgabe += VARIABLE + " ";
 
                 MessageBox.Show(ausgabe);
 
-                BitmapImage b1 = new BitmapImage();
-                BitmapImage b2 = new BitmapImage();
-                BitmapImage b3 = new BitmapImage();
-                BitmapImage b4 = new BitmapImage();
+                var b1 = new BitmapImage();
+                var b2 = new BitmapImage();
+                var b3 = new BitmapImage();
+                var b4 = new BitmapImage();
                 Uri urip;
                 b1.BeginInit();
                 b2.BeginInit();
@@ -821,7 +617,6 @@ namespace KeepTalkingAndNobodyExplodes
         private void simonsays()
         {
             if ((bool) vokal)
-            {
                 switch (fehler)
                 {
                     case 0:
@@ -855,9 +650,7 @@ namespace KeepTalkingAndNobodyExplodes
                         lb_yellow.Foreground = Brushes.Blue;
                         break;
                 }
-            }
             else
-            {
                 switch (fehler)
                 {
                     case 0:
@@ -891,16 +684,15 @@ namespace KeepTalkingAndNobodyExplodes
                         lb_yellow.Foreground = Brushes.Red;
                         break;
                 }
-            }
 
-            lb_errors.Content = fehler.ToString() + ". Fehler";
+            lb_errors.Content = fehler + ". Fehler";
         }
 
         #endregion
 
         #region Words
 
-        IDictionary<string, string> kette = new Dictionary<string, string>();
+        private readonly IDictionary<string, string> kette = new Dictionary<string, string>();
 
 
         private void btnWords_Click(object sender, RoutedEventArgs e)
@@ -978,10 +770,7 @@ namespace KeepTalkingAndNobodyExplodes
             Display_inhalt.Items.Add("CE");
             Display_inhalt.Items.Add("C");
             Display_inhalt.Items.Add("Zu Spät");
-            foreach (string keys in kette.Keys)
-            {
-                Key_inhalt.Items.Add(keys);
-            }
+            foreach (var keys in kette.Keys) Key_inhalt.Items.Add(keys);
 
             lb_key.Visibility = Visibility.Hidden;
             Key_inhalt.Visibility = Visibility.Hidden;
@@ -998,11 +787,11 @@ namespace KeepTalkingAndNobodyExplodes
             right_bottom_word.Source = null;
         }
 
-        private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string inhalt = (string) Display_inhalt.SelectedValue;
-            BitmapImage pic = new BitmapImage();
-            Uri uripic = new Uri("Bilder/Words/eyes.png", UriKind.Relative);
+            var inhalt = (string) Display_inhalt.SelectedValue;
+            var pic = new BitmapImage();
+            var uripic = new Uri("Bilder/Words/eyes.png", UriKind.Relative);
             pic.BeginInit();
             pic.UriSource = uripic;
             pic.EndInit();
@@ -1088,16 +877,16 @@ namespace KeepTalkingAndNobodyExplodes
 
         #region Memory
 
-        private int stufe = 0;
+        private int stufe;
 
         //                          { Zahl, Position }
-        private int[] durch1 = new[] {0, 0};
-        private int[] durch2 = new[] {0, 0};
-        private int[] durch3 = new[] {0, 0};
-        private int[] durch4 = new[] {0, 0};
-        private int[] durch5 = new[] {0, 0};
-        private bool changed = false;
-        string search = "";
+        private int[] durch1 = {0, 0};
+        private int[] durch2 = {0, 0};
+        private int[] durch3 = {0, 0};
+        private int[] durch4 = {0, 0};
+        private int[] durch5 = {0, 0};
+        private bool changed;
+        private string search = "";
 
         private void btnMemory_Click(object sender, RoutedEventArgs e)
         {
@@ -1119,7 +908,7 @@ namespace KeepTalkingAndNobodyExplodes
                 memory_num.Visibility = Visibility.Hidden;
                 memory_pos.Visibility = Visibility.Hidden;
                 lb_saved_mem.Visibility = Visibility.Hidden;
-                lb_memory_durchgang.Content = (stufe + 1).ToString() + ". Druchgang";
+                lb_memory_durchgang.Content = stufe + 1 + ". Druchgang";
             }
         }
 
@@ -1127,9 +916,9 @@ namespace KeepTalkingAndNobodyExplodes
         {
             if (stufe < 5)
             {
-                int num = 0;
+                var num = 0;
                 int pos;
-                string ausgabe = "";
+                var ausgabe = "";
                 lb_saved_mem.Visibility = Visibility.Hidden;
                 btn_save_memory.Visibility = Visibility.Visible;
                 if (!int.TryParse(tb_anzeige.Text, out num))
@@ -1167,7 +956,6 @@ namespace KeepTalkingAndNobodyExplodes
                     else
                     {
                         if (changed)
-                        {
                             switch (stufe)
                             {
                                 case 1:
@@ -1180,7 +968,7 @@ namespace KeepTalkingAndNobodyExplodes
                                             break;
                                         case 2:
                                             pos = durch1[1];
-                                            ausgabe = pos.ToString() + ". Position";
+                                            ausgabe = pos + ". Position";
                                             search = "Number";
                                             break;
                                         case 3:
@@ -1190,7 +978,7 @@ namespace KeepTalkingAndNobodyExplodes
                                             break;
                                         case 4:
                                             pos = durch1[1];
-                                            ausgabe = pos.ToString() + ". Position";
+                                            ausgabe = pos + ". Position";
                                             search = "Number";
                                             break;
                                     }
@@ -1201,12 +989,12 @@ namespace KeepTalkingAndNobodyExplodes
                                     {
                                         case 1:
                                             pos = durch2[0];
-                                            ausgabe = "Beschriftung " + pos.ToString();
+                                            ausgabe = "Beschriftung " + pos;
                                             search = "Position";
                                             break;
                                         case 2:
                                             pos = durch1[0];
-                                            ausgabe = "Beschriftung " + pos.ToString();
+                                            ausgabe = "Beschriftung " + pos;
                                             search = "Position";
                                             break;
                                         case 3:
@@ -1215,7 +1003,7 @@ namespace KeepTalkingAndNobodyExplodes
                                             break;
                                         case 4:
                                             pos = durch1[1];
-                                            ausgabe = pos.ToString() + ". Position";
+                                            ausgabe = pos + ". Position";
                                             search = "Number";
                                             break;
                                     }
@@ -1226,7 +1014,7 @@ namespace KeepTalkingAndNobodyExplodes
                                     {
                                         case 1:
                                             pos = durch1[1];
-                                            ausgabe = pos.ToString() + ". Position";
+                                            ausgabe = pos + ". Position";
                                             search = "Number";
                                             break;
                                         case 2:
@@ -1235,12 +1023,12 @@ namespace KeepTalkingAndNobodyExplodes
                                             break;
                                         case 3:
                                             pos = durch2[1];
-                                            ausgabe = pos.ToString() + ". Position";
+                                            ausgabe = pos + ". Position";
                                             search = "Number";
                                             break;
                                         case 4:
                                             pos = durch3[1];
-                                            ausgabe = pos.ToString() + ". Position";
+                                            ausgabe = pos + ". Position";
                                             search = "Number";
                                             break;
                                     }
@@ -1251,29 +1039,28 @@ namespace KeepTalkingAndNobodyExplodes
                                     {
                                         case 1:
                                             pos = durch1[0];
-                                            ausgabe = "Beschriftung " + pos.ToString();
+                                            ausgabe = "Beschriftung " + pos;
                                             search = "Position";
                                             break;
                                         case 2:
                                             pos = durch2[0];
-                                            ausgabe = "Beschriftung " + pos.ToString();
+                                            ausgabe = "Beschriftung " + pos;
                                             search = "Position";
                                             break;
                                         case 3:
                                             pos = durch4[0];
-                                            ausgabe = "Beschriftung " + pos.ToString();
+                                            ausgabe = "Beschriftung " + pos;
                                             search = "Position";
                                             break;
                                         case 4:
                                             pos = durch3[0];
-                                            ausgabe = "Beschriftung " + pos.ToString();
+                                            ausgabe = "Beschriftung " + pos;
                                             search = "Position";
                                             break;
                                     }
 
                                     break;
                             }
-                        }
                     }
 
                     lb_answer.Content = ausgabe;
@@ -1305,7 +1092,6 @@ namespace KeepTalkingAndNobodyExplodes
         {
             if (stufe < 5)
             {
-                
                 changed = true;
                 string content;
                 if (search == "Position")
@@ -1367,14 +1153,13 @@ namespace KeepTalkingAndNobodyExplodes
 
         #endregion
 
-
         #region Complicated
 
         private void btnComplicated_Click(object sender, RoutedEventArgs e)
         {
             if (SwitchingTab())
             {
-                TabControl.SelectedIndex = 8;
+                TabControl.SelectedIndex = 7;
                 compli_blue.IsChecked = false;
                 compli_white.IsChecked = false;
                 compli_led.IsChecked = false;
@@ -1383,51 +1168,44 @@ namespace KeepTalkingAndNobodyExplodes
                 lb_comli_cut.Content = "";
             }
         }
+
         private void btn_compli_solve_Click(object sender, RoutedEventArgs e)
         {
-            string ans = "";
-            if ((bool)compli_stern.IsChecked)
+            var ans = "";
+            if ((bool) compli_stern.IsChecked)
             {
-                if ((bool)compli_led.IsChecked)
+                if ((bool) compli_led.IsChecked)
                 {
-                    if ((bool)compli_blue.IsChecked)
+                    if ((bool) compli_blue.IsChecked)
                     {
-                        if ((bool)compli_red.IsChecked)
-                        {
+                        if ((bool) compli_red.IsChecked)
                             ans = "N";
-                        }
                         else
-                        {
                             ans = "P";
-                        }
                     }
-                    else if ((bool)compli_red.IsChecked)
+                    else if ((bool) compli_red.IsChecked)
                     {
                         ans = "B";
                     }
-                    else if ((bool)compli_white.IsChecked)
+                    else if ((bool) compli_white.IsChecked)
                     {
                         ans = "B";
                     }
                 }
                 else
                 {
-                    if ((bool)compli_blue.IsChecked)
+                    if ((bool) compli_blue.IsChecked)
                     {
-                        if ((bool)compli_red.IsChecked)
-                        {
+                        if ((bool) compli_red.IsChecked)
                             ans = "P";
-                        }
                         else
-                        {
                             ans = "N";
-                        }
                     }
-                    else if ((bool)compli_red.IsChecked)
+                    else if ((bool) compli_red.IsChecked)
                     {
                         ans = "D";
                     }
-                    else if ((bool)compli_white.IsChecked)
+                    else if ((bool) compli_white.IsChecked)
                     {
                         ans = "D";
                     }
@@ -1435,91 +1213,75 @@ namespace KeepTalkingAndNobodyExplodes
             }
             else
             {
-                if ((bool)compli_led.IsChecked)
+                if ((bool) compli_led.IsChecked)
                 {
-                    if ((bool)compli_blue.IsChecked)
+                    if ((bool) compli_blue.IsChecked)
                     {
-                        if ((bool)compli_red.IsChecked)
-                        {
+                        if ((bool) compli_red.IsChecked)
                             ans = "S";
-                        }
                         else
-                        {
                             ans = "P";
-                        }
                     }
-                    else if ((bool)compli_red.IsChecked)
+                    else if ((bool) compli_red.IsChecked)
                     {
                         ans = "B";
                     }
-                    else if((bool)compli_white.IsChecked)
+                    else if ((bool) compli_white.IsChecked)
                     {
                         ans = "N";
                     }
                 }
                 else
                 {
-                    if ((bool)compli_blue.IsChecked)
+                    if ((bool) compli_blue.IsChecked)
                     {
-                        if ((bool)compli_red.IsChecked)
-                        {
+                        if ((bool) compli_red.IsChecked)
                             ans = "S";
-                        }
                         else
-                        {
                             ans = "S";
-                        }
                     }
-                    else if ((bool)compli_red.IsChecked)
+                    else if ((bool) compli_red.IsChecked)
                     {
                         ans = "S";
                     }
-                    else if ((bool)compli_white.IsChecked)
+                    else if ((bool) compli_white.IsChecked)
                     {
                         ans = "D";
                     }
                 }
             }
 
-            string cut = "";
+            var cut = "";
             if (ans == "D")
             {
                 cut = "Cut it";
-            }else if (ans == "N")
+            }
+            else if (ans == "N")
             {
                 cut = "Don't cut it";
-            }else if (ans == "S")
+            }
+            else if (ans == "S")
             {
-                if ((bool)iseven)
-                {
+                if ((bool) iseven)
                     cut = "Cut it";
-                }
                 else
-                {
                     cut = "Don't cut it";
-                }
-            }else if (ans == "P")
+            }
+            else if (ans == "P")
             {
-                if ((bool)parralel)
-                {
+                if ((bool) parralel)
                     cut = "Cut it";
-                }
                 else
-                {
                     cut = "Don't cut it";
-                }
             }
             else if (ans == "B")
             {
                 if (batteries >= 2)
-                {
                     cut = "Cut it";
-                }
                 else
-                {
                     cut = "Don't cut it";
-                }
             }
+
             lb_comli_cut.Content = cut;
         }
 
@@ -1527,15 +1289,15 @@ namespace KeepTalkingAndNobodyExplodes
 
         #region Sequence
 
-        private int blue = 0;
-        private int red = 0;
-        private int black = 0;
+        private int blue;
+        private int red;
+        private int black;
 
         private void btnSequence_Click(object sender, RoutedEventArgs e)
         {
             if (SwitchingTab())
             {
-                TabControl.SelectedIndex = 9;
+                TabControl.SelectedIndex = 8;
                 blue = 0;
                 red = 0;
                 black = 0;
@@ -1546,9 +1308,9 @@ namespace KeepTalkingAndNobodyExplodes
 
         private void Complicated_Blue_Click(object sender, RoutedEventArgs e)
         {
-            string content = "Cut wenn ";
+            var content = "Cut wenn ";
             blue++;
-            bool cases = false;
+            var cases = false;
             switch (blue)
             {
                 case 1:
@@ -1591,20 +1353,16 @@ namespace KeepTalkingAndNobodyExplodes
 
             CutOrNot_Label.Content = "Blau";
             if (cases)
-            {
                 CutOrNot.Content = content;
-            }
             else
-            {
                 CutOrNot.Content = "No more Wires";
-            }
         }
 
         private void Complicated_Red_Click(object sender, RoutedEventArgs e)
         {
-            string content = "Cut wenn ";
+            var content = "Cut wenn ";
             red++;
-            bool cases = false;
+            var cases = false;
             switch (red)
             {
                 case 1:
@@ -1647,20 +1405,16 @@ namespace KeepTalkingAndNobodyExplodes
 
             CutOrNot_Label.Content = "Rot";
             if (cases)
-            {
                 CutOrNot.Content = content;
-            }
             else
-            {
                 CutOrNot.Content = "No more Wires";
-            }
         }
 
         private void Complicated_Black_Click(object sender, RoutedEventArgs e)
         {
-            string content = "Cut wenn ";
+            var content = "Cut wenn ";
             black++;
-            bool cases = false;
+            var cases = false;
             switch (black)
             {
                 case 1:
@@ -1703,18 +1457,13 @@ namespace KeepTalkingAndNobodyExplodes
 
             CutOrNot_Label.Content = "Schwarz";
             if (cases)
-            {
                 CutOrNot.Content = content;
-            }
             else
-            {
                 CutOrNot.Content = "No more Wires";
-            }
         }
 
-        #endregion 
+        #endregion
 
-        // Noch nicht done
         #region Labyrinth
 
         private void btnLabyrinth_Click(object sender, RoutedEventArgs e)
@@ -1723,105 +1472,960 @@ namespace KeepTalkingAndNobodyExplodes
             {
                 TabControl.SelectedIndex = 9;
                 buildLabyrinth(0);
-                buildLabyrinth(21);
-
             }
         }
 
-
-        void buildLabyrinth(int layout)
+        private bool placeThings(int pos, string type)
         {
+            bool geht = false;
+            if (type == "P")
+            {
+                switch (pos)
+                {
+                    case 11:
+                        pos11.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 12:
+                        pos12.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 13:
+                        pos13.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 14:
+                        pos14.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 15:
+                        pos15.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 16:
+                        pos16.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 21:
+                        pos21.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 22:
+                        pos22.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 23:
+                        pos23.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 24:
+                        pos24.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 25:
+                        pos25.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 26:
+                        pos26.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 31:
+                        pos31.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 32:
+                        pos32.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 33:
+                        pos33.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 34:
+                        pos34.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 35:
+                        pos35.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 36:
+                        pos36.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 41:
+                        pos41.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 42:
+                        pos42.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 43:
+                        pos43.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 44:
+                        pos44.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 45:
+                        pos45.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 46:
+                        pos46.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 51:
+                        pos51.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 52:
+                        pos52.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 53:
+                        pos53.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 54:
+                        pos54.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 55:
+                        pos55.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 56:
+                        pos56.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 61:
+                        pos61.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 62:
+                        pos62.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 63:
+                        pos63.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 64:
+                        pos64.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 65:
+                        pos65.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                    case 66:
+                        pos66.Background = Brushes.Red;
+                        geht = true;
+                        break;
+                }
+
+            }
+            else
+            {
+                switch (pos)
+                {
+                    case 11:
+                        pos11.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 12:
+                        pos12.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 13:
+                        pos13.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 14:
+                        pos14.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 15:
+                        pos15.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 16:
+                        pos16.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 21:
+                        pos21.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 22:
+                        pos22.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 23:
+                        pos23.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 24:
+                        pos24.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 25:
+                        pos25.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 26:
+                        pos26.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 31:
+                        pos31.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 32:
+                        pos32.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 33:
+                        pos33.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 34:
+                        pos34.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 35:
+                        pos35.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 36:
+                        pos36.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 41:
+                        pos41.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 42:
+                        pos42.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 43:
+                        pos43.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 44:
+                        pos44.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 45:
+                        pos45.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 46:
+                        pos46.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 51:
+                        pos51.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 52:
+                        pos52.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 53:
+                        pos53.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 54:
+                        pos54.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 55:
+                        pos55.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 56:
+                        pos56.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 61:
+                        pos61.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 62:
+                        pos62.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 63:
+                        pos63.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 64:
+                        pos64.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 65:
+                        pos65.Background = Brushes.White;
+                        geht = true;
+                        break;
+                    case 66:
+                        pos66.Background = Brushes.White;
+                        geht = true;
+                        break;
+                }
+
+            }
+
+            return geht;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            bool trykreis = int.TryParse(labi_kreis.Text, out int kreis);
+            bool tryplayer = int.TryParse(labi_you.Text, out int player);
+            bool tryziel = int.TryParse(labi_ziel.Text, out int goal);
+            if (trykreis && tryplayer && tryziel)
+            {
+                
+                if (!buildLabyrinth(kreis))
+                {
+                    buildLabyrinth(0);
+                }
+                else if (!placeThings(player, "P"))
+                {
+                    buildLabyrinth(0);
+                }
+                else if (!placeThings(goal, "Z"))
+                {
+                    buildLabyrinth(0);
+                }
+
+                
+                
+            }
+            
+        }
+
+        private bool buildLabyrinth(int layout)
+        {
+            bool geht = true;
+            Thickness l5111 = new Thickness(5, 1, 1, 1);
+            Thickness l1513 = new Thickness(1, 5, 1, 3);
+            Thickness l1531 = new Thickness(1, 5, 3, 1);
+            Thickness l3511 = new Thickness(3, 5, 1, 1);
+            Thickness l1553 = new Thickness(1, 5, 5, 3);
+            Thickness l5131 = new Thickness(5, 1, 3, 1);
+            Thickness l3311 = new Thickness(3, 3, 1, 1);
+            Thickness l1133 = new Thickness(1, 1, 3, 3);
+            Thickness l3113 = new Thickness(3, 1, 1, 3);
+            Thickness l1313 = new Thickness(1, 3, 1, 3);
+            Thickness l1351 = new Thickness(1, 3, 5, 1);
+            Thickness l1331 = new Thickness(1, 3, 3, 1);
+            Thickness l3313 = new Thickness(3, 3, 1, 3);
+            Thickness l1113 = new Thickness(1, 1, 1, 3);
+            Thickness l1333 = new Thickness(1, 3, 3, 3);
+            Thickness l3151 = new Thickness(3, 1, 5, 1);
+            Thickness l1335 = new Thickness(1, 3, 3, 5);
+            Thickness l3115 = new Thickness(3, 1, 1, 5);
+            Thickness l1135 = new Thickness(1, 1, 3, 5);
+            Thickness l5513 = new Thickness(5, 5, 1, 3);
+            Thickness l1533 = new Thickness(1, 5, 3, 3);
+            Thickness l5311 = new Thickness(5, 3, 1, 1);
+            Thickness l3331 = new Thickness(3, 3, 3, 1);
+            Thickness l3131 = new Thickness(3, 1, 3, 1);
+            Thickness l5135 = new Thickness(5, 1, 3, 5);
+            Thickness l1315 = new Thickness(1, 3, 1, 5);
+            Thickness l3531 = new Thickness(3, 5, 3, 1);
+            Thickness l5133 = new Thickness(5, 1, 3, 3);
+            Thickness l1131 = new Thickness(1, 1, 3, 1);
+            Thickness l3513 = new Thickness(3, 5, 1, 3);
+            Thickness l3315 = new Thickness(3, 3, 1, 5);
+            Thickness l3153 = new Thickness(3, 1, 5, 3);
+            Thickness l3133 = new Thickness(3, 1, 3, 3);
+            Thickness l5531 = new Thickness(5, 5, 3, 1);
+            Thickness l5113 = new Thickness(5, 1, 1, 3);
+            Thickness l3351 = new Thickness(3, 3, 5, 1);
+            Thickness l1153 = new Thickness(1, 1, 5, 3);
+            Thickness l1355 = new Thickness(1, 3, 5, 5);
+            pos11.Background = Brushes.LightGray;
+            pos12.Background = Brushes.LightGray;
+            pos13.Background = Brushes.LightGray;
+            pos14.Background = Brushes.LightGray;
+            pos15.Background = Brushes.LightGray;
+            pos16.Background = Brushes.LightGray;
+            pos21.Background = Brushes.LightGray;
+            pos22.Background = Brushes.LightGray;
+            pos23.Background = Brushes.LightGray;
+            pos24.Background = Brushes.LightGray;
+            pos25.Background = Brushes.LightGray;
+            pos26.Background = Brushes.LightGray;
+            pos31.Background = Brushes.LightGray;
+            pos32.Background = Brushes.LightGray;
+            pos33.Background = Brushes.LightGray;
+            pos34.Background = Brushes.LightGray;
+            pos35.Background = Brushes.LightGray;
+            pos36.Background = Brushes.LightGray;
+            pos41.Background = Brushes.LightGray;
+            pos42.Background = Brushes.LightGray;
+            pos43.Background = Brushes.LightGray;
+            pos44.Background = Brushes.LightGray;
+            pos45.Background = Brushes.LightGray;
+            pos46.Background = Brushes.LightGray;
+            pos51.Background = Brushes.LightGray;
+            pos52.Background = Brushes.LightGray;
+            pos53.Background = Brushes.LightGray;
+            pos54.Background = Brushes.LightGray;
+            pos55.Background = Brushes.LightGray;
+            pos56.Background = Brushes.LightGray;
+            pos61.Background = Brushes.LightGray;
+            pos62.Background = Brushes.LightGray;
+            pos63.Background = Brushes.LightGray;
+            pos64.Background = Brushes.LightGray;
+            pos65.Background = Brushes.LightGray;
+            pos66.Background = Brushes.LightGray;
             switch (layout)
             {
-                case int pos when (pos == 21 || pos == 36):
+                case int pos when pos == 21 || pos == 36:
+
                     pos21.Background = Brushes.LightGreen;
                     pos36.Background = Brushes.LightGreen;
-                    pos12.BorderThickness = new Thickness(0, 5, 0, 3);
-                    pos13.BorderThickness = new Thickness(1, 5, 3, 1);
-                    pos14.BorderThickness = new Thickness(3, 5, 1, 1);
-                    pos15.BorderThickness = new Thickness(1, 5, 1, 3);
-                    pos16.BorderThickness = new Thickness(1, 5, 5, 3);
-                    pos21.BorderThickness = new Thickness(5, 1, 3, 1);
-                    pos22.BorderThickness = new Thickness(3, 3, 1, 1);
-                    pos23.BorderThickness = new Thickness(1, 1, 3, 3);
-                    pos24.BorderThickness = new Thickness(3, 1, 1, 3);
-                    pos25.BorderThickness = new Thickness(1, 3, 1, 3);
-                    pos26.BorderThickness = new Thickness(1, 3, 5, 1);
-
+                    pos12.BorderThickness = l1513;
+                    pos13.BorderThickness = l1531;
+                    pos14.BorderThickness = l3511;
+                    pos15.BorderThickness = l1513;
+                    pos16.BorderThickness = l1553;
+                    pos21.BorderThickness = l5131;
+                    pos22.BorderThickness = l3311;
+                    pos23.BorderThickness = l1133;
+                    pos24.BorderThickness = l3113;
+                    pos25.BorderThickness = l1313;
+                    pos26.BorderThickness = l1351;
+                    pos31.BorderThickness = l5131;
+                    pos32.BorderThickness = l3113;
+                    pos33.BorderThickness = l1331;
+                    pos34.BorderThickness = l3311;
+                    pos35.BorderThickness = l1313;
+                    pos41.BorderThickness = l5131;
+                    pos42.BorderThickness = l3313;
+                    pos43.BorderThickness = l1113;
+                    pos44.BorderThickness = l1133;
+                    pos45.BorderThickness = l3313;
+                    pos52.BorderThickness = l1313;
+                    pos53.BorderThickness = l1331;
+                    pos54.BorderThickness = l3311;
+                    pos55.BorderThickness = l1333;
+                    pos56.BorderThickness = l3151;
+                    pos62.BorderThickness = l1335;
+                    pos63.BorderThickness = l3115;
+                    pos64.BorderThickness = l1135;
+                    pos65.BorderThickness = l3115;
                     break;
-                case int pos when (pos == 25 || pos == 42):
-                    
+                case int pos when pos == 25 || pos == 42:
+                    pos25.Background = Brushes.LightGreen;
+                    pos42.Background = Brushes.LightGreen;
+                    pos11.BorderThickness = l5513;
+                    pos13.BorderThickness = l1533;
+                    pos16.BorderThickness = l1553;
+                    pos21.BorderThickness = l5311;
+                    pos22.BorderThickness = l1133;
+                    pos23.BorderThickness = l3311;
+                    pos24.BorderThickness = l1133;
+                    pos25.BorderThickness = l3113;
+                    pos26.BorderThickness = l1351;
+                    pos31.BorderThickness = l5131;
+                    pos32.BorderThickness = l3311;
+                    pos33.BorderThickness = l1133;
+                    pos34.BorderThickness = l3311;
+                    pos35.BorderThickness = l1313;
+                    pos42.BorderThickness = l1133;
+                    pos43.BorderThickness = l3311;
+                    pos44.BorderThickness = l1133;
+                    pos45.BorderThickness = l3331;
+                    pos46.BorderThickness = l3151;
+                    pos51.BorderThickness = l5111;
+                    pos52.BorderThickness = l3331;
+                    pos53.BorderThickness = l3131;
+                    pos54.BorderThickness = l3311;
+                    pos55.BorderThickness = l1133;
+                    pos56.BorderThickness = l3151;
+                    pos61.BorderThickness = l5135;
+                    pos62.BorderThickness = l3115;
+                    pos63.BorderThickness = l1135;
+                    pos64.BorderThickness = l3115;
+                    pos65.BorderThickness = l1315;
                     break;
-                case int pos when (pos == 44 || pos == 46):
-                    
+                case int pos when pos == 44 || pos == 46:
+                    pos44.Background = Brushes.LightGreen;
+                    pos46.Background = Brushes.LightGreen;
+                    pos12.BorderThickness = l1513;
+                    pos13.BorderThickness = l1531;
+                    pos14.BorderThickness = l3531;
+                    pos15.BorderThickness = l3511;
+                    pos21.BorderThickness = l5133;
+                    pos22.BorderThickness = l3331;
+                    pos23.BorderThickness = l3131;
+                    pos24.BorderThickness = l3113;
+                    pos25.BorderThickness = l1133;
+                    pos26.BorderThickness = l3151;
+                    pos31.BorderThickness = l5311;
+                    pos32.BorderThickness = l1131;
+                    pos33.BorderThickness = l3131;
+                    pos34.BorderThickness = l3311;
+                    pos35.BorderThickness = l1331;
+                    pos36.BorderThickness = l3151;
+                    pos41.BorderThickness = l5131;
+                    pos42.BorderThickness = l3131;
+                    pos43.BorderThickness = l3131;
+                    pos44.BorderThickness = l3131;
+                    pos45.BorderThickness = l3131;
+                    pos46.BorderThickness = l3151;
+                    pos51.BorderThickness = l5131;
+                    pos52.BorderThickness = l3113;
+                    pos53.BorderThickness = l1133;
+                    pos54.BorderThickness = l3131;
+                    pos55.BorderThickness = l3131;
+                    pos56.BorderThickness = l3151;
+                    pos62.BorderThickness = l1315;
+                    pos63.BorderThickness = l1315;
+                    pos64.BorderThickness = l1135;
+                    pos65.BorderThickness = l3115;
                     break;
-                case int pos when (pos == 11 || pos == 41):
-                    
+                case int pos when pos == 11 || pos == 41:
+                    pos11.Background = Brushes.LightGreen;
+                    pos41.Background = Brushes.LightGreen;
+                    pos12.BorderThickness = l1531;
+                    pos13.BorderThickness = l3513;
+                    pos14.BorderThickness = l1513;
+                    pos15.BorderThickness = l1513;
+                    pos21.BorderThickness = l5131;
+                    pos22.BorderThickness = l3131;
+                    pos23.BorderThickness = l3311;
+                    pos24.BorderThickness = l1313;
+                    pos25.BorderThickness = l1313;
+                    pos31.BorderThickness = l5131;
+                    pos32.BorderThickness = l3113;
+                    pos33.BorderThickness = l1133;
+                    pos34.BorderThickness = l3311;
+                    pos35.BorderThickness = l1333;
+                    pos36.BorderThickness = l3151;
+                    pos41.BorderThickness = l5131;
+                    pos42.BorderThickness = l3313;
+                    pos43.BorderThickness = l1313;
+                    pos44.BorderThickness = l1113;
+                    pos45.BorderThickness = l1313;
+                    pos52.BorderThickness = l1313;
+                    pos53.BorderThickness = l1313;
+                    pos54.BorderThickness = l1313;
+                    pos55.BorderThickness = l1331;
+                    pos56.BorderThickness = l3151;
+                    pos62.BorderThickness = l1315;
+                    pos63.BorderThickness = l1335;
+                    pos64.BorderThickness = l3315;
+                    pos65.BorderThickness = l1135;
+                    pos66.BorderThickness = new Thickness(3, 1, 5, 5);
                     break;
-                case int pos when (pos == 35 || pos == 64):
-                    
+                case int pos when pos == 35 || pos == 64:
+                    pos35.Background = Brushes.LightGreen;
+                    pos64.Background = Brushes.LightGreen;
+                    pos11.BorderThickness = l5513;
+                    pos12.BorderThickness = l1513;
+                    pos13.BorderThickness = l1513;
+                    pos14.BorderThickness = l1513;
+                    pos21.BorderThickness = l5311;
+                    pos22.BorderThickness = l1313;
+                    pos23.BorderThickness = l1313;
+                    pos24.BorderThickness = new Thickness(1, 3, 1, 1);
+                    pos25.BorderThickness = l1133;
+                    pos26.BorderThickness = l3153;
+                    pos32.BorderThickness = l1331;
+                    pos33.BorderThickness = l3313;
+                    pos34.BorderThickness = l1133;
+                    pos35.BorderThickness = l3311;
+                    pos36.BorderThickness = l1351;
+                    pos41.BorderThickness = l5131;
+                    pos42.BorderThickness = l3113;
+                    pos43.BorderThickness = l1313;
+                    pos44.BorderThickness = l1331;
+                    pos45.BorderThickness = l3133;
+                    pos46.BorderThickness = l3151;
+                    pos51.BorderThickness = l5131;
+                    pos52.BorderThickness = l3311;
+                    pos53.BorderThickness = l1313;
+                    pos54.BorderThickness = l1113;
+                    pos55.BorderThickness = l1333;
+                    pos56.BorderThickness = l3151;
+                    pos61.BorderThickness = l5135;
+                    pos62.BorderThickness = l3115;
+                    pos63.BorderThickness = l1315;
+                    pos64.BorderThickness = l1315;
+                    pos65.BorderThickness = l1315;
                     break;
-                case int pos when (pos == 15 || pos == 53):
-                    
+                case int pos when pos == 15 || pos == 53:
+                    pos15.Background = Brushes.LightGreen;
+                    pos53.Background = Brushes.LightGreen;
+                    pos11.BorderThickness = l5531;
+                    pos12.BorderThickness = l3511;
+                    pos13.BorderThickness = l1531;
+                    pos14.BorderThickness = l3513;
+                    pos21.BorderThickness = l5131;
+                    pos22.BorderThickness = l3131;
+                    pos23.BorderThickness = l3131;
+                    pos24.BorderThickness = l3311;
+                    pos25.BorderThickness = l1133;
+                    pos26.BorderThickness = l3151;
+                    pos32.BorderThickness = l1133;
+                    pos33.BorderThickness = l3133;
+                    pos34.BorderThickness = l3131;
+                    pos35.BorderThickness = l3311;
+                    pos41.BorderThickness = l5113;
+                    pos42.BorderThickness = l1331;
+                    pos43.BorderThickness = l3311;
+                    pos44.BorderThickness = l1131;
+                    pos45.BorderThickness = l3131;
+                    pos46.BorderThickness = l3351;
+                    pos51.BorderThickness = l5311;
+                    pos52.BorderThickness = l1133;
+                    pos53.BorderThickness = l3133;
+                    pos54.BorderThickness = l3131;
+                    pos55.BorderThickness = l3113;
+                    pos62.BorderThickness = l1315;
+                    pos63.BorderThickness = l1315;
+                    pos64.BorderThickness = l1135;
+                    pos65.BorderThickness = l3315;
                     break;
-                case int pos when (pos == 12 || pos == 62):
+                case int pos when pos == 12 || pos == 62:
+                    pos12.Background = Brushes.LightGreen;
+                    pos62.Background = Brushes.LightGreen;
+                    pos12.BorderThickness = l1513;
+                    pos13.BorderThickness = l1513;
+                    pos14.BorderThickness = l1531;
+                    pos15.BorderThickness = l3511;
+                    pos21.BorderThickness = l5131;
+                    pos22.BorderThickness = l3311;
+                    pos23.BorderThickness = l1333;
+                    pos24.BorderThickness = l3113;
+                    pos25.BorderThickness = l1133;
+                    pos26.BorderThickness = l3151;
+                    pos31.BorderThickness = l5113;
+                    pos32.BorderThickness = l1133;
+                    pos33.BorderThickness = l3311;
+                    pos34.BorderThickness = l1333;
+                    pos35.BorderThickness = l3311;
+                    pos36.BorderThickness = l1153;
+                    pos41.BorderThickness = l5311;
+                    pos42.BorderThickness = l1331;
+                    pos43.BorderThickness = new Thickness(3, 1, 1, 1);
+                    pos44.BorderThickness = l1313;
+                    pos45.BorderThickness = l1133;
+                    pos46.BorderThickness = l3351;
+                    pos51.BorderThickness = l5131;
+                    pos52.BorderThickness = l3133;
+                    pos53.BorderThickness = l3113;
+                    pos54.BorderThickness = l1313;
+                    pos55.BorderThickness = l1331;
+                    pos56.BorderThickness = l3151;
+                    pos62.BorderThickness = l1315;
+                    pos63.BorderThickness = l1315;
+                    pos64.BorderThickness = l1315;
                     break;
-                case int pos when (pos == 14 || pos == 43):
+                case int pos when pos == 14 || pos == 43:
+                    pos14.Background = Brushes.LightGreen;
+                    pos43.Background = Brushes.LightGreen;
+                    pos11.BorderThickness = l5531;
+                    pos12.BorderThickness = l3511;
+                    pos13.BorderThickness = l1513;
+                    pos14.BorderThickness = l1531;
+                    pos15.BorderThickness = l3511;
+                    pos22.BorderThickness = l1113;
+                    pos23.BorderThickness = l1333;
+                    pos24.BorderThickness = l3113;
+                    pos25.BorderThickness = l1133;
+                    pos26.BorderThickness = l3151;
+                    pos31.BorderThickness = l5131;
+                    pos32.BorderThickness = l3311;
+                    pos33.BorderThickness = l1313;
+                    pos34.BorderThickness = l1313;
+                    pos35.BorderThickness = l1331;
+                    pos36.BorderThickness = l3151;
+                    pos41.BorderThickness = l5131;
+                    pos42.BorderThickness = l3113;
+                    pos43.BorderThickness = l1331;
+                    pos44.BorderThickness = l3313;
+                    pos45.BorderThickness = l1113;
+                    pos46.BorderThickness = l1153;
+                    pos51.BorderThickness = l5131;
+                    pos52.BorderThickness = l3331;
+                    pos53.BorderThickness = l3113;
+                    pos54.BorderThickness = l1313;
+                    pos55.BorderThickness = l1313;
+                    pos56.BorderThickness = new Thickness(1, 3, 5, 3);
+                    pos63.BorderThickness = l1315;
+                    pos64.BorderThickness = l1315;
+                    pos65.BorderThickness = l1315;
+                    pos66.BorderThickness = l1355;
                     break;
-                case int pos when (pos == 23 || pos == 51):
+                case int pos when pos == 23 || pos == 51:
+                    pos23.Background = Brushes.LightGreen;
+                    pos51.Background = Brushes.LightGreen;
+                    pos11.BorderThickness = l5531;
+                    pos12.BorderThickness = l3511;
+                    pos13.BorderThickness = l1513;
+                    pos14.BorderThickness = l1513;
+                    pos21.BorderThickness = l5131;
+                    pos22.BorderThickness = l3131;
+                    pos23.BorderThickness = l3311;
+                    pos24.BorderThickness = l1333;
+                    pos25.BorderThickness = l3131;
+                    pos26.BorderThickness = l3151;
+                    pos32.BorderThickness = l1113;
+                    pos33.BorderThickness = l1133;
+                    pos34.BorderThickness = l3311;
+                    pos35.BorderThickness = l1133;
+                    pos36.BorderThickness = l3151;
+                    pos41.BorderThickness = l5131;
+                    pos42.BorderThickness = l3331;
+                    pos43.BorderThickness = l3311;
+                    pos44.BorderThickness = l1133;
+                    pos45.BorderThickness = l3313;
+                    pos51.BorderThickness = l5131;
+                    pos52.BorderThickness = l3131;
+                    pos53.BorderThickness = l3131;
+                    pos54.BorderThickness = l3311;
+                    pos55.BorderThickness = l1331;
+                    pos56.BorderThickness = l3153;
+                    pos62.BorderThickness = l1135;
+                    pos63.BorderThickness = l3115;
+                    pos64.BorderThickness = l1135;
+                    pos65.BorderThickness = l3115;
+                    pos66.BorderThickness = l1355;
+                    break;
                 default:
+                    Thickness l1511 = new Thickness(1, 5, 1, 1);
+                    Thickness l1111 = new Thickness(1, 1, 1, 1);
+                    Thickness l1151 = new Thickness(1, 1, 5, 1);
+                    Thickness l1115 = new Thickness(1, 1, 1, 5);
                     pos11.BorderThickness = new Thickness(5, 5, 1, 1);
-                    pos12.BorderThickness = new Thickness(1, 5, 1, 1);
-                    pos13.BorderThickness = new Thickness(1, 5, 1, 1);
-                    pos14.BorderThickness = new Thickness(1, 5, 1, 1);
-                    pos15.BorderThickness = new Thickness(1, 5, 1, 1);
+                    pos12.BorderThickness = l1511;
+                    pos13.BorderThickness = l1511;
+                    pos14.BorderThickness = l1511;
+                    pos15.BorderThickness = l1511;
                     pos16.BorderThickness = new Thickness(1, 5, 5, 1);
-                    pos21.BorderThickness = new Thickness(5, 1, 1, 1);
-                    pos22.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos23.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos24.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos25.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos26.BorderThickness = new Thickness(1, 1, 5, 1);
-                    pos31.BorderThickness = new Thickness(5, 1, 1, 1);
-                    pos32.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos33.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos34.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos35.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos36.BorderThickness = new Thickness(1, 1, 5, 1);
-                    pos41.BorderThickness = new Thickness(5, 1, 1, 1);
-                    pos42.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos43.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos44.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos45.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos46.BorderThickness = new Thickness(1, 1, 5, 1);
-                    pos51.BorderThickness = new Thickness(5, 1, 1, 1);
-                    pos52.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos53.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos54.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos55.BorderThickness = new Thickness(1, 1, 1, 1);
-                    pos56.BorderThickness = new Thickness(1, 1, 5, 1);
+                    pos21.BorderThickness = l5111;
+                    pos22.BorderThickness = l1111;
+                    pos23.BorderThickness = l1111;
+                    pos24.BorderThickness = l1111;
+                    pos25.BorderThickness = l1111;
+                    pos26.BorderThickness = l1151;
+                    pos31.BorderThickness = l5111;
+                    pos32.BorderThickness = l1111;
+                    pos33.BorderThickness = l1111;
+                    pos34.BorderThickness = l1111;
+                    pos35.BorderThickness = l1111;
+                    pos36.BorderThickness = l1151;
+                    pos41.BorderThickness = l5111;
+                    pos42.BorderThickness = l1111;
+                    pos43.BorderThickness = l1111;
+                    pos44.BorderThickness = l1111;
+                    pos45.BorderThickness = l1111;
+                    pos46.BorderThickness = l1151;
+                    pos51.BorderThickness = l5111;
+                    pos52.BorderThickness = l1111;
+                    pos53.BorderThickness = l1111;
+                    pos54.BorderThickness = l1111;
+                    pos55.BorderThickness = l1111;
+                    pos56.BorderThickness = l1151;
                     pos61.BorderThickness = new Thickness(5, 1, 1, 5);
-                    pos62.BorderThickness = new Thickness(1, 1, 1, 5);
-                    pos63.BorderThickness = new Thickness(1, 1, 1, 5);
-                    pos64.BorderThickness = new Thickness(1, 1, 1, 5);
-                    pos65.BorderThickness = new Thickness(1, 1, 1, 5);
+                    pos62.BorderThickness = l1115;
+                    pos63.BorderThickness = l1115;
+                    pos64.BorderThickness = l1115;
+                    pos65.BorderThickness = l1115;
                     pos66.BorderThickness = new Thickness(1, 1, 5, 5);
+                    geht = false;
                     break;
             }
+
+            return geht;
         }
+
         #endregion
 
-        // Noch nicht done
         #region Passwd
 
+        private List<string> words = new List<string>();
+        private List<string> filter_first = new List<string>();
+        private List<string> filter_second = new List<string>();
+        private List<string> filter_third = new List<string>();
+        private List<string> filter_fourth = new List<string>();
         private void btnPasswd_Click(object sender, RoutedEventArgs e)
         {
-            if (SwitchingTab()) TabControl.SelectedIndex = 10;
+            if (SwitchingTab())
+            {
+                TabControl.SelectedIndex = 10;
+                words.Add("angst");
+                words.Add("atmen");
+                words.Add("beten");
+                words.Add("bombe");
+                words.Add("danke");
+                words.Add("draht");
+                words.Add("druck");
+                words.Add("drück");
+                words.Add("farbe");
+                words.Add("fehlt");
+                words.Add("ferse");
+                words.Add("kabel");
+                words.Add("knall");
+                words.Add("knapp");
+                words.Add("knopf");
+                words.Add("leere");
+                words.Add("legal");
+                words.Add("lehre");
+                words.Add("mathe");
+                words.Add("matte");
+                words.Add("panik");
+                words.Add("pieps");
+                words.Add("rauch");
+                words.Add("ruhig");
+                words.Add("saite");
+                words.Add("sehne");
+                words.Add("seite");
+                words.Add("sende");
+                words.Add("strom");
+                words.Add("super");
+                words.Add("timer");
+                words.Add("übrig");
+                words.Add("verse");
+                words.Add("warte");
+                words.Add("zange");
+                filter_first.Clear();
+                filter_second.Clear();
+                filter_third.Clear();
+                filter_fourth.Clear();
+                Zeile1.Text = "";
+                Zeile2.Text = "";
+                Zeile3.Text = "";
+                Zeile4.Text = "";
+                pass.Content = "";
+                Zeile2.Visibility = Visibility.Hidden;
+                Zeile3.Visibility = Visibility.Hidden;
+                Zeile4.Visibility = Visibility.Hidden;
+            }
+        }
+        private void Zeile1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            filter_first.Clear();
+            for (int i = 0; i < Zeile1.Text.Length; i++)
+            {
+                foreach (string word in words)
+                {
+                    if (word.Substring(0,1) == Zeile1.Text.Substring(i,1))
+                    {
+                        filter_first.Add(word);
+                    }
+                }
+            }
+
+            Zeile2.Visibility = Visibility.Visible;
         }
 
+        private void Zeile2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            filter_second.Clear();
+            
+            for (int i = 0; i < Zeile2.Text.Length; i++)
+            {
+                foreach (string word in filter_first)
+                {
+                    if (word.Substring(1, 1) == Zeile2.Text.Substring(i, 1))
+                    {
+                        filter_second.Add(word);
+                    }
+                }
+            }
 
+            Zeile3.Visibility = Visibility.Visible;
+        }
+
+        private void Zeile3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            filter_third.Clear();
+            
+            for (int i = 0; i < Zeile3.Text.Length; i++)
+            {
+                foreach (string word in filter_second)
+                {
+                    if (word.Substring(2, 1) == Zeile3.Text.Substring(i, 1))
+                    {
+                        filter_third.Add(word);
+                    }
+                }
+            }
+
+            try
+            {
+                if (filter_third.Count == 1 || filter_third[0] == filter_third[1])
+                {
+                 pass.Content = filter_third[0];
+                }
+                else
+                {
+                    Zeile4.Visibility = Visibility.Visible;
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine("Cool");
+            }
+           
+           
+        }
+
+        private void Zeile4_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            filter_fourth.Clear();
+            for (int i = 0; i < Zeile4.Text.Length; i++)
+            {
+                foreach (string word in filter_third)
+                {
+                    if (word.Substring(3, 1) == Zeile4.Text.Substring(i, 1))
+                    {
+                        filter_fourth.Add(word);
+                    }
+                }
+            }
+
+            string ausgabe = "";
+            foreach (var VARIABLE in filter_fourth)
+            {
+                ausgabe += VARIABLE;
+            }
+
+            MessageBox.Show(ausgabe);
+
+            try
+            {
+                if (filter_fourth.Count == 1 || filter_fourth[0] == filter_fourth[1])
+                {
+                    pass.Content = filter_fourth[0];
+                }
+                else
+                {
+                    pass.Content = "Da war wohl ein Fehler";
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine("cool");
+            }
+            
+        }
 
         #endregion
+
 
     }
 }
