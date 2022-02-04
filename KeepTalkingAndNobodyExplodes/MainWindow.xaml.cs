@@ -2491,7 +2491,45 @@ namespace KeepTalkingAndNobodyExplodes
             else if (sender == bt_submit_queng_laby)
             {
                 input = tb_quengel_laby.Text;
+                tb_quengel_laby.Text = "";
+            }else if (sender == bt_submit_queng_passwd)
+            {
+                input = tb_quengel_passwd.Text;
+                tb_quengel_passwd.Text = "";
             }
+
+            string output = "";
+            int inputnr = -1;
+            int.TryParse(input, out inputnr);
+            switch (inputnr)
+            {
+                case int nr when nr == 11101 || nr == 10011:
+                    output = "oben";
+                    break;
+                case int nr when nr == 1101 || nr == 10001:
+                    output = "unten";
+                    break;
+                case int nr when nr == 10111 || nr == 10110:
+                    output = "links";
+                    break;
+                case int nr when nr == 111010 || nr == 100010:
+                    output = "rechts";
+                    break;
+                default:
+                    output = "wrong";
+                    break;
+            }
+            lb_queng_main.Content = output;
+            lb_queng_wire.Content = output;
+            lb_queng_Button.Content = output;
+            lb_queng_Symbol.Content = output;
+            lb_queng_Simon.Content = output;
+            lb_queng_words.Content = output;
+            lb_queng_Memory.Content = output;
+            lb_queng_Complicated.Content = output;
+            lb_queng_sequence.Content = output;
+            lb_queng_laby.Content = output;
+            lb_queng_passwd.Content = output;
         }
 
 

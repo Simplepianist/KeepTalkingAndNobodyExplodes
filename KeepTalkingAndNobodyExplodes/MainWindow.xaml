@@ -10,25 +10,25 @@
                     VerticalAlignment="Top" Width="792">
             <TabItem Header="Main" Margin="-2,-1">
                 <Grid Background="#FFE5E5E5" Margin="0,-10,-3,3">
-                    <Button x:Name="btnWires" Content="Wires" HorizontalAlignment="Left" Margin="0,30,0,0"
+                    <Button x:Name="btnWires" Content="Wires" HorizontalAlignment="Left" Margin="64,142,0,0"
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnWires_Click" />
-                    <Button x:Name="btnButton" Content="Buttons" HorizontalAlignment="Left" Margin="112,30,0,0"
+                    <Button x:Name="btnButton" Content="Buttons" HorizontalAlignment="Left" Margin="191,142,0,0"
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnButton_Click" />
-                    <Button x:Name="btnSymbols" Content="Symbols" HorizontalAlignment="Left" Margin="224,30,0,0"
+                    <Button x:Name="btnSymbols" Content="Symbols" HorizontalAlignment="Left" Margin="319,142,0,0"
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnSymbols_Click" />
-                    <Button x:Name="btnSimonSays" Content="Simon Says" HorizontalAlignment="Left" Margin="336,30,0,0"
+                    <Button x:Name="btnSimonSays" Content="Simon Says" HorizontalAlignment="Left" Margin="64,204,0,0"
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnSimonSays_Click" />
-                    <Button x:Name="btnWords" Content="Wörterkette" HorizontalAlignment="Left" Margin="448,30,0,0"
+                    <Button x:Name="btnWords" Content="Wörterkette" HorizontalAlignment="Left" Margin="191,204,0,0"
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnWords_Click" />
-                    <Button x:Name="btnMemory" Content="Memory" HorizontalAlignment="Left" Margin="252,124,0,0"
+                    <Button x:Name="btnMemory" Content="Memory" HorizontalAlignment="Left" Margin="448,142,0,0"
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnMemory_Click" />
-                    <Button x:Name="btnComplicated" Content="Complicated" HorizontalAlignment="Left" Margin="0,72,0,0"
+                    <Button x:Name="btnComplicated" Content="Complicated" HorizontalAlignment="Left" Margin="319,204,0,0"
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnComplicated_Click" />
-                    <Button x:Name="btnSequence" Content="Sequence" HorizontalAlignment="Left" Margin="112,72,0,0"
+                    <Button x:Name="btnSequence" Content="Sequence" HorizontalAlignment="Left" Margin="448,204,0,0"
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnSequence_Click" />
-                    <Button x:Name="btnLabirinth" Content="Labyrinth" HorizontalAlignment="Left" Margin="224,72,0,0"
+                    <Button x:Name="btnLabirinth" Content="Labyrinth" HorizontalAlignment="Left" Margin="191,267,0,0"
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnLabyrinth_Click" />
-                    <Button x:Name="btnPasswd" Content="Passwort" HorizontalAlignment="Left" Margin="336,72,0,0"
+                    <Button x:Name="btnPasswd" Content="Passwort" HorizontalAlignment="Left" Margin="319,267,0,0"
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnPasswd_Click" />
 
 
@@ -97,6 +97,8 @@
                     <TextBox x:Name="tb_quengel_main" HorizontalAlignment="Left" Height="23" Margin="631,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
                     <Button x:Name="bt_submit_queng_main" Content="Submit" HorizontalAlignment="Left" Margin="661,354,0,0" VerticalAlignment="Top" Width="71" Click="bt_submit_queng_Click"/>
                     <Label x:Name="lb_queng_main" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="631,379,0,0" VerticalAlignment="Top" Width="128"/>
+                    <Label Content="Keep Talking and Nobody Explodes" FontSize="28" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="605"/>
+                    <Label Content="Main-Menü" HorizontalAlignment="Left" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Margin="79,74,0,0" VerticalAlignment="Top" Width="467"/>
 
                 </Grid>
             </TabItem>
