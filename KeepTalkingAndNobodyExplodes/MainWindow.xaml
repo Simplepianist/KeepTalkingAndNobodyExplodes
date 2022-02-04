@@ -20,7 +20,7 @@
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnSimonSays_Click" />
                     <Button x:Name="btnWords" Content="Wörterkette" HorizontalAlignment="Left" Margin="448,30,0,0"
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnWords_Click" />
-                    <Button x:Name="btnMemory" Content="Memory" HorizontalAlignment="Left" Margin="560,30,0,0"
+                    <Button x:Name="btnMemory" Content="Memory" HorizontalAlignment="Left" Margin="252,124,0,0"
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnMemory_Click" />
                     <Button x:Name="btnComplicated" Content="Complicated" HorizontalAlignment="Left" Margin="0,72,0,0"
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnComplicated_Click" />
@@ -32,7 +32,7 @@
                             VerticalAlignment="Top" Width="112" Height="47" Click="btnPasswd_Click" />
 
 
-                    <Grid HorizontalAlignment="Left" Height="315" Margin="615,105,0,0" VerticalAlignment="Top"
+                    <Grid HorizontalAlignment="Left" Height="315" Margin="615,10,0,0" VerticalAlignment="Top"
                           Width="164">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50" />
@@ -93,6 +93,10 @@
                            VerticalAlignment="Top" Width="80" />
                     <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
                            HorizontalAlignment="Left" Margin="0,336,0,0" VerticalAlignment="Top" Width="80" />
+                    <Label x:Name="Quengel_main" Content="Quengel" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Margin="631,274,0,0" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="tb_quengel_main" HorizontalAlignment="Left" Height="23" Margin="631,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Button x:Name="bt_submit_queng_main" Content="Submit" HorizontalAlignment="Left" Margin="661,354,0,0" VerticalAlignment="Top" Width="71" Click="bt_submit_queng_Click"/>
+                    <Label x:Name="lb_queng_main" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="631,379,0,0" VerticalAlignment="Top" Width="128"/>
 
                 </Grid>
             </TabItem>
@@ -158,12 +162,16 @@
                            VerticalAlignment="Top" Width="80" />
                     <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
                            HorizontalAlignment="Left" Margin="0,328,0,0" VerticalAlignment="Top" Width="80" />
+                    <Label x:Name="Quengel_wire" Content="Quengel" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Margin="625,279,0,0" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="tb_quengel_wire" HorizontalAlignment="Left" Height="23" Margin="625,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Button x:Name="bt_submit_queng_wire" Content="Submit" HorizontalAlignment="Left" Margin="655,359,0,0" VerticalAlignment="Top" Width="71" Click="bt_submit_queng_Click"/>
+                    <Label x:Name="lb_queng_wire" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="625,384,0,0" VerticalAlignment="Top" Width="128"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Button">
                 <Grid Background="#FFE5E5E5">
                     <Label FontSize="25" FontWeight="Bold" HorizontalContentAlignment="Center"
-                           HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786" />
+                           HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="52" Width="786" Content="Buttons" />
                     <Button x:Name="Back1" Content="&lt;--" HorizontalAlignment="Left" Margin="10,10,0,0"
                             VerticalAlignment="Top" Width="47" Height="38" Grid.ColumnSpan="2" Click="Back_Click" />
                     <RadioButton x:Name="ch_red" GroupName="Farbe" Content="Rot" HorizontalAlignment="Left"
@@ -236,6 +244,10 @@
                            VerticalAlignment="Top" Width="80" />
                     <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
                            HorizontalAlignment="Left" Margin="0,328,0,0" VerticalAlignment="Top" Width="80" />
+                    <Label x:Name="Quengel_Button" Content="Quengel" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Margin="625,279,0,0" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="tb_quengel_Button" HorizontalAlignment="Left" Height="23" Margin="625,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Button x:Name="bt_submit_queng_Button" Content="Submit" HorizontalAlignment="Left" Margin="655,359,0,0" VerticalAlignment="Top" Width="71" Click="bt_submit_queng_Click"/>
+                    <Label x:Name="lb_queng_Button" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="625,384,0,0" VerticalAlignment="Top" Width="128"/>
 
 
                 </Grid>
@@ -462,6 +474,10 @@
                             Margin="424,373,0,0">
                         <Image x:Name="sym4" />
                     </Button>
+                    <Label x:Name="Quengel_Symbol" Content="Quengel" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Margin="625,279,0,0" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="tb_quengel_Symbol" HorizontalAlignment="Left" Height="23" Margin="625,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Button x:Name="bt_submit_queng_Symbol" Content="Submit" HorizontalAlignment="Left" Margin="655,359,0,0" VerticalAlignment="Top" Width="71" Click="bt_submit_queng_Click"/>
+                    <Label x:Name="lb_queng_Symbol" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="625,384,0,0" VerticalAlignment="Top" Width="128"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Simon says">
@@ -534,6 +550,10 @@
                            VerticalAlignment="Top" Width="80" />
                     <Label Content="Fehler:" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
                            HorizontalAlignment="Left" Margin="0,328,0,0" VerticalAlignment="Top" Width="80" />
+                    <Label x:Name="Quengel_Simon" Content="Quengel" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Margin="625,279,0,0" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="tb_quengel_Simon" HorizontalAlignment="Left" Height="23" Margin="625,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Button x:Name="bt_submit_queng_Simon" Content="Submit" HorizontalAlignment="Left" Margin="655,359,0,0" VerticalAlignment="Top" Width="71" Click="bt_submit_queng_Click"/>
+                    <Label x:Name="lb_queng_Simon" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="625,384,0,0" VerticalAlignment="Top" Width="128"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Words">
@@ -637,6 +657,10 @@
                     </Label>
                     <Label x:Name="lb_answers" HorizontalAlignment="Left" Margin="229,297,0,0" VerticalAlignment="Top"
                            Height="55" Width="322" />
+                    <Label x:Name="Quengel_words" Content="Quengel" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Margin="625,279,0,0" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="tb_quengel_words" HorizontalAlignment="Left" Height="23" Margin="625,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Button x:Name="bt_submit_queng_words" Content="Submit" HorizontalAlignment="Left" Margin="655,359,0,0" VerticalAlignment="Top" Width="71" Click="bt_submit_queng_Click"/>
+                    <Label x:Name="lb_queng_words" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="625,384,0,0" VerticalAlignment="Top" Width="128"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Memory">
@@ -709,6 +733,10 @@
                            Margin="270,234,0,0" VerticalAlignment="Top" Height="27" Width="240" />
                     <Label x:Name="lb_saved_mem" HorizontalContentAlignment="Center" Content="Saved"
                            HorizontalAlignment="Left" Margin="345,385,0,0" VerticalAlignment="Top" Width="87" />
+                    <Label x:Name="Quengel_Memory" Content="Quengel" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Margin="625,279,0,0" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="tb_quengel_Memory" HorizontalAlignment="Left" Height="23" Margin="625,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Button x:Name="bt_submit_queng_Memory" Content="Submit" HorizontalAlignment="Left" Margin="655,359,0,0" VerticalAlignment="Top" Width="71" Click="bt_submit_queng_Click"/>
+                    <Label x:Name="lb_queng_Memory" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="625,384,0,0" VerticalAlignment="Top" Width="128"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Complicated">
@@ -782,6 +810,10 @@
                             </TransformGroup>
                         </CheckBox.RenderTransform>
                     </CheckBox>
+                    <Label x:Name="Quengel_Complicated" Content="Quengel" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Margin="625,279,0,0" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="tb_quengel_Complicated" HorizontalAlignment="Left" Height="23" Margin="625,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Button x:Name="bt_submit_queng_Complicated" Content="Submit" HorizontalAlignment="Left" Margin="655,359,0,0" VerticalAlignment="Top" Width="71" Click="bt_submit_queng_Click"/>
+                    <Label x:Name="lb_queng_Complicated" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="625,384,0,0" VerticalAlignment="Top" Width="128"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Sequence">
@@ -842,6 +874,10 @@
                     <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" FontSize="14"
                            FontWeight="Bold" x:Name="CutOrNot_Label" Content="" HorizontalAlignment="Left"
                            Margin="301,293,0,0" VerticalAlignment="Top" Height="41" Width="166" />
+                    <Label x:Name="Quengel_sequence" Content="Quengel" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Margin="625,279,0,0" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="tb_quengel_sequence" HorizontalAlignment="Left" Height="23" Margin="625,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Button x:Name="bt_submit_queng_sequence" Content="Submit" HorizontalAlignment="Left" Margin="655,359,0,0" VerticalAlignment="Top" Width="71" Click="bt_submit_queng_Click"/>
+                    <Label x:Name="lb_queng_sequence" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="625,384,0,0" VerticalAlignment="Top" Width="128"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Labyrinth">
@@ -955,6 +991,10 @@
                     <Label Content="You" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="363,332,0,0" VerticalAlignment="Top" Width="49"/>
                     <Label Content="Ziel" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="462,332,0,0" VerticalAlignment="Top" Width="49"/>
                     <Button Content="Submit" HorizontalAlignment="Left" Margin="352,391,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                    <Label x:Name="Quengel_laby" Content="Quengel" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Margin="625,279,0,0" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="tb_quengel_laby" HorizontalAlignment="Left" Height="23" Margin="625,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Button x:Name="bt_submit_queng_laby" Content="Submit" HorizontalAlignment="Left" Margin="655,359,0,0" VerticalAlignment="Top" Width="71" Click="bt_submit_queng_Click"/>
+                    <Label x:Name="lb_queng_laby" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="625,384,0,0" VerticalAlignment="Top" Width="128"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Passwort">
@@ -1013,6 +1053,10 @@
                     <TextBox x:Name="Zeile4" HorizontalAlignment="Left" Height="23" Margin="285,267,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" TextChanged="Zeile4_TextChanged"/>
                     <Label Content="4. Zeile" HorizontalAlignment="Left" Margin="285,236,0,0" VerticalAlignment="Top" Width="215"/>
                     <Label x:Name="pass" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="285,328,0,0" VerticalAlignment="Top" Width="215"/>
+                    <Label x:Name="Quengel_passwd" Content="Quengel" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Margin="625,279,0,0" VerticalAlignment="Top" Width="128"/>
+                    <TextBox x:Name="tb_quengel_passwd" HorizontalAlignment="Left" Height="23" Margin="625,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                    <Button x:Name="bt_submit_queng_passwd" Content="Submit" HorizontalAlignment="Left" Margin="655,359,0,0" VerticalAlignment="Top" Width="71" Click="bt_submit_queng_Click"/>
+                    <Label x:Name="lb_queng_passwd" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="625,384,0,0" VerticalAlignment="Top" Width="128"/>
                 </Grid>
             </TabItem>
         </TabControl>

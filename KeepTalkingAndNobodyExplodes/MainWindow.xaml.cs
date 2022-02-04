@@ -109,6 +109,7 @@ namespace KeepTalkingAndNobodyExplodes
         private void btnWires_Click(object sender, RoutedEventArgs e)
         {
             if (SwitchingTab()) TabControl.SelectedIndex = 1;
+            tb_wires.Text = "";
             lb_ans_wire.Visibility = Visibility.Hidden;
             lb_wire_cut.Visibility = Visibility.Hidden;
         }
@@ -197,6 +198,8 @@ namespace KeepTalkingAndNobodyExplodes
         private void btnButton_Click(object sender, RoutedEventArgs e)
         {
             if (SwitchingTab()) TabControl.SelectedIndex = 2;
+            lb_type.Content = "";
+            lb_ans_stripes.Content = "";
             ch_stripe_blue.Visibility = Visibility.Hidden;
             ch_stripe_white.Visibility = Visibility.Hidden;
             ch_stripe_other.Visibility = Visibility.Hidden;
@@ -476,7 +479,6 @@ namespace KeepTalkingAndNobodyExplodes
                 var ausgabe = "";
                 foreach (var VARIABLE in founds) ausgabe += VARIABLE + " ";
 
-                MessageBox.Show(ausgabe);
                 var length = founds.Length;
 
                 var temp = founds[0];
@@ -490,10 +492,7 @@ namespace KeepTalkingAndNobodyExplodes
                         founds[j] = temp;
                     }
 
-                ausgabe = "";
-                foreach (var VARIABLE in founds) ausgabe += VARIABLE + " ";
-
-                MessageBox.Show(ausgabe);
+                
 
                 var b1 = new BitmapImage();
                 var b2 = new BitmapImage();
@@ -912,6 +911,7 @@ namespace KeepTalkingAndNobodyExplodes
             }
         }
 
+
         private void btn_check_memory_Click(object sender, RoutedEventArgs e)
         {
             if (stufe < 5)
@@ -951,6 +951,10 @@ namespace KeepTalkingAndNobodyExplodes
                                 durch1[1] = 4;
                                 search = "Number";
                                 break;
+                            default:
+                                ausgabe = "Falsch";
+                                stufe--;
+                                break;
                         }
                     }
                     else
@@ -981,6 +985,10 @@ namespace KeepTalkingAndNobodyExplodes
                                             ausgabe = pos + ". Position";
                                             search = "Number";
                                             break;
+                                        default:
+                                            ausgabe = "Falsch";
+                                            stufe--;
+                                            break;
                                     }
 
                                     break;
@@ -1006,6 +1014,11 @@ namespace KeepTalkingAndNobodyExplodes
                                             ausgabe = pos + ". Position";
                                             search = "Number";
                                             break;
+                                        default:
+                                            ausgabe = "Falsch";
+                                            stufe--;
+                                            stufe--;
+                                            break;
                                     }
 
                                     break;
@@ -1030,6 +1043,11 @@ namespace KeepTalkingAndNobodyExplodes
                                             pos = durch3[1];
                                             ausgabe = pos + ". Position";
                                             search = "Number";
+                                            break;
+                                        default:
+                                            ausgabe = "Falsch";
+                                            stufe--;
+                                            stufe--;
                                             break;
                                     }
 
@@ -1057,6 +1075,11 @@ namespace KeepTalkingAndNobodyExplodes
                                             ausgabe = "Beschriftung " + pos;
                                             search = "Position";
                                             break;
+                                        default:
+                                            ausgabe = "Falsch";
+                                            stufe--;
+                                            stufe--;
+                                            break;
                                     }
 
                                     break;
@@ -1064,7 +1087,7 @@ namespace KeepTalkingAndNobodyExplodes
                     }
 
                     lb_answer.Content = ausgabe;
-                    if (changed || stufe == 0)
+                    if (changed || stufe == 0 || stufe == -1)
                     {
                         changed = false;
                         stufe++;
@@ -1080,10 +1103,7 @@ namespace KeepTalkingAndNobodyExplodes
                         memory_num.Visibility = Visibility.Visible;
                         tb_num.Visibility = Visibility.Visible;
                     }
-                    else
-                    {
-                        MessageBox.Show("Fehler im Code schau nochmal nach", "Error");
-                    }
+                    
                 }
             }
         }
@@ -1148,6 +1168,7 @@ namespace KeepTalkingAndNobodyExplodes
                 tb_num.Text = "";
                 tb_pos.Text = "";
                 tb_anzeige.Text = "";
+                lb_memory_durchgang.Content = stufe + 1 + ". Druchgang";
             }
         }
 
@@ -2398,14 +2419,6 @@ namespace KeepTalkingAndNobodyExplodes
                 }
             }
 
-            string ausgabe = "";
-            foreach (var VARIABLE in filter_fourth)
-            {
-                ausgabe += VARIABLE;
-            }
-
-            MessageBox.Show(ausgabe);
-
             try
             {
                 if (filter_fourth.Count == 1 || filter_fourth[0] == filter_fourth[1])
@@ -2426,6 +2439,64 @@ namespace KeepTalkingAndNobodyExplodes
 
         #endregion
 
+        #region Quengel
+        private void bt_submit_queng_Click(object sender, RoutedEventArgs e)
+        {
+            string input = "";
+            if (sender == bt_submit_queng_main)
+            {
+                input = tb_quengel_main.Text;
+                tb_quengel_main.Text = "";
+            }
+            else if (sender == bt_submit_queng_wire)
+            {
+                input = tb_quengel_wire.Text;
+                tb_quengel_wire.Text = "";
+            }
+            else if (sender == bt_submit_queng_Button)
+            {
+                input = tb_quengel_Button.Text;
+                tb_quengel_Button.Text = "";
+            }
+            else if (sender == bt_submit_queng_Symbol)
+            {
+                input = tb_quengel_Symbol.Text;
+                tb_quengel_Symbol.Text = "";
+            }
+            else if (sender == bt_submit_queng_Simon)
+            {
+                input = tb_quengel_Simon.Text;
+                tb_quengel_Simon.Text = "";
+            }
+            else if (sender == bt_submit_queng_words)
+            {
+                input = tb_quengel_words.Text;
+                tb_quengel_words.Text = "";
+            }
+            else if (sender == bt_submit_queng_Memory)
+            {
+                input = tb_quengel_Memory.Text;
+                tb_quengel_Memory.Text = "";
+            }
+            else if (sender == bt_submit_queng_Complicated)
+            {
+                input = tb_quengel_Complicated.Text;
+                tb_quengel_Complicated.Text = "";
+            }
+            else if (sender == bt_submit_queng_sequence)
+            {
+                input = tb_quengel_sequence.Text;
+                tb_quengel_sequence.Text = "";
+            }
+            else if (sender == bt_submit_queng_laby)
+            {
+                input = tb_quengel_laby.Text;
+            }
+        }
 
+
+        #endregion
+
+        
     }
 }
